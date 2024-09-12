@@ -10,7 +10,6 @@ public class WeaponChange : MonoBehaviour
 
     void Start()
     {
-        
         SelectWeapon();  // 시작할 때 기본 무기 선택
     }
 
@@ -45,9 +44,7 @@ public class WeaponChange : MonoBehaviour
             selectedWeapon--;
             if (selectedWeapon < 0) selectedWeapon = weapons.Count - 1;
             SelectWeapon();
-            
         }
-        
     }
 
     void SelectWeapon()

@@ -3,8 +3,40 @@
   "WorkspaceRootPath": "D:\\Project archive\\Log6\\HoneyComb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|d:\\project archive\\log6\\honeycomb\\assets\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|d:\\project archive\\log6\\honeycomb\\assets\\2_scripts\\home_teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\2_scripts\\home_teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|d:\\project archive\\log6\\honeycomb\\assets\\2_scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\2_scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\2_scripts\\park_hyeon_wook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\2_scripts\\park_hyeon_wook.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project archive\\Log6\\HoneyComb\\Assets\\PlayerAction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\PlayerAction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\WeaponChange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\WeaponChange.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\PlayerAction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\PlayerAction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\Attack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Attack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\Cmove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\Scripts\\Cmove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,15 +59,110 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Home_teleport.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\2_Scripts\\Home_teleport.cs",
+              "RelativeDocumentMoniker": "Assets\\2_Scripts\\Home_teleport.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\2_Scripts\\Home_teleport.cs",
+              "RelativeToolTip": "Assets\\2_Scripts\\Home_teleport.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T03:53:54.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Park_Hyeon_Wook.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\2_Scripts\\Park_Hyeon_Wook.cs",
+              "RelativeDocumentMoniker": "Assets\\2_Scripts\\Park_Hyeon_Wook.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\2_Scripts\\Park_Hyeon_Wook.cs",
+              "RelativeToolTip": "Assets\\2_Scripts\\Park_Hyeon_Wook.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T03:40:47.171Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "teleport.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\2_Scripts\\teleport.cs",
+              "RelativeDocumentMoniker": "Assets\\2_Scripts\\teleport.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\2_Scripts\\teleport.cs",
+              "RelativeToolTip": "Assets\\2_Scripts\\teleport.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T03:38:30.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WeaponChange.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\WeaponChange.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\WeaponChange.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\WeaponChange.cs",
+              "RelativeToolTip": "Assets\\Scripts\\WeaponChange.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T03:22:38.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "teleport.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\teleport.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\teleport.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\teleport.cs",
+              "RelativeToolTip": "Assets\\Scripts\\teleport.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T03:22:22.216Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PlayerAction.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\PlayerAction.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerAction.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\PlayerAction.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerAction.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAQwCAAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T03:21:54.548Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Attack.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\Attack.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Attack.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\Attack.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Attack.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T03:21:09.028Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Cmove.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\Cmove.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Cmove.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\Scripts\\Cmove.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Cmove.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T03:11:53.465Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "PlayerAction.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\PlayerAction.cs",
               "RelativeDocumentMoniker": "Assets\\PlayerAction.cs",
               "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\PlayerAction.cs",
               "RelativeToolTip": "Assets\\PlayerAction.cs",
-              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBUAAAACAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-04T13:12:02.456Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-04T13:12:02.456Z"
             }
           ]
         }
