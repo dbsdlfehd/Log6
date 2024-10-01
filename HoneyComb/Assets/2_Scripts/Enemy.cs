@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 dirVec = target.position - rigid.position;
-        Debug.Log($"{dirVec.x.ToString("F0")}, {dirVec.y.ToString("F0")}");
+        //Debug.Log($"플레이어와 몬스터의 거리 : {dirVec.x.ToString("F0")}, {dirVec.y.ToString("F0")}");
 
 
         //player좌표 - npc좌표

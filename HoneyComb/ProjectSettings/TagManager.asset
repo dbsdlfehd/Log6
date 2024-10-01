@@ -41,3 +41,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Ground
+    uniqueID: 54192435
+    locked: 0
+  - name: Carpet
+    uniqueID: 2968288821
+    locked: 0
+  - name: BorderLine
+    uniqueID: 323400413
+    locked: 0
+  - name: Enemy
+    uniqueID: 2145977891
+    locked: 0
+  - name: Player
+    uniqueID: 3175115681
+    locked: 0
+  - name: Object
+    uniqueID: 2162735053
+    locked: 0
