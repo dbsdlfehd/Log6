@@ -9,17 +9,33 @@ public class Enemy : MonoBehaviour
     public Rigidbody2D target;
     public int SenserRangeX = 3;
     public int SenserRangeY = 3;
+    public PlayerAction playerAction;
+    public int maxHp;
+    public int nowHp;
 
     bool isLive;
 
     Rigidbody2D rigid;
     SpriteRenderer spriter;
 
-    void Awake()
+    private void SetEnemyStatus(int _maxHP)
+    {
+        maxHp = _maxHP;
+        nowHp = _maxHP;
+    }
+
+	void Start()
+	{
+        SetEnemyStatus(100);
+	}
+
+	void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriter = GetComponent<SpriteRenderer>();
-    }
+		// PlayerAction 컴포넌트를 찾아 변수에 저장
+		playerAction = FindObjectOfType<PlayerAction>();
+	}
 
     void FixedUpdate()
     {
@@ -45,4 +61,18 @@ public class Enemy : MonoBehaviour
     {
         spriter.flipX = target.position.x < rigid.position.x;
     }
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		if (other.CompareTag("Player") && playerAction.attacked)
+		{
+            nowHp = nowHp - 10;
+			Debug.Log($"적이 플레이어에게 공격을 받음 현재 적 체력 {nowHp}");
+		}
+        if(nowHp < 0)//적 사망
+        {
+			Debug.Log($"적이 사망하였습니다.");
+			Destroy(gameObject);
+        }
+	}
 }
