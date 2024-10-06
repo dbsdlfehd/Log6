@@ -1,0 +1,340 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.31f1 (3409e2af086f) revision 3410402'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'ko' Physical Memory: 16139 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+D:\UnityEditorDownload\2021.3.31f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker4
+-projectPath
+D:/Project archive/Log6/HoneyComb
+-logFile
+Logs/AssetImportWorker4.log
+-srvPort
+8778
+Successfully changed project path to: D:/Project archive/Log6/HoneyComb
+D:/Project archive/Log6/HoneyComb
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [27812] Host "[IP] 192.168.219.183 [Port] 0 [Flags] 2 [Guid] 3157235523 [EditorId] 3157235523 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EDV24H0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [27812] Host "[IP] 192.168.219.183 [Port] 0 [Flags] 2 [Guid] 3157235523 [EditorId] 3157235523 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EDV24H0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
+Refreshing native plugins compatible for Editor in 88.74 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.31f1 (3409e2af086f)
+[Subsystems] Discovering subsystems at path D:/UnityEditorDownload/2021.3.31f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Project archive/Log6/HoneyComb/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3060 (ID=0x2504)
+    Vendor:   NVIDIA
+    VRAM:     12115 MB
+    Driver:   32.0.15.6070
+Initialize mono
+Mono path[0] = 'D:/UnityEditorDownload/2021.3.31f1/Editor/Data/Managed'
+Mono path[1] = 'D:/UnityEditorDownload/2021.3.31f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/UnityEditorDownload/2021.3.31f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56456
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/UnityEditorDownload/2021.3.31f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: D:/UnityEditorDownload/2021.3.31f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: D:/UnityEditorDownload/2021.3.31f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002694 seconds.
+Native extension for WindowsStandalone target not found
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 224 ms
+Refreshing native plugins compatible for Editor in 85.32 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.816 seconds
+Domain Reload Profiling:
+	ReloadAssembly (816ms)
+		BeginReloadAssembly (82ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (658ms)
+			LoadAssemblies (81ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (92ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (24ms)
+			SetupLoadedEditorAssemblies (507ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (310ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (85ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (72ms)
+				ProcessInitializeOnLoadMethodAttributes (39ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.005050 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 85.61 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Completed reload, in  1.348 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1348ms)
+		BeginReloadAssembly (106ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (1157ms)
+			LoadAssemblies (83ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (203ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (51ms)
+			SetupLoadedEditorAssemblies (794ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (24ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (86ms)
+				BeforeProcessingInitializeOnLoad (81ms)
+				ProcessInitializeOnLoadAttributes (557ms)
+				ProcessInitializeOnLoadMethodAttributes (42ms)
+				AfterProcessingInitializeOnLoad (4ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.83 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3872 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (46.7 KB). Loaded Objects now: 4333.
+Memory consumption went from 153.1 MB to 153.0 MB.
+Total: 3.048400 ms (FindLiveObjects: 0.371900 ms CreateObjectMapping: 0.104900 ms MarkObjects: 2.491200 ms  DeleteObjects: 0.079500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 533897.611446 seconds.
+  path: Assets/Sprites/isometric/castle_tower_E.asset
+  artifactKey: Guid(91d5d97b82083ea45a1140c9752a702e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Sprites/isometric/castle_tower_E.asset using Guid(91d5d97b82083ea45a1140c9752a702e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9e35e15d8dea00aec20c49e08eb90995') in 0.070251 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Sprites/isometric/ForestBG_23.asset
+  artifactKey: Guid(c2c333ae0f60a0143be401c6051686a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Sprites/isometric/ForestBG_23.asset using Guid(c2c333ae0f60a0143be401c6051686a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd78ffb3b9b175595bfc1d946937c5693') in 0.075578 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 6.096646 seconds.
+  path: Assets/Sprites/1/1.png
+  artifactKey: Guid(311e8549b7a1be848a44f61b3a804799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Sprites/1/1.png using Guid(311e8549b7a1be848a44f61b3a804799) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df5200d5af7497c2e4104b7933fc3171') in 0.041791 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Sprites/1/Run.png
+  artifactKey: Guid(d5d16d846c315a44597b921655a6a65c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Sprites/1/Run.png using Guid(d5d16d846c315a44597b921655a6a65c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca74661ca3b3508b4e17ddca1cd5cdc2') in 0.027519 seconds 
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Sprites/1/SquatAttack.png
+  artifactKey: Guid(2e1b0522e5e56f446b2647cc4b3b901f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Sprites/1/SquatAttack.png using Guid(2e1b0522e5e56f446b2647cc4b3b901f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'deb6cf7cbb36a37a9f2954cfb3df3ec6') in 0.009876 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 20.649804 seconds.
+  path: Assets/Fonts/Maplestory Bold SDF.asset
+  artifactKey: Guid(cefc4e1db190e97419a4c031bbed9db0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Fonts/Maplestory Bold SDF.asset using Guid(cefc4e1db190e97419a4c031bbed9db0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8e398ec06bf7140e7a35d648c5426855') in 0.234161 seconds 
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 1.160057 seconds.
+  path: Assets/Scenes/bgbar.png
+  artifactKey: Guid(80e297670ecb73c41a620198550efaf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/bgbar.png using Guid(80e297670ecb73c41a620198550efaf2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f318f34e0191a6f632003817b354356') in 0.014446 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 2.158243 seconds.
+  path: Assets/Scenes/Individual Sprites/adventurer-air-attack-3-end-00.png
+  artifactKey: Guid(5e1a9f1ca67e9de4696f5ca4be12e2e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/Individual Sprites/adventurer-air-attack-3-end-00.png using Guid(5e1a9f1ca67e9de4696f5ca4be12e2e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '141ce01c6a704feb2e340178a3391c6c') in 0.015138 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/Scenes/Individual Sprites/adventurer-crnr-clmb-00.png
+  artifactKey: Guid(0c021172b2aabab4595e267fc331db00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/Individual Sprites/adventurer-crnr-clmb-00.png using Guid(0c021172b2aabab4595e267fc331db00) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6c67a3eec34cd8da9217589233ccc87') in 0.019748 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Scenes/Individual Sprites/adventurer-cast-loop-03.png
+  artifactKey: Guid(3e4bb9705f2b35a478c9e5de170fde87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/Individual Sprites/adventurer-cast-loop-03.png using Guid(3e4bb9705f2b35a478c9e5de170fde87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dfd6fea6627d5b17e8df058fd807ae46') in 0.011689 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Scenes/Individual Sprites/adventurer-attack2-05.png
+  artifactKey: Guid(da18b98ed620ee94cb2f9f68e706570f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/Individual Sprites/adventurer-attack2-05.png using Guid(da18b98ed620ee94cb2f9f68e706570f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c26161935f87b8e3d2e17b6561b9c879') in 0.011035 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Scenes/Individual Sprites/adventurer-hurt-01.png
+  artifactKey: Guid(3fd624ac008e91f4f8caa3d50d6fb724) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/Individual Sprites/adventurer-hurt-01.png using Guid(3fd624ac008e91f4f8caa3d50d6fb724) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91fb954c64ed027b33a1b9fab4ee7900') in 0.011224 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/Scenes/Individual Sprites/adventurer-attack3-00.png
+  artifactKey: Guid(4a59441a8cfc4eb49b4808a1547d737b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/Individual Sprites/adventurer-attack3-00.png using Guid(4a59441a8cfc4eb49b4808a1547d737b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd87a63d5323dd791838362153ac2e81') in 0.012427 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Scenes/Individual Sprites/adventurer-die-02.png
+  artifactKey: Guid(1fb74126aea4f2943ade15b1087c045e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/Individual Sprites/adventurer-die-02.png using Guid(1fb74126aea4f2943ade15b1087c045e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '022bfba17cd401952dcaa3c23885a1d3') in 0.012656 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Scenes/Individual Sprites/adventurer-crnr-grb-03.png
+  artifactKey: Guid(b7e5481592be89548a829163934d622c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/Individual Sprites/adventurer-crnr-grb-03.png using Guid(b7e5481592be89548a829163934d622c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f911f4090eb737c42319909ae99c893') in 0.015934 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Scenes/Individual Sprites/adventurer-die-04.png
+  artifactKey: Guid(62da9e26795dc724097eb5aaa3a5a375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/Individual Sprites/adventurer-die-04.png using Guid(62da9e26795dc724097eb5aaa3a5a375) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6205ff8aaf44974b6d40a36a7da7b2a') in 0.037090 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Scenes/Individual Sprites/adventurer-crouch-01.png
+  artifactKey: Guid(db68b996ad8f63e45b5c6272362dd86d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/Individual Sprites/adventurer-crouch-01.png using Guid(db68b996ad8f63e45b5c6272362dd86d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56c3e4a4ac779d8176dcaa0948d0097f') in 0.012294 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Scenes/Individual Sprites/adventurer-die-05.png
+  artifactKey: Guid(6378affe66f917d4d9c9cac7f7dc5b95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/Individual Sprites/adventurer-die-05.png using Guid(6378affe66f917d4d9c9cac7f7dc5b95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca98b7a27dc89c7790b1f9efd39b1ced') in 0.013028 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 4.522838 seconds.
+  path: Assets/Scenes/Individual Sprites/adventurer-idle-00.png
+  artifactKey: Guid(1ca3a6b7dfec8bf41a3c844c1c4ed5b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/Individual Sprites/adventurer-idle-00.png using Guid(1ca3a6b7dfec8bf41a3c844c1c4ed5b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9661b34628048c5145efbe46c286bbc') in 0.024371 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/Scenes/Individual Sprites/adventurer-jump-02.png
+  artifactKey: Guid(bef681541f6bfda4194e77ff079913ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Scenes/Individual Sprites/adventurer-jump-02.png using Guid(bef681541f6bfda4194e77ff079913ce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71053014c0b8b0489c062a1c7448c81b') in 0.132190 seconds 
+Number of asset objects unloaded after import = 3
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
