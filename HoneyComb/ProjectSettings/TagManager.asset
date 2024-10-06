@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - weapon
+  - EnemyAttack1
   layers:
   - Default
   - TransparentFX
@@ -26,8 +28,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - EnemyAttack1
+  - EnemyAttack2
   - 
   - 
   - 
@@ -50,6 +52,9 @@ TagManager:
     locked: 0
   - name: BorderLine
     uniqueID: 323400413
+    locked: 0
+  - name: Attack
+    uniqueID: 1659233345
     locked: 0
   - name: Enemy
     uniqueID: 2145977891

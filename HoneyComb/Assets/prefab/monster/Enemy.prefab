@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9118523573164819808}
   - component: {fileID: 9118523573164819839}
   - component: {fileID: 9118523573164819838}
+  - component: {fileID: 4123873087523489720}
   - component: {fileID: 1211214430899685842}
   m_Layer: 0
   m_Name: Enemy
@@ -182,6 +183,23 @@ MonoBehaviour:
   playerAction: {fileID: 0}
   maxHp: 0
   nowHp: 0
+--- !u!114 &4123873087523489720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9118523573164819809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15a9dda36a9c24498bf9f930b103887, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scanRange: 5
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  nearestTarget: {fileID: 0}
 --- !u!222 &1211214430899685842
 CanvasRenderer:
   m_ObjectHideFlags: 0

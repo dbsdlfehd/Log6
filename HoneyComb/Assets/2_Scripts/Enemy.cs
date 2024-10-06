@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour
     public int maxHp;
     public int nowHp;
 
+    public Scanner scanner;
+    public Scanner2 scanner2;
+
     bool isLive;
 
     Rigidbody2D rigid;
@@ -35,7 +38,10 @@ public class Enemy : MonoBehaviour
         spriter = GetComponent<SpriteRenderer>();
 		// PlayerAction 컴포넌트를 찾아 변수에 저장
 		playerAction = FindObjectOfType<PlayerAction>();
-	}
+        scanner = GetComponent<Scanner>(); //근거리 공격용 스캔
+        scanner2 = GetComponent<Scanner2>(); //원거리 공격용 스캔
+
+    }
 
     void FixedUpdate()
     {

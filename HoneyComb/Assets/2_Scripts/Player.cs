@@ -17,6 +17,8 @@ public class Player : MonoBehaviour
         anim.SetTrigger("Atk");
 
     }
+
+    public float health;
     public Slider slider;
     public int speed;
     public float minPos;
@@ -68,5 +70,27 @@ public class Player : MonoBehaviour
             isAtk = true;
             SetAtk();
         }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (!collision.CompareTag("weapon"))
+            return;
+
+        health = health - collision.GetComponent<FarATK>().damage;
+
+        if (health > 0)
+        {
+            //이러면 그냥 살아있는 겨
+        }
+        else
+        {
+            Dead();
+        }
+    }
+
+    void Dead()
+    {
+        gameObject.SetActive(false);
     }
 }
