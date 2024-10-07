@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class PlayerAction : MonoBehaviour
 {
-	[Header("[SPEED]")]
+	[Header("속도")]
 	public float speed;
 
-	[Header("[RAY]")]
+	[Header("실선 추적기")]
 	public float Length = 0.7f;
 
-	[Header("[Attack]")]
+	[Header("공격 범위")]
 	public BoxCollider2D left; // 왼쪽 콜라이더
 	public BoxCollider2D right; // 오른쪽 콜라이더
 

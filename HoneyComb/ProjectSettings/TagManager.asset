@@ -50,6 +50,9 @@ TagManager:
   - name: Carpet
     uniqueID: 2968288821
     locked: 0
+  - name: Object
+    uniqueID: 4079258265
+    locked: 0
   - name: BorderLine
     uniqueID: 323400413
     locked: 0

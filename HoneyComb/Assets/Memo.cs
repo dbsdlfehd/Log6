@@ -22,6 +22,8 @@ public class Memo : MonoBehaviour
 	3. NullReference 원인 모를 에러 발생시 (발생해도 빌드는 돌아갈시)
 		유니티 껏다 키셈 (세이브 꼭하고)
 
+	4. isometric 시점 오브젝트 콜라이더 설정
+		edge collider 2d로 직접 콜라이더 만드셈
 
 
 
