@@ -8,7 +8,7 @@ public class weapon2 : MonoBehaviour
     //공격 구분짓기 위함
     public int id; //무기 or 공격 아이디
     public int prefabId; //프리펩 아이디
-    public float damage; //데미지
+    public int damage; //데미지
     public int count; //관통 되는 수
     public float speed; // 무기 속도
 
@@ -66,7 +66,10 @@ public class weapon2 : MonoBehaviour
         {
             Transform FarATK = GameManager.Instance.pool.Get(prefabId).transform;
             FarATK.parent = transform;
-            FarATK.GetComponent<FarATK>().Init(damage, count, Vector3.zero); //count 자리 -1은 무한으로 관통
+            if(Vector3.zero != null)
+            {
+				FarATK.GetComponent<FarATK>().Init(damage, count, Vector3.zero); //count 자리 -1은 무한으로 관통
+			}
         }
 
     }

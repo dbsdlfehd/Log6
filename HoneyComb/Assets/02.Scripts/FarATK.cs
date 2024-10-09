@@ -4,26 +4,31 @@ using UnityEngine;
 
 public class FarATK : MonoBehaviour
 {
-    public float damage;
+    public int damage;
     public int per;
+    public float speed = 1f;
 
     Rigidbody2D rigid;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
-    }
+	}
 
-    public void Init(float damage, int per, Vector3 dir)
+    public void Init(int damage, int per, Vector3 dir)
     {
         this.damage = damage;
         this.per = per;
-
-        if (per > -1)
+        if(rigid != null)
         {
-            rigid.velocity = dir * 1f; //공격이 쫓아오는 속도
-        }
-    }
+			if (per > -1)
+			{
+				rigid.velocity = dir * speed; //공격이 쫓아오는 속도
+			}
+		}
+		
+
+	}
 
     void OnTriggerEnter2D(Collider2D collision)
     {

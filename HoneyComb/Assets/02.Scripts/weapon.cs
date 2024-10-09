@@ -8,7 +8,7 @@ public class weapon : MonoBehaviour
     //공격 구분짓기 위함
     public int id; //무기 or 공격 아이디
     public int prefabId; //프리펩 아이디
-    public float damage; //데미지
+    public int damage; //데미지
     public int count; //관통 되는 수
     public float speed; // 공속
 

@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEditor.Tilemaps;
 
 public class Enemy : MonoBehaviour
 {
@@ -41,7 +40,7 @@ public class Enemy : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D>();
 		// Scene에서 Player 태그를 가진 오브젝트를 찾습니다.
-		player = FindObjectOfType<Player>();
+		player = FindObjectOfType<Player>();//무조건 해줘야됨 (초기화)
 		SetEnemyStatus(100);
 	}
 
@@ -59,10 +58,7 @@ public class Enemy : MonoBehaviour
 
 	void FixedUpdate()
     {
-		if (playerAction.attacked)
-		{
-			Debug.Log("공격했다.");
-		}
+		
 		Vector2 direction = player.transform.position - transform.position;
 		//rb.velocity = direction.normalized * speed;
 
@@ -76,15 +72,13 @@ public class Enemy : MonoBehaviour
 			rigid.MovePosition(rigid.position + nextVec);
 			rigid.velocity = Vector2.zero;
 
-			//Debug.Log($"{direction.x}");
+			//왼쪽 오른쪽 플립해주는 것
 			if(direction.x > 0)
 			{
 				spriter.flipX = false;
-				Debug.Log("오른쪽");
 			}
 			else if(direction.x < 0)
 			{
-				Debug.Log("왼쪽");
 				spriter.flipX = true;
 			}
 		}

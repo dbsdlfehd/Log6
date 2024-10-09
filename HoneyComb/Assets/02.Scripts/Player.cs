@@ -7,13 +7,7 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     Animator anim;
-
-    
-
-    private void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
+    PlayerHpShow PlayerHpShow;
 
     public void PlayAnimation(int atkNum)
     {
@@ -23,7 +17,8 @@ public class Player : MonoBehaviour
     }
 
     [Header("체력")]
-    public float HP;
+    public float maxHP;
+    public float nowHP;
 	public TextMeshProUGUI HP_UI;
 
 	[Header("공격")]
@@ -38,7 +33,14 @@ public class Player : MonoBehaviour
     public RectTransform pass;//얘도 ㅋㅋㅋㅋㅋ
     public int atkNum;//콤보? 번호일듯
 
-    public void SetAtk()
+	private void Start()
+	{
+		anim = GetComponent<Animator>();
+		nowHP = maxHP;
+		PlayerHpShow = GetComponent<PlayerHpShow>();
+	}
+
+	public void SetAtk()
     {
         slider.value = 0;
         minPos = pass.anchoredPosition.x;
@@ -84,7 +86,7 @@ public class Player : MonoBehaviour
         }
 
         //플레이어 체력 UI에 나타내기
-        HP_UI.text = "현재 플레이어 체력 : " + HP.ToString();
+        HP_UI.text = "현재 플레이어 체력 : " + nowHP.ToString();
 		Atk_UI.text = Atk.ToString();
 
 	}
@@ -94,20 +96,17 @@ public class Player : MonoBehaviour
         if (!collision.CompareTag("weapon"))
             return;
 
-        HP = HP - collision.GetComponent<FarATK>().damage;
+		nowHP = nowHP - collision.GetComponent<FarATK>().damage;
 
-        if (HP > 0)
+        //현재 체력이 0보다 작거나 같으면
+        if (nowHP < 0)
         {
-            //이러면 그냥 살아있는 겨
-        }
-        else
-        {
-            Dead();
-        }
+			Dead();
+		}
     }
 
     void Dead()
     {
-        gameObject.SetActive(false);
-    }
+		gameObject.SetActive(false);//플레이어 오브젝트 안보이기 처리
+	}
 }
