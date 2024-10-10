@@ -27,6 +27,8 @@ public class PlayerAction : MonoBehaviour
     private float specialAttackCooldown = 2f; // 특수 공격 쿨타임
     private float nextSpecialAttackTime = 0f; // 다음 특수 공격 가능 시간
 
+    private Collider2D playerCollider; // 플레이어의 콜라이더
+
     void AttackTrue()
     {
         attacked = true;
@@ -42,6 +44,7 @@ public class PlayerAction : MonoBehaviour
         rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sp = GetComponent<SpriteRenderer>();
+        playerCollider = GetComponent<Collider2D>(); // 플레이어의 콜라이더 가져오기
     }
 
     void Update()
@@ -94,6 +97,20 @@ public class PlayerAction : MonoBehaviour
             animator.SetTrigger("Skill2"); // "Skill2" 애니메이션 트리거
             nextSpecialAttackTime = Time.time + specialAttackCooldown; // 쿨타임 설정
         }
+
+        // 슬라이드 입력 (스페이스 바)
+        if (Input.GetKeyDown(KeyCode.Space)) // Space Key
+        {
+            StartCoroutine(Slide()); // 슬라이드 코루틴 시작
+        }
+    }
+
+    private IEnumerator Slide()
+    {
+        animator.SetTrigger("Slide"); // "Slide" 애니메이션 트리거
+        playerCollider.enabled = false; // 플레이어의 콜라이더 비활성화
+        yield return new WaitForSeconds(1f); // 1초 대기
+        playerCollider.enabled = true; // 플레이어의 콜라이더 활성화
     }
 
     void Attack()
