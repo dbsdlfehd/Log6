@@ -24,6 +24,8 @@ public class PlayerAction : MonoBehaviour
     private Vector3 dirVec;
 
     public bool attacked; // 공격 중인지 확인하는 플래그
+    private float specialAttackCooldown = 2f; // 특수 공격 쿨타임
+    private float nextSpecialAttackTime = 0f; // 다음 특수 공격 가능 시간
 
     void AttackTrue()
     {
@@ -77,6 +79,20 @@ public class PlayerAction : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && !attacked)
         {
             Attack();
+        }
+
+        // 스킬 입력 (우클릭)
+        if (Input.GetMouseButtonDown(1) && Time.time >= nextSpecialAttackTime) // Right Mouse Button
+        {
+            animator.SetTrigger("Skill1"); // "Skill1" 애니메이션 트리거
+            nextSpecialAttackTime = Time.time + specialAttackCooldown; // 쿨타임 설정
+        }
+
+        // 스킬 입력 (R키)
+        if (Input.GetKeyDown(KeyCode.R) && Time.time >= nextSpecialAttackTime) // R Key
+        {
+            animator.SetTrigger("Skill2"); // "Skill2" 애니메이션 트리거
+            nextSpecialAttackTime = Time.time + specialAttackCooldown; // 쿨타임 설정
         }
     }
 
