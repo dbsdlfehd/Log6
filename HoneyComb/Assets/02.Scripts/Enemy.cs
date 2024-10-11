@@ -13,15 +13,18 @@ public class Enemy : MonoBehaviour
 	private PlayerAction playerAction;
 
     private Rigidbody2D target;
+
+	[Header("감지 범위")]
     public int SenserRangeX = 3;
     public int SenserRangeY = 3;
     //private PlayerAction playerAction;
 
     [Header("체력")]
-    public int maxHp;
-    public int nowHp;
-    //public TextMeshProUGUI HP_UI;
+    public int maxHP;
+    public int nowHP;
+	//public TextMeshProUGUI HP_UI;
 
+	[Header("이건 나도 몰루")]
     public Scanner scanner;
     public Scanner2 scanner2;
 
@@ -32,8 +35,8 @@ public class Enemy : MonoBehaviour
 
     private void SetEnemyStatus(int _maxHP)
     {
-        maxHp = _maxHP;
-        nowHp = _maxHP;
+        maxHP = _maxHP;
+        nowHP = _maxHP;
     }
 
 	void Start()
@@ -49,8 +52,6 @@ public class Enemy : MonoBehaviour
 		rigid = GetComponent<Rigidbody2D>();
         target = GetComponent<Rigidbody2D>();
 		spriter = GetComponent<SpriteRenderer>();
-		// PlayerAction 컴포넌트를 찾아 변수에 저장
-		//playerAction = FindObjectOfType<PlayerAction>();
         scanner = GetComponent<Scanner>(); //근거리 공격용 스캔
         scanner2 = GetComponent<Scanner2>(); //원거리 공격용 스캔
 		playerAction = FindObjectOfType<Player>().GetComponent<PlayerAction>();
@@ -60,7 +61,6 @@ public class Enemy : MonoBehaviour
     {
 		
 		Vector2 direction = player.transform.position - transform.position;
-		//rb.velocity = direction.normalized * speed;
 
 		int X = Math.Abs(Mathf.RoundToInt(direction.x));
 		int Y = Math.Abs(Mathf.RoundToInt(direction.y));
@@ -82,31 +82,18 @@ public class Enemy : MonoBehaviour
 				spriter.flipX = true;
 			}
 		}
-
-		
-
-		//      //체력 UI 표시
-		//      HP_UI.text = "현재 적 체력 : " + nowHp;
-
 	}
-    
-    void LateUpdate()
-    {
-        //spriter.flipX = target.position.x < rigid.position.x;
-    }
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.CompareTag("Player") && playerAction.attacked)
 		{
-            nowHp = nowHp - player.Atk;
-			//Debug.Log($"적이 플레이어에게 공격을 받음 현재 적 체력 {nowHp}");
+            nowHP = nowHP - player.Atk;
+			Debug.Log("현재 적 체력" + nowHP);
 		}
-        if(nowHp <= 0)//적 사망
+        if(nowHP <= 0)//적 사망
         {
-            nowHp = 0;
-			//HP_UI.text = "현재 적 체력 : " + nowHp;
-			//Debug.Log($"적이 사망하였습니다.");
+            nowHP = 0;
 			Destroy(gameObject);
         }
 	}

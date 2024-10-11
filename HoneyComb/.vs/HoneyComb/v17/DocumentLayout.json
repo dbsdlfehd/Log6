@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "D:\\Project archive\\Log6\\HoneyComb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\faratk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\faratk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|d:\\project archive\\log6\\honeycomb\\assets\\02.scripts\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|d:\\project archive\\log6\\honeycomb\\assets\\02.scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\memo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\memo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\weapon2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\weapon2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,8 +19,24 @@
       "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\playerhpshow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\enemyhpshow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\enemyhpshow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\faratk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\faratk.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\01.animation\\playeranim\\attack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\01.animation\\playeranim\\attack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\weapon2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\weapon2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\memo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\memo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\poolmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -54,17 +62,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "PlayerAction.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\PlayerAction.cs",
+              "RelativeDocumentMoniker": "Assets\\02.Scripts\\PlayerAction.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\PlayerAction.cs",
+              "RelativeToolTip": "Assets\\02.Scripts\\PlayerAction.cs",
+              "ViewState": "AQIAAFIAAAAAAAAAAAASwGoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T10:10:58.371Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\02.Scripts\\Player.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Player.cs",
+              "RelativeToolTip": "Assets\\02.Scripts\\Player.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAAwE0AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T12:19:24.159Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "PlayerHpShow.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\PlayerHpShow.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\PlayerHpShow.cs",
               "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\PlayerHpShow.cs",
               "RelativeToolTip": "Assets\\02.Scripts\\PlayerHpShow.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAwCIAAAAEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-09T13:16:56.922Z",
               "IsPinned": true
@@ -72,41 +108,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Player.cs",
-              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Player.cs",
-              "RelativeDocumentMoniker": "Assets\\02.Scripts\\Player.cs",
-              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Player.cs",
-              "RelativeToolTip": "Assets\\02.Scripts\\Player.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAAowGcAAAAKAAAA",
+              "Title": "enemyHpShow.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\enemyHpShow.cs",
+              "RelativeDocumentMoniker": "Assets\\enemyHpShow.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\enemyHpShow.cs",
+              "RelativeToolTip": "Assets\\enemyHpShow.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBMAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T12:19:24.159Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FarATK.cs",
-              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\FarATK.cs",
-              "RelativeDocumentMoniker": "Assets\\02.Scripts\\FarATK.cs",
-              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\FarATK.cs",
-              "RelativeToolTip": "Assets\\02.Scripts\\FarATK.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T14:07:06.487Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "weapon2.cs",
-              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\weapon2.cs",
-              "RelativeDocumentMoniker": "Assets\\02.Scripts\\weapon2.cs",
-              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\weapon2.cs",
-              "RelativeToolTip": "Assets\\02.Scripts\\weapon2.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAjwEUAAAANAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T14:30:13.845Z",
+              "WhenOpened": "2024-10-11T10:24:54.789Z",
               "IsPinned": true
             },
             {
@@ -117,7 +126,7 @@
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\Enemy.cs",
               "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Enemy.cs",
               "RelativeToolTip": "Assets\\02.Scripts\\Enemy.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAMAAAA",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAkwFgAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-07T12:29:03.253Z",
               "IsPinned": true,
@@ -125,7 +134,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
+              "Title": "FarATK.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\FarATK.cs",
+              "RelativeDocumentMoniker": "Assets\\02.Scripts\\FarATK.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\FarATK.cs",
+              "RelativeToolTip": "Assets\\02.Scripts\\FarATK.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwAgAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T14:07:06.487Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "weapon2.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\weapon2.cs",
+              "RelativeDocumentMoniker": "Assets\\02.Scripts\\weapon2.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\weapon2.cs",
+              "RelativeToolTip": "Assets\\02.Scripts\\weapon2.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAAwEUAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T14:30:13.845Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\GameManager.cs",
@@ -146,7 +181,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
+              "Title": "Attack.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\01.Animation\\PlayerAnim\\Attack.cs",
+              "RelativeDocumentMoniker": "Assets\\01.Animation\\PlayerAnim\\Attack.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\01.Animation\\PlayerAnim\\Attack.cs",
+              "RelativeToolTip": "Assets\\01.Animation\\PlayerAnim\\Attack.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T10:02:25.68Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "PoolManager.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\PoolManager.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\PoolManager.cs",
@@ -158,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Scanner2.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Scanner2.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\Scanner2.cs",
@@ -170,19 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PlayerAction.cs",
-              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\PlayerAction.cs",
-              "RelativeDocumentMoniker": "Assets\\02.Scripts\\PlayerAction.cs",
-              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\PlayerAction.cs",
-              "RelativeToolTip": "Assets\\02.Scripts\\PlayerAction.cs",
-              "ViewState": "AQIAADUAAAAAAAAAAAArwEYAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T14:28:32.056Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "teleport.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\teleport.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\teleport.cs",
@@ -194,7 +229,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "Memo.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\Memo.cs",
               "RelativeDocumentMoniker": "Assets\\Memo.cs",

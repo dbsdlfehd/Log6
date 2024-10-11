@@ -6,15 +6,15 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
-    Animator anim;
+    //Animator anim;
     PlayerHpShow PlayerHpShow;
 
-    public void PlayAnimation(int atkNum)
-    {
-        anim.SetFloat("Blend", atkNum);
-        anim.SetTrigger("Atk");
+    //public void PlayAnimation(int atkNum)
+    //{
+    //    anim.SetFloat("Blend", atkNum);
+    //    anim.SetTrigger("Atk");
 
-    }
+    //}
 
     [Header("체력")]
     public float maxHP;
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
 
 	[Header("공격")]
 	public int Atk;
-    public Slider slider;
+    //public Slider slider;
 	public TextMeshProUGUI Atk_UI;
 
 	[Header("속도")]
@@ -35,60 +35,59 @@ public class Player : MonoBehaviour
 
 	private void Start()
 	{
-		anim = GetComponent<Animator>();
+		//anim = GetComponent<Animator>();
 		nowHP = maxHP;
 		PlayerHpShow = GetComponent<PlayerHpShow>();
 	}
 
-	public void SetAtk()
-    {
-        slider.value = 0;
-        minPos = pass.anchoredPosition.x;
-        maxPos = pass.sizeDelta.x + minPos;
-        StartCoroutine(ComboAtk());
-    }
+	//public void SetAtk()
+ //   {
+ //       //slider.value = 0;
+ //       minPos = pass.anchoredPosition.x;
+ //       maxPos = pass.sizeDelta.x + minPos;
+ //       StartCoroutine(ComboAtk());
+ //   }
 
     IEnumerator ComboAtk()
     {
         yield return null;
-        while (!(Input.GetKeyDown(KeyCode.Space) || slider.value == slider.maxValue))
-        {
-            slider.value += Time.deltaTime * speed;
-            yield return null;
-        }
-        if (slider.value >= minPos && slider.value <= maxPos)
-        {
-            PlayAnimation(atkNum++);
-            if (atkNum < 4)  //  공격모션이 4개이기때문
-                SetAtk();
-            else
-            {
-                atkNum = 0;
-                isAtk = false;
-            }
-        }
-        else
-        {
-            PlayAnimation(0);
-            isAtk = false;
-            atkNum = 0;
-        }
-        slider.value = 0;
+        //while (!(Input.GetKeyDown(KeyCode.Space) || slider.value == slider.maxValue))
+        //{
+        //    slider.value += Time.deltaTime * speed;
+        //    yield return null;
+        //}
+        //if (slider.value >= minPos && slider.value <= maxPos)
+        //{
+        //    //PlayAnimation(atkNum++);
+        //    if (atkNum < 4)  //  공격모션이 4개이기때문
+        //        SetAtk();
+        //    else
+        //    {
+        //        atkNum = 0;
+        //        isAtk = false;
+        //    }
+        //}
+        //else
+        //{
+        //    //PlayAnimation(0);
+        //    isAtk = false;
+        //    atkNum = 0;
+        //}
+        //slider.value = 0;
     }
-    bool isAtk = false;
+    //bool isAtk = false;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !isAtk)
-        {
-            isAtk = true;
-            SetAtk();
-        }
+        //if (Input.GetKeyDown(KeyCode.Space) && !isAtk)
+        //{
+        //    isAtk = true;
+        //    //SetAtk();
+        //}
 
         //플레이어 체력 UI에 나타내기
         HP_UI.text = "현재 플레이어 체력 : " + nowHP.ToString();
 		Atk_UI.text = Atk.ToString();
-
 	}
 
     void OnTriggerEnter2D(Collider2D collision)

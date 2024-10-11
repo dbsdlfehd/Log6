@@ -86,6 +86,7 @@
     <Compile Include="Assets\02.Scripts\Player.cs" />
     <Compile Include="Assets\02.Scripts\Keyboard.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\01.Animation\PlayerAnim\Attack.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
     <Compile Include="Assets\04.Sprites\IsometricElfFreeVer\scripts\ShotController.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Assets\02.Scripts\Scanner.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\04.Sprites\IsometricElfFreeVer\scripts\PotionManager.cs" />
+    <Compile Include="Assets\enemyHpShow.cs" />
     <Compile Include="Assets\02.Scripts\teleport.cs" />
     <Compile Include="Assets\Memo.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
@@ -108,9 +110,9 @@
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\01.Animation\PlayerAnim\AttackReset.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
-    <Compile Include="Assets\02.Scripts\Attack.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />

@@ -54,6 +54,57 @@ MonoBehaviour:
   damage: 25
   count: 1
   speed: 0
+--- !u!1 &1282557466185825720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4035085038041038606}
+  - component: {fileID: 1941343819254728346}
+  m_Layer: 7
+  m_Name: enemyHpShow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4035085038041038606
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282557466185825720}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 638616940354329364}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1941343819254728346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282557466185825720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd60c0a63bb936f4b89a02c2471538b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabHP_bar: {fileID: 3300254503943496060, guid: bfff50d5051199141b91c8fdd41125f7, type: 3}
+  height: 1.7
 --- !u!1 &1468321975499971028
 GameObject:
   m_ObjectHideFlags: 0
@@ -147,6 +198,7 @@ RectTransform:
   - {fileID: 6078138461833324239}
   - {fileID: 1879668733567622856}
   - {fileID: 6538943703462518675}
+  - {fileID: 4035085038041038606}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -290,8 +342,8 @@ MonoBehaviour:
   speed: 2
   SenserRangeX: 3
   SenserRangeY: 3
-  maxHp: 100
-  nowHp: 0
+  maxHP: 0
+  nowHP: 0
   scanner: {fileID: 0}
   scanner2: {fileID: 0}
 --- !u!114 &1434557988318601364

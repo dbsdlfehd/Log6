@@ -1,13 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
-    [Header("속도")]
+
+	[Header("속도")]
     public float speed;
 
-    [Header("실선 추적기")]
+    [Header("점멸 거리")]
+    public float moveDistance = 1.0f;
+
+	[Header("실선 추적기")]
     public float Length = 0.7f;
 
     [Header("공격 범위")]
@@ -45,7 +50,7 @@ public class PlayerAction : MonoBehaviour
         animator = GetComponent<Animator>();
         sp = GetComponent<SpriteRenderer>();
         playerCollider = GetComponent<Collider2D>(); // 플레이어의 콜라이더 가져오기
-    }
+	}
 
     void Update()
     {
@@ -87,14 +92,16 @@ public class PlayerAction : MonoBehaviour
         // 스킬 입력 (우클릭)
         if (Input.GetMouseButtonDown(1) && Time.time >= nextSpecialAttackTime) // Right Mouse Button
         {
-            animator.SetTrigger("Skill1"); // "Skill1" 애니메이션 트리거
+            Attack();
+			animator.SetTrigger("Skill1"); // "Skill1" 애니메이션 트리거
             nextSpecialAttackTime = Time.time + specialAttackCooldown; // 쿨타임 설정
         }
 
         // 스킬 입력 (R키)
         if (Input.GetKeyDown(KeyCode.R) && Time.time >= nextSpecialAttackTime) // R Key
         {
-            animator.SetTrigger("Skill2"); // "Skill2" 애니메이션 트리거
+            Attack();
+			animator.SetTrigger("Skill2"); // "Skill2" 애니메이션 트리거
             nextSpecialAttackTime = Time.time + specialAttackCooldown; // 쿨타임 설정
         }
 
@@ -103,7 +110,10 @@ public class PlayerAction : MonoBehaviour
         {
             StartCoroutine(Slide()); // 슬라이드 코루틴 시작
         }
-    }
+
+	}
+
+
 
     private IEnumerator Slide()
     {
@@ -166,4 +176,10 @@ public class PlayerAction : MonoBehaviour
         if (rayHit.collider != null) scanObject = rayHit.collider.gameObject;
         else scanObject = null;
     }
+
+	void Dead()
+	{
+        Debug.Log("플레이어 숨기기");
+		gameObject.SetActive(false);//플레이어 오브젝트 안보이기 처리
+	}
 }
