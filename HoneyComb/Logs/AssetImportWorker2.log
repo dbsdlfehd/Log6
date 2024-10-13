@@ -15,7 +15,7 @@ D:/Project archive/Log6/HoneyComb
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-8642
+10116
 Successfully changed project path to: D:/Project archive/Log6/HoneyComb
 D:/Project archive/Log6/HoneyComb
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,12 +47,12 @@ D:/Project archive/Log6/HoneyComb
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [27164] Host "[IP] 192.168.219.183 [Port] 0 [Flags] 2 [Guid] 104082054 [EditorId] 104082054 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EDV24H0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [51716] Host "[IP] 192.168.219.183 [Port] 0 [Flags] 2 [Guid] 941556340 [EditorId] 941556340 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EDV24H0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [27164] Host "[IP] 192.168.219.183 [Port] 0 [Flags] 2 [Guid] 104082054 [EditorId] 104082054 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EDV24H0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [51716] Host "[IP] 192.168.219.183 [Port] 0 [Flags] 2 [Guid] 941556340 [EditorId] 941556340 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EDV24H0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
-Refreshing native plugins compatible for Editor in 91.45 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 98.30 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.31f1 (3409e2af086f)
 [Subsystems] Discovering subsystems at path D:/UnityEditorDownload/2021.3.31f1/Editor/Data/Resources/UnitySubsystems
@@ -68,99 +68,99 @@ Initialize mono
 Mono path[0] = 'D:/UnityEditorDownload/2021.3.31f1/Editor/Data/Managed'
 Mono path[1] = 'D:/UnityEditorDownload/2021.3.31f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/UnityEditorDownload/2021.3.31f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56316
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56192
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/UnityEditorDownload/2021.3.31f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: D:/UnityEditorDownload/2021.3.31f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: D:/UnityEditorDownload/2021.3.31f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002674 seconds.
+Registered in 0.002888 seconds.
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 265 ms
-Refreshing native plugins compatible for Editor in 88.86 ms, found 4 plugins.
+Android Extension - Scanning For ADB Devices 323 ms
+Refreshing native plugins compatible for Editor in 90.24 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.857 seconds
+- Completed reload, in  0.934 seconds
 Domain Reload Profiling:
-	ReloadAssembly (858ms)
-		BeginReloadAssembly (77ms)
+	ReloadAssembly (935ms)
+		BeginReloadAssembly (72ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (0ms)
-		EndReloadAssembly (704ms)
-			LoadAssemblies (77ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (780ms)
+			LoadAssemblies (72ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (92ms)
+			SetupTypeCache (102ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (25ms)
-			SetupLoadedEditorAssemblies (553ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (614ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (352ms)
+				InitializePlatformSupportModulesInManaged (414ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (89ms)
+				RefreshPlugins (90ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (73ms)
-				ProcessInitializeOnLoadMethodAttributes (38ms)
+				ProcessInitializeOnLoadAttributes (70ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004225 seconds.
+Registered in 0.004161 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 88.22 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 94.23 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Completed reload, in  1.342 seconds
+- Completed reload, in  1.533 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1343ms)
-		BeginReloadAssembly (105ms)
+	ReloadAssembly (1534ms)
+		BeginReloadAssembly (132ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (21ms)
-		EndReloadAssembly (1152ms)
-			LoadAssemblies (78ms)
+			CreateAndSetChildDomain (22ms)
+		EndReloadAssembly (1289ms)
+			LoadAssemblies (117ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (210ms)
+			SetupTypeCache (260ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (52ms)
-			SetupLoadedEditorAssemblies (780ms)
+			RebuildScriptCaches (58ms)
+			SetupLoadedEditorAssemblies (834ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (24ms)
+				InitializePlatformSupportModulesInManaged (28ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (88ms)
-				BeforeProcessingInitializeOnLoad (80ms)
-				ProcessInitializeOnLoadAttributes (543ms)
-				ProcessInitializeOnLoadMethodAttributes (42ms)
+				RefreshPlugins (94ms)
+				BeforeProcessingInitializeOnLoad (85ms)
+				ProcessInitializeOnLoadAttributes (576ms)
+				ProcessInitializeOnLoadMethodAttributes (47ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.78 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.48 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 3883 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 36 unused Assets / (46.4 KB). Loaded Objects now: 4345.
-Memory consumption went from 153.5 MB to 153.4 MB.
-Total: 3.028100 ms (FindLiveObjects: 0.312100 ms CreateObjectMapping: 0.087300 ms MarkObjects: 2.551300 ms  DeleteObjects: 0.076500 ms)
+Unloading 3884 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 36 unused Assets / (46.5 KB). Loaded Objects now: 4346.
+Memory consumption went from 153.5 MB to 153.5 MB.
+Total: 2.123000 ms (FindLiveObjects: 0.179900 ms CreateObjectMapping: 0.049600 ms MarkObjects: 1.823800 ms  DeleteObjects: 0.069000 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -176,123 +176,51 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 103828.278581 seconds.
-  path: Assets/04.Sprites/Demo_Sprites/Desert/Flat/desert-sliced_02.png
-  artifactKey: Guid(40c74bdb314e60147be4706b27817189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 271212.741197 seconds.
+  path: Assets/04.Sprites/Demo_Sprites/Basic/Raised/cube01.png
+  artifactKey: Guid(39cf1e7417ef8f5439004335a2aa242d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/Desert/Flat/desert-sliced_02.png using Guid(40c74bdb314e60147be4706b27817189) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '09148708deec8a3339e40cdc6155b879') in 0.081381 seconds 
+Start importing Assets/04.Sprites/Demo_Sprites/Basic/Raised/cube01.png using Guid(39cf1e7417ef8f5439004335a2aa242d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3875c1bbb72fdab8a130a0800025a50f') in 0.093372 seconds 
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/04.Sprites/Demo_Sprites/Desert/Flat/desert-sliced_08.png
-  artifactKey: Guid(fabb83d01aa016848a2741f371a1ccbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 0.000022 seconds.
+  path: Assets/04.Sprites/Demo_Sprites/Basic/Raised/slope2.png
+  artifactKey: Guid(eb090b6429dd791489ffb8d070685aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/Desert/Flat/desert-sliced_08.png using Guid(fabb83d01aa016848a2741f371a1ccbd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cdc0ede93218dbc0aa5d1d2c34cda18') in 0.026914 seconds 
+Start importing Assets/04.Sprites/Demo_Sprites/Basic/Raised/slope2.png using Guid(eb090b6429dd791489ffb8d070685aac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b33d9cf99b28e7e3a8acb5d432d73e4b') in 0.015727 seconds 
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 1.574215 seconds.
-  path: Assets/04.Sprites/Demo_Sprites/Desert/Decoration/desert-sliced_23.png
-  artifactKey: Guid(8bd8a84fc6db3644fa4d984068398d9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/Desert/Decoration/desert-sliced_23.png using Guid(8bd8a84fc6db3644fa4d984068398d9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e8d81cecc70de3431f0e5a25afcd788b') in 0.026487 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/04.Sprites/Demo_Sprites/Desert/Decoration/desert-sliced_59.png
-  artifactKey: Guid(298d6e68c0cd48746a19fbbf30d2bd29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/Desert/Decoration/desert-sliced_59.png using Guid(298d6e68c0cd48746a19fbbf30d2bd29) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06aecac4bf0104377815fa11e921eef4') in 0.022126 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/04.Sprites/Demo_Sprites/Desert/Decoration/desert-sliced_54.png
-  artifactKey: Guid(d0af17dc956c6d84b9b80a1345f2e01e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/Desert/Decoration/desert-sliced_54.png using Guid(d0af17dc956c6d84b9b80a1345f2e01e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c03e67d58727cab389acc37682326d70') in 0.013894 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.625181 seconds.
+  Time since last request: 3.569037 seconds.
   path: Assets/04.Sprites/Demo_Sprites/Desert/Raised/desert-sliced_26.png
   artifactKey: Guid(f5a21f39a3306ad4e8b7c99428ddb2d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/Desert/Raised/desert-sliced_26.png using Guid(f5a21f39a3306ad4e8b7c99428ddb2d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a24f1ecc6949d12e311ba985bd05b1f2') in 0.021840 seconds 
+Start importing Assets/04.Sprites/Demo_Sprites/Desert/Raised/desert-sliced_26.png using Guid(f5a21f39a3306ad4e8b7c99428ddb2d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '240f1fa00961fced09b152bec5560e9e') in 0.021794 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/04.Sprites/Demo_Sprites/Desert/Raised/desert-sliced_39.png
+  artifactKey: Guid(c047d326d73228341b37d36ffec656fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Demo_Sprites/Desert/Raised/desert-sliced_39.png using Guid(c047d326d73228341b37d36ffec656fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4b5707c79adf4af72c5f1c403235e37') in 0.019720 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/04.Sprites/Demo_Sprites/Desert/Raised/desert-sliced_43.png
+  artifactKey: Guid(c41a02acdb7d7b64994b5ac56d30bc5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Demo_Sprites/Desert/Raised/desert-sliced_43.png using Guid(c41a02acdb7d7b64994b5ac56d30bc5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d9a77491b7d2a266d45023a234b0baf') in 0.017056 seconds 
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
   Time since last request: 0.000016 seconds.
-  path: Assets/04.Sprites/Demo_Sprites/Desert/Raised/desert-sliced_53.png
-  artifactKey: Guid(dbfe26f852ac8d046afaba7b0663c9b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  path: Assets/04.Sprites/Demo_Sprites/Desert/Raised/desert-sliced_44.png
+  artifactKey: Guid(ec72bcc9301095f4baaeda0a680e9312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/Desert/Raised/desert-sliced_53.png using Guid(dbfe26f852ac8d046afaba7b0663c9b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4923b7e724c0bf7255f3589921aeb6ea') in 0.015405 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/04.Sprites/Demo_Sprites/Desert/Raised/desert-sliced_45.png
-  artifactKey: Guid(fd5e1ba53b59a0c48ac6bbf17322b439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/Desert/Raised/desert-sliced_45.png using Guid(fd5e1ba53b59a0c48ac6bbf17322b439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a49d385325333812496b76045397273') in 0.012205 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 3.798529 seconds.
-  path: Assets/04.Sprites/Demo_Sprites/FrozenCave/Wall/cave-sliced_34.png
-  artifactKey: Guid(59a33a5d143704146b075230a577f2d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/FrozenCave/Wall/cave-sliced_34.png using Guid(59a33a5d143704146b075230a577f2d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '022319596b273bf27a28709ee9798216') in 0.024626 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 1.501105 seconds.
-  path: Assets/04.Sprites/Demo_Sprites/FrozenCave/Raised/cave-sliced_02.png
-  artifactKey: Guid(349def5cbbfb987418465220ecc08562) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/FrozenCave/Raised/cave-sliced_02.png using Guid(349def5cbbfb987418465220ecc08562) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '110cfc1cf120c2d811f53b1d50edabe9') in 0.016272 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/04.Sprites/Demo_Sprites/FrozenCave/Raised/cave-sliced_19.png
-  artifactKey: Guid(e5c92efa6e5bce0409b5fb175d42e872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/FrozenCave/Raised/cave-sliced_19.png using Guid(e5c92efa6e5bce0409b5fb175d42e872) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba5ecb2a86133a2f4aa9307b48e352d8') in 0.015315 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000014 seconds.
-  path: Assets/04.Sprites/Demo_Sprites/FrozenCave/Raised/cave-sliced_20.png
-  artifactKey: Guid(9724b10684169e24583471751a22904e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/FrozenCave/Raised/cave-sliced_20.png using Guid(9724b10684169e24583471751a22904e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2bd6aec99a759c6f1d7554bb06e5e0b7') in 0.014972 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/04.Sprites/Demo_Sprites/FrozenCave/Raised/cave-sliced_18.png
-  artifactKey: Guid(888f480ec97a69542aac255c4f3da578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/FrozenCave/Raised/cave-sliced_18.png using Guid(888f480ec97a69542aac255c4f3da578) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d2ab1aaa5bc7e565731bac5c3de19ea') in 0.013836 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 5.218930 seconds.
-  path: Assets/04.Sprites/Demo_Sprites/Temple/Raised/temple-sliced_19.png
-  artifactKey: Guid(9bad3ccaa2f4a9c4babd138aac19f062) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/Temple/Raised/temple-sliced_19.png using Guid(9bad3ccaa2f4a9c4babd138aac19f062) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc8ee6c31e0ecb730215577aefe7ed26') in 0.019396 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/04.Sprites/Demo_Sprites/Temple/Raised/temple-sliced_41.png
-  artifactKey: Guid(3086c7c4fcf42f846b242e2e7b7e007d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/04.Sprites/Demo_Sprites/Temple/Raised/temple-sliced_41.png using Guid(3086c7c4fcf42f846b242e2e7b7e007d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '452ca0854183fdcc1e82a1ee0573c9e8') in 0.168398 seconds 
+Start importing Assets/04.Sprites/Demo_Sprites/Desert/Raised/desert-sliced_44.png using Guid(ec72bcc9301095f4baaeda0a680e9312) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3004f4f910ed40c05f9435a9491f2d3') in 0.016783 seconds 
 Number of asset objects unloaded after import = 3
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server

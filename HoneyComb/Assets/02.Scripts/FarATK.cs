@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class FarATK : MonoBehaviour
 {
+    [Header("이것들 안됨, 메모장 보셈;;")]
     public int damage;
     public int per;
+
+    [Header("이건 됨, 탄속")]
     public float speed = 1f;
+
+    [Header("이건 됨, 몇 초후 사라짐")]
+    public float disappearTime = 5f;
 
     Rigidbody2D rigid;
 
@@ -26,11 +32,19 @@ public class FarATK : MonoBehaviour
 				rigid.velocity = dir * speed; //공격이 쫓아오는 속도
 			}
 		}
-		
 
+		// 10초 후에 오브젝트를 비활성화
+		Invoke("DestroyAfterTime", disappearTime);
 	}
 
-    void OnTriggerEnter2D(Collider2D collision)
+	// 10초가 지나면 오브젝트를 비활성화하는 함수
+	void DestroyAfterTime()
+	{
+		rigid.velocity = Vector2.zero;
+		gameObject.SetActive(false);
+	}
+
+	void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Player") || per == -1)
             return;
@@ -43,4 +57,6 @@ public class FarATK : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+
 }

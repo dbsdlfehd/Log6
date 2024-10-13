@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour
 		if (other.CompareTag("Player") && playerAction.attacked)
 		{
             nowHP = nowHP - player.Atk;
-			Debug.Log("현재 적 체력" + nowHP);
+			//Debug.Log("현재 적 체력" + nowHP);
 		}
         if(nowHP <= 0)//적 사망
         {

@@ -6,10 +6,17 @@ public class weapon2 : MonoBehaviour
 {
     //원거리 공격용 스크립트
     //공격 구분짓기 위함
+    [Header("주민등록번호")]
     public int id; //무기 or 공격 아이디
     public int prefabId; //프리펩 아이디
+
+    [Header("공격력")]
     public int damage; //데미지
-    public int count; //관통 되는 수
+
+    [Header("관통력")]
+    public int count; //관통 되는 수 // EX. 0 = 한개
+
+    [Header("탄속")]
     public float speed; // 무기 속도
 
     //public int per;
