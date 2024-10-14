@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class PlayerAction : MonoBehaviour
 {
-
 	[Header("속도")]
     public float speed;
 
@@ -19,7 +18,13 @@ public class PlayerAction : MonoBehaviour
     public BoxCollider2D left; // 왼쪽 콜라이더
     public BoxCollider2D right; // 오른쪽 콜라이더
 
-    private SpriteRenderer sp;
+    [Header("대화창")]
+    //public TextMeshProUGUI Dialog_UI_text;
+    //private string dialog_text;
+	public TalkManager talkManager;
+
+
+	private SpriteRenderer sp;
     private Rigidbody2D rigid;
     private Animator animator;
     private float garo;
@@ -46,7 +51,8 @@ public class PlayerAction : MonoBehaviour
 
     void Awake()
     {
-        rigid = GetComponent<Rigidbody2D>();
+        //dialog_text = "아무것도 발견된게 없습니다.";
+		rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sp = GetComponent<SpriteRenderer>();
         playerCollider = GetComponent<Collider2D>(); // 플레이어의 콜라이더 가져오기
@@ -77,14 +83,25 @@ public class PlayerAction : MonoBehaviour
         if (garo < 0) dirVec = Vector3.left; // 왼쪽
         else if (garo > 0) dirVec = Vector3.right; // 오른쪽
 
-        // 오브젝트 스캔
-        if (Input.GetButtonDown("Jump") && scanObject != null)
+
+        // 허공 스캔
+        if (Input.GetKeyDown(KeyCode.E) && scanObject == null)
         {
-            UnityEngine.Debug.Log("이것은: " + scanObject.name);
+			//dialog_text = "가까이 가서 대상을 바라보며 \n E키를 누르세요.";
+		}
+        // 오브젝트 스캔
+        if (Input.GetKeyDown(KeyCode.E) && scanObject != null)
+        {
+            talkManager.DialogAction(scanObject);
+			//dialog_text = "이것은 " + scanObject.name + " 입니다.";
+			//Debug.Log("이것은 " + scanObject.name + " 입니다.");
         }
 
-        // 공격 입력 (좌클릭)
-        if (Input.GetMouseButtonDown(0) && !attacked)
+        // UI에 보여주기
+		//Dialog_UI_text.text = dialog_text.ToString();
+
+		// 공격 입력 (좌클릭)
+		if (Input.GetMouseButtonDown(0) && !attacked)
         {
             Attack();
         }
@@ -92,7 +109,6 @@ public class PlayerAction : MonoBehaviour
         // 스킬 입력 (우클릭)
         if (Input.GetMouseButtonDown(1) && Time.time >= nextSpecialAttackTime) // Right Mouse Button
         {
-            Attack();
 			animator.SetTrigger("Skill1"); // "Skill1" 애니메이션 트리거
             nextSpecialAttackTime = Time.time + specialAttackCooldown; // 쿨타임 설정
         }
@@ -100,7 +116,6 @@ public class PlayerAction : MonoBehaviour
         // 스킬 입력 (R키)
         if (Input.GetKeyDown(KeyCode.R) && Time.time >= nextSpecialAttackTime) // R Key
         {
-            Attack();
 			animator.SetTrigger("Skill2"); // "Skill2" 애니메이션 트리거
             nextSpecialAttackTime = Time.time + specialAttackCooldown; // 쿨타임 설정
         }
@@ -169,17 +184,17 @@ public class PlayerAction : MonoBehaviour
         rigid.velocity = moveDirection * speed;
 
         // 플레이어 주위의 얇은 선으로 감지
-        UnityEngine.Debug.DrawRay(rigid.position, dirVec * Length, new Color(0, 1, 0));
-        RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, dirVec, Length, LayerMask.GetMask("Enemy"));
+        Debug.DrawRay(rigid.position, dirVec * Length, new Color(0, 1, 0));
+        RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, dirVec, Length, LayerMask.GetMask("Object"));
 
         // 무언가 감지됨!
         if (rayHit.collider != null) scanObject = rayHit.collider.gameObject;
         else scanObject = null;
     }
 
-	void Dead()
-	{
-        Debug.Log("플레이어 숨기기");
-		gameObject.SetActive(false);//플레이어 오브젝트 안보이기 처리
-	}
+	//void Dead()
+	//{
+ //       //Debug.Log("플레이어 숨기기");
+	//	gameObject.SetActive(false);//플레이어 오브젝트 안보이기 처리
+	//}
 }

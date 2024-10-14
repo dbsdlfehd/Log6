@@ -10,7 +10,7 @@ public class weapon2 : MonoBehaviour
     public int id; //무기 or 공격 아이디
     public int prefabId; //프리펩 아이디
 
-    [Header("공격력")]
+    [Header("이게 되는 거임;; 공격력")]
     public int damage; //데미지
 
     [Header("관통력")]
