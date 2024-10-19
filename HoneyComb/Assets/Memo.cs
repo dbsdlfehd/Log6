@@ -25,7 +25,8 @@ public class Memo : MonoBehaviour
 	4. isometric 시점 오브젝트 콜라이더 설정
 		edge collider 2d로 직접 콜라이더 만드셈
 
-	5. 적 공격력 -> 적 프리펩에 자식에 있는 Weapon 스크립트에 있음
+	5. 적 공격력 
+		적 프리펩 -> 원거리 공격 -> Weapon2스크립트
 
 	6. 다른 스크립트 값 가져올 때
 		private 선언시 무조건 start나 awake에서 선언해주기

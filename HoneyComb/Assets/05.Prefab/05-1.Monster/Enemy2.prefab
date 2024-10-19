@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   prefabId: 1
-  damage: 5
+  damage: 100
   count: 0
   speed: 0.5
 --- !u!1 &6078138461163856461
@@ -290,8 +290,8 @@ MonoBehaviour:
   speed: 2
   SenserRangeX: 3
   SenserRangeY: 3
-  maxHp: 100
-  nowHp: 0
+  maxHP: 100
+  nowHP: 0
   scanner: {fileID: 0}
   scanner2: {fileID: 0}
 --- !u!114 &1434557988318601364

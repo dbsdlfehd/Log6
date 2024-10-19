@@ -7,8 +7,8 @@ public class teleport : MonoBehaviour
     [Header("좌표")]
 	public Transform [] Pos;// 플레이어가 스폰될 게임 오브젝트 좌표
 
-    //트리거에 충돌했을 때 호출되는 함수
-    private void OnTriggerEnter2D(Collider2D other)//닿은 접촉체를 매개변수로 불러옴
+	//트리거에 충돌했을 때 호출되는 함수
+	private void OnTriggerEnter2D(Collider2D other)//닿은 접촉체를 매개변수로 불러옴
     {
         if (Pos.Length>=2)
         {

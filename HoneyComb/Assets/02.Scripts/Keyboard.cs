@@ -23,23 +23,23 @@ public class Keyboard : MonoBehaviour
 		}
 
 
-		//숫자키 = 방번호
-		if (Input.GetKeyDown(KeyCode.Alpha1))
-			player.position = Pos[1].position;
+		////숫자키 = 방번호
+		//if (Input.GetKeyDown(KeyCode.Alpha1))
+		//	player.position = Pos[1].position;
 
-		if (Input.GetKeyDown(KeyCode.Alpha2))
-			player.position = Pos[2].position;
+		//if (Input.GetKeyDown(KeyCode.Alpha2))
+		//	player.position = Pos[2].position;
 
-		if (Input.GetKeyDown(KeyCode.Alpha3))
-			player.position = Pos[3].position;
+		//if (Input.GetKeyDown(KeyCode.Alpha3))
+		//	player.position = Pos[3].position;
 
-		if (Input.GetKeyDown(KeyCode.Alpha4))
-			player.position = Pos[4].position;
+		//if (Input.GetKeyDown(KeyCode.Alpha4))
+		//	player.position = Pos[4].position;
 
-		if (Input.GetKeyDown(KeyCode.Alpha5))
-			player.position = Pos[5].position;
+		//if (Input.GetKeyDown(KeyCode.Alpha5))
+		//	player.position = Pos[5].position;
 
-		if (Input.GetKeyDown(KeyCode.Alpha6))
-			player.position = Pos[6].position;
+		//if (Input.GetKeyDown(KeyCode.Alpha6))
+		//	player.position = Pos[6].position;
 	}
 }
