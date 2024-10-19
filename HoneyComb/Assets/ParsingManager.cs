@@ -8,7 +8,7 @@ using UnityEngine.Networking;
 
 public class ParsingManager : MonoBehaviour
 {
-	const string URL = "https://docs.google.com/spreadsheets/d/1tEMmdWn9jWmPBLcppi0xkukl86hoj3C0Jo3x9Y8utwU/export?format=tsv&range=I2:J19";
+	const string URL = "https://docs.google.com/spreadsheets/d/1tEMmdWn9jWmPBLcppi0xkukl86hoj3C0Jo3x9Y8utwU/export?format=tsv&range=I2:J1000";
 	string SHEET;
 
 	//파씽 스타트
@@ -41,8 +41,8 @@ public class ParsingManager : MonoBehaviour
 		//Debug.Log($"{hang2[0]} {hang2[1]}");
 		//Debug.Log($"{hang3[0]} {hang3[1]}");
 
-		//1행부터 17행까지
-		for(int i = 1; i <= 17; i++)
+		//1행부터 100행까지
+		for(int i = 1; i <= 1000; i++)
 		{
 			string[] hang = sheet[i].Split("\t");
 			//Debug.Log($"대화넘버{hang[0]} 대화주체자{hang[1]}");
