@@ -2,16 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAction : MonoBehaviour
 {
-	[Header("속도")]
-    public float speed;
+    public float walkSpeed = 5f;        // 걷기 속도
+    public float defaultSpeed = 5f;     // 기본 속도(걷기 속도와 동일해야함)
+    public float slideSpeed = 10f;      // 슬라이드 속도
+    public float slideDuration = 0.3f;  // 슬라이드 지속 시간 (0.3초)
+    public float slideCooldown = 1f;    // 슬라이드 후 쿨타임 (1초)
+    private float slideTime = 0f;       // 남은 슬라이드 시간
+    private float cooldownTime = 0f;    // 남은 쿨타임 시간
+    public float skillAttackCooldown = 2f;    // 첫 번째 스킬 쿨타임 2초
+    public float skillAttack2Cooldown = 3f;   // 두 번째 스킬 쿨타임 3초
+    private float skillAttackTime = 0f;       // 첫 번째 스킬 사용 가능 시간
+    private float skillAttack2Time = 0f;      // 두 번째 스킬 사용 가능 시간
 
-    [Header("점멸 거리")]
-    public float moveDistance = 1.0f;
+    Vector2 moveInput;
+    Vector3 dirVec;
 
-	[Header("실선 추적기")]
+    [Header("실선 추적기")]
     public float Length = 0.7f;
 
     [Header("공격 범위")]
@@ -23,30 +33,72 @@ public class PlayerAction : MonoBehaviour
     //private string dialog_text;
 	public TalkManager talkManager;
 
+    Rigidbody2D rigid;        // Rigidbody2D 컴포넌트 참조
+    Animator animator;     // Animator 컴포넌트 참조
+    SpriteRenderer sp;
 
-	private SpriteRenderer sp;
-    private Rigidbody2D rigid;
-    private Animator animator;
-    private float garo;
-    private float sero;
     private GameObject scanObject;
-
-    private Vector3 dirVec;
-
-    public bool attacked; // 공격 중인지 확인하는 플래그
-    private float specialAttackCooldown = 2f; // 특수 공격 쿨타임
-    private float nextSpecialAttackTime = 0f; // 다음 특수 공격 가능 시간
 
     private Collider2D playerCollider; // 플레이어의 콜라이더
 
-    void AttackTrue()
+    // 이동 상태 확인 변수 (애니메이터와 연동)
+    [SerializeField]
+    private bool _isMoving = false;
+    public bool IsMoving
     {
-        attacked = true;
+        get
+        {
+            return _isMoving;
+        }
+        private set
+        {
+            _isMoving = value;
+            animator.SetBool(AnimationStrings.isMoving, value);  // 애니메이션 상태 변경
+        }
     }
 
-    void AttackFalse()
+    // 슬라이딩 상태 확인 변수 (애니메이터와 연동)
+    [SerializeField]
+    private bool _isSliding = false;
+    public bool IsSliding
     {
-        attacked = false;
+        get
+        {
+            return _isSliding;
+        }
+        private set
+        {
+            _isSliding = value;
+            animator.SetBool(AnimationStrings.isSliding, value);  // 애니메이션 상태 변경
+        }
+    }
+    private bool isCooldown = false; // 슬라이드 쿨타임 중인지 여부
+
+    // 캐릭터가 오른쪽을 보고 있는지 확인하는 변수
+    public bool _isFacingRight = true;
+    
+
+    public bool IsFacingRight
+    {
+        get { return _isFacingRight; }
+        private set
+        {
+            if (_isFacingRight != value)
+            {
+                transform.localScale *= new Vector2(-1, 1);
+            }
+
+            _isFacingRight = value;
+        }
+    }
+
+    // canMove: 플레이어가 이동할 수 있는지 여부를 나타냄
+    public bool canMove
+    {
+        get
+        {
+            return animator.GetBool(AnimationStrings.canMove);
+        }
     }
 
     void Awake()
@@ -60,113 +112,53 @@ public class PlayerAction : MonoBehaviour
 
     void Update()
     {
-        garo = Input.GetAxisRaw("Horizontal");
-        sero = Input.GetAxisRaw("Vertical");
-
-        // 플레이어의 방향과 애니메이션 업데이트
-        if (garo < 0) // 왼쪽
+        if (isCooldown)
         {
-            sp.flipX = true;
-            animator.SetTrigger("run");
-        }
-        else if (garo > 0) // 오른쪽
-        {
-            sp.flipX = false;
-            animator.SetTrigger("run");
-        }
-        else if (sero != 0)
-        {
-            animator.SetTrigger("run");
+            cooldownTime -= Time.deltaTime;
+            if (cooldownTime <= 0)
+            {
+                isCooldown = false;  // 쿨타임 종료
+            }
         }
 
-        // 방향 변수 설정
-        if (garo < 0) dirVec = Vector3.left; // 왼쪽
-        else if (garo > 0) dirVec = Vector3.right; // 오른쪽
-
-
-        // 허공 스캔
-        if (Input.GetKeyDown(KeyCode.E) && scanObject == null)
+        if (IsSliding)
         {
-			//dialog_text = "가까이 가서 대상을 바라보며 \n E키를 누르세요.";
-		}
-        // 오브젝트 스캔
-        if (Input.GetKeyDown(KeyCode.E) && scanObject != null)
+            slideTime -= Time.deltaTime;
+            if (slideTime <= 0)
+            {
+                StopSliding();  // 슬라이드가 끝나면 슬라이딩 종료
+            }
+        }
+
+        // 쿨타임 감소
+        if (skillAttackTime > 0)
         {
-            talkManager.DialogAction(scanObject);
-			//dialog_text = "이것은 " + scanObject.name + " 입니다.";
-			//Debug.Log("이것은 " + scanObject.name + " 입니다.");
+            skillAttackTime -= Time.deltaTime;
+        }
+
+        if (skillAttack2Time > 0)
+        {
+            skillAttack2Time -= Time.deltaTime;
         }
 
         // UI에 보여주기
-		//Dialog_UI_text.text = dialog_text.ToString();
-
-		// 공격 입력 (좌클릭)
-		if (Input.GetMouseButtonDown(0) && !attacked)
-        {
-            Attack();
-        }
-
-        // 스킬 입력 (우클릭)
-        if (Input.GetMouseButtonDown(1) && Time.time >= nextSpecialAttackTime) // Right Mouse Button
-        {
-			animator.SetTrigger("Skill1"); // "Skill1" 애니메이션 트리거
-            nextSpecialAttackTime = Time.time + specialAttackCooldown; // 쿨타임 설정
-        }
-
-        // 스킬 입력 (R키)
-        if (Input.GetKeyDown(KeyCode.R) && Time.time >= nextSpecialAttackTime) // R Key
-        {
-			animator.SetTrigger("Skill2"); // "Skill2" 애니메이션 트리거
-            nextSpecialAttackTime = Time.time + specialAttackCooldown; // 쿨타임 설정
-        }
-
-        // 슬라이드 입력 (스페이스 바)
-        if (Input.GetKeyDown(KeyCode.Space)) // Space Key
-        {
-            StartCoroutine(Slide()); // 슬라이드 코루틴 시작
-        }
-
-	}
-
-
-
-    private IEnumerator Slide()
-    {
-        animator.SetTrigger("Slide"); // "Slide" 애니메이션 트리거
-        playerCollider.enabled = false; // 플레이어의 콜라이더 비활성화
-        yield return new WaitForSeconds(1f); // 1초 대기
-        playerCollider.enabled = true; // 플레이어의 콜라이더 활성화
+        //Dialog_UI_text.text = dialog_text.ToString();
     }
 
-    void Attack()
+    public void OnInteract(InputAction.CallbackContext context)
     {
-        AttackTrue(); // 공격 중 플래그 설정
-        animator.SetTrigger("Attack"); // 공격 애니메이션 트리거 실행
-
-        // 마우스 클릭 위치 계산
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mousePos.z = 0; // 2D 게임이므로 z축을 0으로 설정
-
-        // 클릭 방향으로 스프라이트 플립
-        if (mousePos.x < transform.position.x)
+        if (context.started)
         {
-            sp.flipX = true; // 왼쪽으로 클릭
-        }
-        else
-        {
-            sp.flipX = false; // 오른쪽으로 클릭
-        }
-
-        // 방향에 따라 적절한 BoxCollider2D 활성화
-        if (sp.flipX)
-        {
-            left.enabled = true;
-            StartCoroutine(DisableCollider(left));
-        }
-        else
-        {
-            right.enabled = true;
-            StartCoroutine(DisableCollider(right));
+            if (scanObject == null)
+            {
+                //dialog_text = "가까이 가서 대상을 바라보며 \n E키를 누르세요.";
+            }
+            else if (scanObject != null)
+            {
+                talkManager.DialogAction(scanObject);
+                //dialog_text = "이것은 " + scanObject.name + " 입니다.";
+                //Debug.Log("이것은 " + scanObject.name + " 입니다.");
+            }
         }
     }
 
@@ -174,14 +166,18 @@ public class PlayerAction : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f); // 콜라이더를 0.1초 동안 활성화
         collider.enabled = false;
-        AttackFalse(); // 공격 중 플래그 리셋
     }
 
     void FixedUpdate()
     {
-        // X, Y축 이동 처리
-        Vector2 moveDirection = new Vector2(garo, sero).normalized; // 정규화하여 방향만 유지
-        rigid.velocity = moveDirection * speed;
+        if (canMove)
+        {
+            rigid.velocity = new Vector2(moveInput.x * walkSpeed, moveInput.y * walkSpeed);
+        }
+        else
+        {
+            rigid.velocity = new Vector2(0, 0);  // 이동을 막을 때 속도를 0으로 설정
+        }
 
         // 플레이어 주위의 얇은 선으로 감지
         Debug.DrawRay(rigid.position, dirVec * Length, new Color(0, 1, 0));
@@ -192,9 +188,105 @@ public class PlayerAction : MonoBehaviour
         else scanObject = null;
     }
 
-	//void Dead()
-	//{
- //       //Debug.Log("플레이어 숨기기");
-	//	gameObject.SetActive(false);//플레이어 오브젝트 안보이기 처리
-	//}
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        if (canMove)
+        {
+            moveInput = context.ReadValue<Vector2>();
+
+            IsMoving = moveInput != Vector2.zero;
+
+            SetFacingDirection(moveInput);
+        }
+    }
+
+    void SetFacingDirection(Vector2 moveInput)
+    {
+        if (moveInput.x > 0 && !IsFacingRight)
+        {
+            IsFacingRight = true;
+            dirVec = Vector3.right;
+        }
+        else if (moveInput.x < 0 && IsFacingRight)
+        {
+            IsFacingRight = false;
+            dirVec = Vector3.left;
+        }
+    }
+
+    public void OnSlide(InputAction.CallbackContext context)
+    {
+        if (context.started && !isCooldown && !IsSliding)
+        {
+            StartSliding();
+        }
+        else if (context.canceled && IsSliding)
+        {
+            StopSliding();
+        }
+    }
+
+    private void StartSliding()
+    {
+        IsSliding = true;
+        slideTime = slideDuration;
+        walkSpeed = slideSpeed;
+    }
+
+    private void StopSliding()
+    {
+        IsSliding = false;
+        walkSpeed = defaultSpeed;
+        isCooldown = true;
+        cooldownTime = slideCooldown;
+    }
+
+    public void OnAttack(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            // 방향에 따라 적절한 BoxCollider2D 활성화
+            if (sp.flipX)
+            {
+                left.enabled = true;
+                StartCoroutine(DisableCollider(left));
+            }
+            else
+            {
+                right.enabled = true;
+                StartCoroutine(DisableCollider(right));
+            }
+            animator.SetTrigger(AnimationStrings.attackTrigger);
+        }
+    }
+
+    public void OnSkillAttack(InputAction.CallbackContext context)
+    {
+        if (context.started)  // 쿨타임이 0일 때만 스킬 발동
+        {
+            if (skillAttackTime <= 0)
+            {
+                animator.SetTrigger(AnimationStrings.skillAttackTrigger);
+                skillAttackTime = skillAttackCooldown;  // 쿨타임 적용
+            }
+        }
+    }
+
+    public void OnSkillAttack2(InputAction.CallbackContext context)
+    {
+        if (context.started)  // 쿨타임이 0일 때만 스킬 발동
+        {
+            if (skillAttack2Time <= 0)
+            {
+                animator.SetTrigger(AnimationStrings.skillAttackTrigger2);
+                skillAttack2Time = skillAttack2Cooldown;  // 쿨타임 적용
+            }
+        }
+    }
+
+    //void Dead()
+    //{
+    //       //Debug.Log("플레이어 숨기기");
+    //	gameObject.SetActive(false);//플레이어 오브젝트 안보이기 처리
+    //}
 }

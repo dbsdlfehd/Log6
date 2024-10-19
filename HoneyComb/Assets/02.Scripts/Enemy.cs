@@ -86,7 +86,7 @@ public class Enemy : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.CompareTag("Player") && playerAction.attacked)
+		if (other.CompareTag("Player"))
 		{
             nowHP = nowHP - player.Atk;
 			//Debug.Log("현재 적 체력" + nowHP);
