@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "D:\\Project archive\\Log6\\HoneyComb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|d:\\project archive\\log6\\honeycomb\\assets\\parsingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\parsingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\talkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|d:\\project archive\\log6\\honeycomb\\assets\\talkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\talkmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\weapon2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\weapon2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\parsingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\parsingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\weapon2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\weapon2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -90,7 +90,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -107,43 +107,43 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Player.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\Player.cs",
               "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Player.cs",
               "RelativeToolTip": "Assets\\02.Scripts\\Player.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAADwvw4AAAAlAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAADwvw4AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-07T12:19:24.159Z",
               "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TalkManager.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\TalkManager.cs",
               "RelativeDocumentMoniker": "Assets\\TalkManager.cs",
               "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\TalkManager.cs",
               "RelativeToolTip": "Assets\\TalkManager.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAgwEcAAAADAAAA",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAgwGAAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T09:57:25.045Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ParsingManager.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\ParsingManager.cs",
               "RelativeDocumentMoniker": "Assets\\ParsingManager.cs",
               "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\ParsingManager.cs",
               "RelativeToolTip": "Assets\\ParsingManager.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAYwDIAAAAoAAAA",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAuwFkAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T08:57:22.751Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -238,7 +238,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "weapon2.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\weapon2.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\weapon2.cs",
