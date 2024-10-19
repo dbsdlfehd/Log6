@@ -33,7 +33,7 @@ public class PlayerHpShow : MonoBehaviour
 
 			if (player.nowHP == 0)
 			{
-				//Destroy(hpBar.gameObject);
+				Destroy(hpBar.gameObject);
 			}
 		}
 	}
