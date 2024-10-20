@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PlayerAction : MonoBehaviour
 {
     public float walkSpeed = 5f;        // 걷기 속도
-    public float defaultSpeed = 5f;     // 기본 속도(걷기 속도와 동일해야함)
+    public float defaultSpeed = 5f;     // 기본 속도(걷기 속도와 동일해야 함)
     public float slideSpeed = 10f;      // 슬라이드 속도
     public float slideDuration = 0.3f;  // 슬라이드 지속 시간 (0.3초)
     public float slideCooldown = 1f;    // 슬라이드 후 쿨타임 (1초)
@@ -18,26 +18,26 @@ public class PlayerAction : MonoBehaviour
     private float skillAttackTime = 0f;       // 첫 번째 스킬 사용 가능 시간
     private float skillAttack2Time = 0f;      // 두 번째 스킬 사용 가능 시간
 
-    Vector2 moveInput;
-    Vector3 dirVec;
+    Vector2 moveInput;  // 플레이어의 입력을 저장하는 변수
+    Vector3 dirVec;     // 플레이어의 방향을 저장하는 변수
 
     [Header("실선 추적기")]
-    public float Length = 0.7f;
+    public float Length = 0.7f;  // 감지할 거리
 
     [Header("공격 범위")]
-    public BoxCollider2D left; // 왼쪽 콜라이더
-    public BoxCollider2D right; // 오른쪽 콜라이더
+    public BoxCollider2D left;   // 왼쪽 공격 범위 콜라이더
+    public BoxCollider2D right;  // 오른쪽 공격 범위 콜라이더
 
     [Header("대화창")]
     //public TextMeshProUGUI Dialog_UI_text;
     //private string dialog_text;
-	public TalkManager talkManager;
+    public TalkManager talkManager;  // 대화 매니저 참조
 
     Rigidbody2D rigid;        // Rigidbody2D 컴포넌트 참조
-    Animator animator;     // Animator 컴포넌트 참조
-    SpriteRenderer sp;
+    Animator animator;        // Animator 컴포넌트 참조
+    SpriteRenderer sp;        // SpriteRenderer 컴포넌트 참조
 
-    private GameObject scanObject;
+    private GameObject scanObject;   // 감지된 오브젝트
 
     private Collider2D playerCollider; // 플레이어의 콜라이더
 
@@ -76,7 +76,7 @@ public class PlayerAction : MonoBehaviour
 
     // 캐릭터가 오른쪽을 보고 있는지 확인하는 변수
     public bool _isFacingRight = true;
-    
+
 
     public bool IsFacingRight
     {
@@ -85,7 +85,7 @@ public class PlayerAction : MonoBehaviour
         {
             if (_isFacingRight != value)
             {
-                transform.localScale *= new Vector2(-1, 1);
+                transform.localScale *= new Vector2(-1, 1); // 캐릭터의 방향을 뒤집음
             }
 
             _isFacingRight = value;
@@ -103,12 +103,12 @@ public class PlayerAction : MonoBehaviour
 
     void Awake()
     {
-        //dialog_text = "아무것도 발견된게 없습니다.";
-		rigid = GetComponent<Rigidbody2D>();
+        // 필요한 컴포넌트들을 가져옴
+        rigid = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sp = GetComponent<SpriteRenderer>();
         playerCollider = GetComponent<Collider2D>(); // 플레이어의 콜라이더 가져오기
-	}
+    }
 
     void Update()
     {
@@ -130,7 +130,7 @@ public class PlayerAction : MonoBehaviour
             }
         }
 
-        // 쿨타임 감소
+        // 스킬 쿨타임 감소
         if (skillAttackTime > 0)
         {
             skillAttackTime -= Time.deltaTime;
@@ -141,20 +141,23 @@ public class PlayerAction : MonoBehaviour
             skillAttack2Time -= Time.deltaTime;
         }
 
-        // UI에 보여주기
+        // 대화창 UI에 보여주기
         //Dialog_UI_text.text = dialog_text.ToString();
     }
 
+    // 상호작용 (E 키) 입력 처리
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (context.started)
         {
             if (scanObject == null)
             {
+                // 대상을 찾지 못했을 때의 대사
                 //dialog_text = "가까이 가서 대상을 바라보며 \n E키를 누르세요.";
             }
             else if (scanObject != null)
             {
+                // 대상을 찾았을 때의 대사
                 talkManager.DialogAction(scanObject);
                 //dialog_text = "이것은 " + scanObject.name + " 입니다.";
                 //Debug.Log("이것은 " + scanObject.name + " 입니다.");
@@ -162,17 +165,19 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
+    // 콜라이더를 비활성화하는 코루틴
     IEnumerator DisableCollider(BoxCollider2D collider)
     {
         yield return new WaitForSeconds(0.1f); // 콜라이더를 0.1초 동안 활성화
         collider.enabled = false;
     }
 
+    // 물리 업데이트 처리 (이동 및 감지)
     void FixedUpdate()
     {
         if (canMove)
         {
-            rigid.velocity = new Vector2(moveInput.x * walkSpeed, moveInput.y * walkSpeed);
+            rigid.velocity = new Vector2(moveInput.x * walkSpeed, moveInput.y * walkSpeed);  // 이동 처리
         }
         else
         {
@@ -188,59 +193,65 @@ public class PlayerAction : MonoBehaviour
         else scanObject = null;
     }
 
+    // 이동 입력 처리
     public void OnMove(InputAction.CallbackContext context)
     {
         if (canMove)
         {
             moveInput = context.ReadValue<Vector2>();
 
-            IsMoving = moveInput != Vector2.zero;
+            IsMoving = moveInput != Vector2.zero;  // 움직임 여부 확인
 
-            SetFacingDirection(moveInput);
+            SetFacingDirection(moveInput);  // 방향 설정
         }
     }
 
+    // 이동 방향 설정
     void SetFacingDirection(Vector2 moveInput)
     {
         if (moveInput.x > 0 && !IsFacingRight)
         {
             IsFacingRight = true;
-            dirVec = Vector3.right;
+            dirVec = Vector3.right;  // 오른쪽 방향 설정
         }
         else if (moveInput.x < 0 && IsFacingRight)
         {
             IsFacingRight = false;
-            dirVec = Vector3.left;
+            dirVec = Vector3.left;  // 왼쪽 방향 설정
         }
     }
 
+    // 슬라이딩 입력 처리
     public void OnSlide(InputAction.CallbackContext context)
     {
         if (context.started && !isCooldown && !IsSliding)
         {
-            StartSliding();
+            StartSliding();  // 슬라이딩 시작
         }
         else if (context.canceled && IsSliding)
         {
-            StopSliding();
+            StopSliding();  // 슬라이딩 종료
         }
     }
 
+    // 슬라이딩 시작
     private void StartSliding()
     {
         IsSliding = true;
         slideTime = slideDuration;
-        walkSpeed = slideSpeed;
+        walkSpeed = slideSpeed;  // 슬라이드 속도 적용
     }
 
+    // 슬라이딩 종료
     private void StopSliding()
     {
         IsSliding = false;
-        walkSpeed = defaultSpeed;
+        walkSpeed = defaultSpeed;  // 기본 속도로 복귀
         isCooldown = true;
-        cooldownTime = slideCooldown;
+        cooldownTime = slideCooldown;  // 슬라이드 쿨타임 적용
     }
 
+    // 공격 입력 처리
     public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -249,36 +260,38 @@ public class PlayerAction : MonoBehaviour
             if (sp.flipX)
             {
                 left.enabled = true;
-                StartCoroutine(DisableCollider(left));
+                StartCoroutine(DisableCollider(left));  // 왼쪽 공격 활성화
             }
             else
             {
                 right.enabled = true;
-                StartCoroutine(DisableCollider(right));
+                StartCoroutine(DisableCollider(right));  // 오른쪽 공격 활성화
             }
-            animator.SetTrigger(AnimationStrings.attackTrigger);
+            animator.SetTrigger(AnimationStrings.attackTrigger);  // 공격 애니메이션 실행
         }
     }
 
+    // 첫 번째 스킬 공격 입력 처리
     public void OnSkillAttack(InputAction.CallbackContext context)
     {
         if (context.started)  // 쿨타임이 0일 때만 스킬 발동
         {
             if (skillAttackTime <= 0)
             {
-                animator.SetTrigger(AnimationStrings.skillAttackTrigger);
+                animator.SetTrigger(AnimationStrings.skillAttackTrigger);  // 스킬 애니메이션 실행
                 skillAttackTime = skillAttackCooldown;  // 쿨타임 적용
             }
         }
     }
 
+    // 두 번째 스킬 공격 입력 처리
     public void OnSkillAttack2(InputAction.CallbackContext context)
     {
         if (context.started)  // 쿨타임이 0일 때만 스킬 발동
         {
             if (skillAttack2Time <= 0)
             {
-                animator.SetTrigger(AnimationStrings.skillAttackTrigger2);
+                animator.SetTrigger(AnimationStrings.skillAttackTrigger2);  // 스킬 애니메이션 실행
                 skillAttack2Time = skillAttack2Cooldown;  // 쿨타임 적용
             }
         }
@@ -286,7 +299,7 @@ public class PlayerAction : MonoBehaviour
 
     //void Dead()
     //{
-    //       //Debug.Log("플레이어 숨기기");
-    //	gameObject.SetActive(false);//플레이어 오브젝트 안보이기 처리
+    //   // 플레이어 사망 처리
+    //   gameObject.SetActive(false);//플레이어 오브젝트 숨기기
     //}
 }

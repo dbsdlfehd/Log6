@@ -4,58 +4,62 @@ using UnityEngine;
 
 public class SetBoolBahaviour : StateMachineBehaviour
 {
-    public string boolName;
-    public bool updateOnState;
-    public bool updateOnStateMachine;
-    public bool valueOnEnter, valueOnExit;
+    public string boolName; // 변경할 애니메이터의 bool 변수 이름
+    public bool updateOnState; // 상태 진입/종료 시 bool 값을 업데이트할지 여부
+    public bool updateOnStateMachine; // 스테이트 머신 진입/종료 시 bool 값을 업데이트할지 여부
+    public bool valueOnEnter, valueOnExit; // 상태나 스테이트 머신에 진입/종료할 때 설정할 bool 값
 
-    // OnStateEnter is called before OnStateEnter is called on any state inside this state machine
+    // 상태에 진입할 때 호출되는 메서드
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (updateOnState)
         {
+            // updateOnState가 true일 때 상태 진입 시 bool 값을 valueOnEnter로 설정
             animator.SetBool(boolName, valueOnEnter);
         }
     }
 
-    // OnStateUpdate is called before OnStateUpdate is called on any state inside this state machine
+    // 상태를 업데이트할 때 호출되는 메서드 (현재 비활성화됨)
     //override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
     //    
     //}
 
-    // OnStateExit is called before OnStateExit is called on any state inside this state machine
+    // 상태에서 나갈 때 호출되는 메서드
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         if (updateOnState)
         {
+            // updateOnState가 true일 때 상태 종료 시 bool 값을 valueOnExit으로 설정
             animator.SetBool(boolName, valueOnExit);
         }
     }
 
-    // OnStateMove is called before OnStateMove is called on any state inside this state machine
+    // 상태에서 이동할 때 호출되는 메서드 (현재 비활성화됨)
     //override public void OnStateMove(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
     //    
     //}
 
-    // OnStateIK is called before OnStateIK is called on any state inside this state machine
+    // IK 계산 시 호출되는 메서드 (현재 비활성화됨)
     //override public void OnStateIK(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     //{
     //    
     //}
 
-    //OnStateMachineEnter is called when entering a state machine via its Entry Node
+    // 스테이트 머신에 진입할 때 호출되는 메서드
     override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash)
     {
         if (updateOnStateMachine)
+            // updateOnStateMachine이 true일 때 스테이트 머신 진입 시 bool 값을 valueOnEnter로 설정
             animator.SetBool(boolName, valueOnEnter);
     }
 
-    // OnStateMachineExit is called when exiting a state machine via its Exit Node
+    // 스테이트 머신에서 나갈 때 호출되는 메서드
     override public void OnStateMachineExit(Animator animator, int stateMachinePathHash)
     {
         if (updateOnStateMachine)
+            // updateOnStateMachine이 true일 때 스테이트 머신 종료 시 bool 값을 valueOnExit으로 설정
             animator.SetBool(boolName, valueOnExit);
     }
 }

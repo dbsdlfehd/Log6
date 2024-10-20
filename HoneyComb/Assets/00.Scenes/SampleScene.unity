@@ -115416,11 +115416,11 @@ GameObject:
   - component: {fileID: 1620787047}
   - component: {fileID: 1620787050}
   - component: {fileID: 5973733437977639341}
+  - component: {fileID: 5973733437977639381}
   - component: {fileID: 5973733437977639340}
   - component: {fileID: 1620787048}
   - component: {fileID: 1620787049}
   - component: {fileID: 5973733437977639380}
-  - component: {fileID: 5973733437977639381}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
