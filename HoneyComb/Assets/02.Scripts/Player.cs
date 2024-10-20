@@ -154,7 +154,7 @@ public class Player : MonoBehaviour
     }
 
     //Á×À½ ÇÔ¼ö
-    void Dead()
+    public void Dead()
     {
         //Á×Àº È½¼ö Ãß°¡ÇÏ±â
         DeadCount++;

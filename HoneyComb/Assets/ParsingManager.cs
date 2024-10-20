@@ -29,26 +29,60 @@ public class ParsingManager : MonoBehaviour
 	}
 	//대화번호, (대화주체:대화) 세트인 딕셔너리 생성
 	Dictionary<int, string> dialog = new Dictionary<int, string>();
-	//테스트 메소드
+
+
+	//엑셀의 정보를 딕셔너리 변수에 추가
 	void Add()
 	{
+		//엑셀에 있는 값을 행기준(줄간격)("\n")으로 분리
 		string[] sheet = SHEET.Split('\n');
 
-		//string[] hang1 = sheet[0].Split("\t");
-		//string[] hang2 = sheet[1].Split("\t");
-		//string[] hang3 = sheet[2].Split("\t");
-		//Debug.Log($"{hang1[0]} {hang1[1]}");
-		//Debug.Log($"{hang2[0]} {hang2[1]}");
-		//Debug.Log($"{hang3[0]} {hang3[1]}");
+		//행 길이
+		int rowCount = Mathf.Min(1000, sheet.Length - 1);
 
-		//1행부터 100행까지
-		for(int i = 1; i <= 1000; i++)
+		//1부터 시작하는 이유: 열의 정보는 무시한다~
+		for (int i = 1; i <= rowCount; i++)
 		{
-			string[] hang = sheet[i].Split("\t");
-			//Debug.Log($"대화넘버{hang[0]} 대화주체자{hang[1]}");
-			int talkNum = int.Parse(hang[0]);
-			string dialogAndTalker = hang[1];
-			dialog.Add(talkNum, dialogAndTalker);
+			//빈 행이 있는 경우를 처리 건너뛰기
+			if (string.IsNullOrWhiteSpace(sheet[i]))
+			{
+				continue;
+			}
+
+			//엑셀에 있는 값을 탭(셀)("\t")으로 분리
+			string[] hang = sheet[i].Split('\t');
+
+			//대화 넘버와 대화 주체자가 모두 있어야 작동됨
+			if (hang.Length < 2)
+			{
+				Debug.LogError($"올바르지 않은 데이터: {sheet[i]}");
+				continue;
+			}
+
+			//대화번호 
+			int talkNum;
+
+			//대화번호가 숫자인지 판별
+			if (int.TryParse(hang[0], out talkNum))
+			{
+				//대화:주체자
+				string dialogAndTalker = hang[1];
+
+				//중복 키 방지
+				if (!dialog.ContainsKey(talkNum))
+				{
+					dialog.Add(talkNum, dialogAndTalker);
+				}
+				else
+				{
+					Debug.LogError($"중복된 키: {talkNum}");
+				}
+			}
+			else
+			{
+				//실패시 알리미
+				Debug.LogError($"대화 넘버 변환 실패: {hang[0]}");
+			}
 		}
 	}
 

@@ -6,6 +6,7 @@ public class Keyboard : MonoBehaviour
 {
 	//플레이어의 좌표 변수 인듯?
 	public Transform player;
+	private Player playerScript;
 
 	//좌표 변수 인듯?
 	public Transform[] Pos;
@@ -14,12 +15,22 @@ public class Keyboard : MonoBehaviour
 	//Pos[2] room2 좌표
 	//Pos[3] room3 좌표...
 
+	private void Start()
+	{
+		playerScript = FindObjectOfType<Player>();
+	}
 	private void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.H))
 		{
 			//플레이어 좌표를 -> 집 좌표
 			player.position = Pos[0].position;
+		}
+
+		if (Input.GetKeyDown(KeyCode.F))
+		{
+			//소천하셨습니다.
+			playerScript.Dead();
 		}
 
 

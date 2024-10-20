@@ -40,8 +40,11 @@ public class FarATK : MonoBehaviour
 	// 10초가 지나면 오브젝트를 비활성화하는 함수
 	void DestroyAfterTime()
 	{
-		rigid.velocity = Vector2.zero;
-		gameObject.SetActive(false);
+        if (rigid != null)
+        {
+			rigid.velocity = Vector2.zero;
+			gameObject.SetActive(false);
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D collision)
