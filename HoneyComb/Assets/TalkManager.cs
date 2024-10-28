@@ -17,11 +17,13 @@ public class TalkManager : MonoBehaviour
 	[Header("파씽")]
 	public ParsingManager parsingManager;
 
-	[Header("DialogSet")]
+	[Header("대화창")]
 	public TextMeshProUGUI Talker;
 	public TextMeshProUGUI Dialog;
 	string talker = "";
 	string dialog = "";
+	public GameObject DialogSet;
+	public bool isDialoging; // 상태 저장 변수
 
 	[Header("테스트")]
 	public TextMeshProUGUI TalkCountNum;
@@ -33,12 +35,14 @@ public class TalkManager : MonoBehaviour
 
 	public bool isOverIndex = false;//대화 흐름수 EX. 10100~10107
 
+	//대화 액션
 	public void DialogAction(GameObject scannedObject)//진우가 한번 스캔시 작동
 	{
 		ScanObject = scannedObject;//진우가 스캔한 NPC
 
 		_Object obj = scannedObject.GetComponent<_Object>();//NPC 정보
 
+		
 		Talk(obj.id, scannedObject);
 		tempId = obj.id;
 		NPCname = obj.name;
@@ -62,10 +66,17 @@ public class TalkManager : MonoBehaviour
 			Debug.Log("B 나는 1 늘어나");
 		}
 
+
+		//죽음의 수가 바뀌었는가?
 		if (obj.tempPlayerDead != player.DeadCount)
 		{
 			i = 0;
 			obj.isDeadUp = true;
+
+			//대화창 오픈
+			Debug.Log("대화열기");
+			isDialoging = true;// talking now
+			DialogSet.SetActive(true);
 		}
 
 		if (player.DeadCount > obj.EachTalkCount && obj.isDeadUp == true)
@@ -95,5 +106,12 @@ public class TalkManager : MonoBehaviour
 			i = 0;
 			isOverIndex = false;
 		}
+	}
+
+	public void StopDialogSet()
+	{
+		DialogSet.SetActive(false);
+		isDialoging = false; // not talking now
+		Debug.Log("대화 닫기");
 	}
 }

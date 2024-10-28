@@ -8,6 +8,8 @@ using UnityEngine.Networking;
 
 public class ParsingManager : MonoBehaviour
 {
+	public GameObject DialogSet; // ¥Î»≠√¢
+
 	const string URL = "https://docs.google.com/spreadsheets/d/1tEMmdWn9jWmPBLcppi0xkukl86hoj3C0Jo3x9Y8utwU/export?format=tsv&range=I2:J1000";
 	string SHEET;
 
@@ -135,6 +137,9 @@ public class ParsingManager : MonoBehaviour
 		}
 		else
 		{
+			//Debug.Log("END");
+			//talkManager.isTalking = false;
+			talkManager.StopDialogSet();
 			talkManager.i = 0;
 			string[] arr = {"...","..." };
 			return arr;

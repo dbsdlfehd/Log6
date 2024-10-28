@@ -32,6 +32,7 @@ public class PlayerAction : MonoBehaviour
     //public TextMeshProUGUI Dialog_UI_text;
     //private string dialog_text;
     public TalkManager talkManager;  // 대화 매니저 참조
+    public GameObject DialogSet;     // 대화창
 
     Rigidbody2D rigid;        // Rigidbody2D 컴포넌트 참조
     Animator animator;        // Animator 컴포넌트 참조
@@ -145,7 +146,7 @@ public class PlayerAction : MonoBehaviour
         //Dialog_UI_text.text = dialog_text.ToString();
     }
 
-    // 상호작용 (E 키) 입력 처리
+    // 대화창 E키
     public void OnInteract(InputAction.CallbackContext context)
     {
         if (context.started)
@@ -157,11 +158,11 @@ public class PlayerAction : MonoBehaviour
             }
             else if (scanObject != null)
             {
-                // 대상을 찾았을 때의 대사
-                talkManager.DialogAction(scanObject);
-                //dialog_text = "이것은 " + scanObject.name + " 입니다.";
-                //Debug.Log("이것은 " + scanObject.name + " 입니다.");
-            }
+				talkManager.DialogAction(scanObject);
+				// 대상을 찾았을 때의 대사
+				//dialog_text = "이것은 " + scanObject.name + " 입니다.";
+				//Debug.Log("이것은 " + scanObject.name + " 입니다.");
+			}
         }
     }
 
@@ -175,7 +176,9 @@ public class PlayerAction : MonoBehaviour
     // 물리 업데이트 처리 (이동 및 감지)
     void FixedUpdate()
     {
-        if (canMove)
+        //canMove는 true,
+        //isDialoging(대화창 열린 여부)가 false 일때 움직일수 있음
+        if (canMove && talkManager.isDialoging == false)
         {
             rigid.velocity = new Vector2(moveInput.x * walkSpeed, moveInput.y * walkSpeed);  // 이동 처리
         }
@@ -209,12 +212,14 @@ public class PlayerAction : MonoBehaviour
     // 이동 방향 설정
     void SetFacingDirection(Vector2 moveInput)
     {
-        if (moveInput.x > 0 && !IsFacingRight)
+        //x값이 0보다 큼 && 오른쪽 안바라봄 && 대화가 끝남
+        if (moveInput.x > 0 && !IsFacingRight && talkManager.isDialoging == false)
         {
             IsFacingRight = true;
             dirVec = Vector3.right;  // 오른쪽 방향 설정
         }
-        else if (moveInput.x < 0 && IsFacingRight)
+		//x값이 0보다 큼 && 오른쪽 바라봄 && 대화가 끝남
+		else if (moveInput.x < 0 && IsFacingRight && talkManager.isDialoging == false)
         {
             IsFacingRight = false;
             dirVec = Vector3.left;  // 왼쪽 방향 설정

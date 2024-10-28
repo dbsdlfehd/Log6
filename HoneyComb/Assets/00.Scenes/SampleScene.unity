@@ -372,6 +372,8 @@ MonoBehaviour:
   name: "\uC544\uC800\uC528"
   isDeadUp: 0
   isUpGraded: 0
+  PlayerDead: 0
+  tempPlayerDead: 0
 --- !u!95 &37689236
 Animator:
   serializedVersion: 5
@@ -650,6 +652,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fea4b899266d74649b71c71f16021afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DialogSet: {fileID: 1772629091}
   talkManager: {fileID: 1648014637}
 --- !u!4 &90256322
 Transform:
@@ -113776,6 +113779,8 @@ MonoBehaviour:
   name: "\uACE0\uC591\uC774"
   isDeadUp: 0
   isUpGraded: 0
+  PlayerDead: 0
+  tempPlayerDead: 0
 --- !u!4 &1006356454 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8433777699645201389, guid: 207698dd64de742449268b11e17e80e4, type: 3}
@@ -114762,6 +114767,7 @@ MonoBehaviour:
   left: {fileID: 831286100}
   right: {fileID: 842417686}
   talkManager: {fileID: 1648014637}
+  DialogSet: {fileID: 1772629091}
   _isMoving: 0
   _isSliding: 0
   _isFacingRight: 1
@@ -114875,6 +114881,8 @@ MonoBehaviour:
   parsingManager: {fileID: 90256321}
   Talker: {fileID: 44724524}
   Dialog: {fileID: 1419703897}
+  DialogSet: {fileID: 1772629091}
+  isDialoging: 0
   TalkCountNum: {fileID: 810829982}
   isOverIndex: 0
   i: 0
@@ -115184,7 +115192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1772629092
 RectTransform:
   m_ObjectHideFlags: 0
