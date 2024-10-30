@@ -63,7 +63,7 @@ public class TalkManager : MonoBehaviour
 
 		if(tempId != id)
 		{
-			Debug.Log("B 나는 1 늘어나");
+			//Debug.Log("B 나는 1 늘어나");
 		}
 
 
@@ -74,15 +74,19 @@ public class TalkManager : MonoBehaviour
 			obj.isDeadUp = true;
 
 			//대화창 오픈
-			Debug.Log("대화열기");
+			//Debug.Log("대화열기");
+			
 			isDialoging = true;// talking now
 			DialogSet.SetActive(true);
+			
 		}
 
+		// 죽음 횟수 가 NPC 기준으로 바뀌었는가?
 		if (player.DeadCount > obj.EachTalkCount && obj.isDeadUp == true)
 		{
 			obj.EachTalkCount++;
 			obj.isDeadUp = false;
+			obj.isDialogged = true; 
 		}
 
 		if (tempId != 0 && tempId != id)//다른사람 대화했다가 저사람 대화했다가 순번 꼬이는 일 방지
@@ -95,9 +99,9 @@ public class TalkManager : MonoBehaviour
 		if (isOverIndex == false)//대화 순번 index를 넘지 않을 때
 		{
 			int DialogNum = obj.EachTalkCount * 10000 + id + i;//대화번호
-			Debug.Log(DialogNum);//테스트
+			//Debug.Log(DialogNum);//테스트
 			i++;
-			string[] texts = parsingManager.GetDialogPlz(DialogNum);
+			string[] texts = parsingManager.GetDialogPlz(DialogNum, obj);
 			talker = texts[1];
 			dialog = texts[0];
 		}
@@ -108,10 +112,11 @@ public class TalkManager : MonoBehaviour
 		}
 	}
 
-	public void StopDialogSet()
+	public void StopDialogSet(_Object obj)
 	{
 		DialogSet.SetActive(false);
 		isDialoging = false; // not talking now
-		Debug.Log("대화 닫기");
+		//Debug.Log("대화 닫기");
+		obj.isDialogged = false;
 	}
 }

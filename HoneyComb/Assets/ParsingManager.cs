@@ -123,7 +123,7 @@ public class ParsingManager : MonoBehaviour
 	//	dialog.Add(20000 + 200 + 5, "?:Áø¿ì");
 	//}
 
-	public string[] GetDialogPlz(int DialogNum)
+	public string[] GetDialogPlz(int DialogNum,_Object obj)
 	{
 		if (dialog.ContainsKey(DialogNum))
 		{
@@ -139,7 +139,7 @@ public class ParsingManager : MonoBehaviour
 		{
 			//Debug.Log("END");
 			//talkManager.isTalking = false;
-			talkManager.StopDialogSet();
+			talkManager.StopDialogSet(obj);
 			talkManager.i = 0;
 			string[] arr = {"...","..." };
 			return arr;

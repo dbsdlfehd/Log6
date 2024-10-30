@@ -9,8 +9,11 @@ public class Player : MonoBehaviour
     //Animator anim;
     PlayerHpShow PlayerHpShow;
 
+	public List<_Object> npcObjects = new List<_Object>();
 
-    [Header("죽은 횟수")]
+
+
+	[Header("죽은 횟수")]
     public int DeadCount = 0;
 	public TextMeshProUGUI DeadCount_UI;
 
@@ -48,6 +51,7 @@ public class Player : MonoBehaviour
     public float maxPos;//잘 모르겠음 아시는 분 주석좀 ㅋㅋ
     public RectTransform pass;//얘도 ㅋㅋㅋㅋㅋ
     public int atkNum;//콤보? 번호일듯
+    
 
 	private void Start()
 	{
@@ -120,6 +124,12 @@ public class Player : MonoBehaviour
 
 			//죽음 연출 보이는 거 없애기
 			Dead_set.SetActive(false);
+
+			// Set isDialogged to true for each NPC
+			foreach (var npc in npcObjects)
+			{
+				npc.isDialogged = true;
+			}
 		}
 
 
