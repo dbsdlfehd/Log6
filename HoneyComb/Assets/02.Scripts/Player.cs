@@ -46,7 +46,6 @@ public class Player : MonoBehaviour
 	public TextMeshProUGUI Atk_UI;
 
 	[Header("속도")]
-    public int speed;
     public float minPos;//이게 뭐더라?
     public float maxPos;//잘 모르겠음 아시는 분 주석좀 ㅋㅋ
     public RectTransform pass;//얘도 ㅋㅋㅋㅋㅋ
@@ -60,15 +59,20 @@ public class Player : MonoBehaviour
 		PlayerHpShow = GetComponent<PlayerHpShow>();
 	}
 
-	//public void SetAtk()
- //   {
- //       //slider.value = 0;
- //       minPos = pass.anchoredPosition.x;
- //       maxPos = pass.sizeDelta.x + minPos;
- //       StartCoroutine(ComboAtk());
- //   }
+	private void FixedUpdate()
+	{
+		
+	}
 
-    IEnumerator ComboAtk()
+	//public void SetAtk()
+	//   {
+	//       //slider.value = 0;
+	//       minPos = pass.anchoredPosition.x;
+	//       maxPos = pass.sizeDelta.x + minPos;
+	//       StartCoroutine(ComboAtk());
+	//   }
+
+	IEnumerator ComboAtk()
     {
         yield return null;
         //while (!(Input.GetKeyDown(KeyCode.Space) || slider.value == slider.maxValue))

@@ -42,8 +42,10 @@ public class PlayerAction : MonoBehaviour
 
     private Collider2D playerCollider; // 플레이어의 콜라이더
 
-    // 이동 상태 확인 변수 (애니메이터와 연동)
-    [SerializeField]
+	public Transform player;
+
+	// 이동 상태 확인 변수 (애니메이터와 연동)
+	[SerializeField]
     private bool _isMoving = false;
     public bool IsMoving
     {
@@ -57,9 +59,8 @@ public class PlayerAction : MonoBehaviour
             animator.SetBool(AnimationStrings.isMoving, value);  // 애니메이션 상태 변경
         }
     }
-
-    // 슬라이딩 상태 확인 변수 (애니메이터와 연동)
-    [SerializeField]
+	// 슬라이딩 상태 확인 변수 (애니메이터와 연동)
+	[SerializeField]
     private bool _isSliding = false;
     public bool IsSliding
     {
@@ -229,9 +230,12 @@ public class PlayerAction : MonoBehaviour
     // 슬라이딩 입력 처리
     public void OnSlide(InputAction.CallbackContext context)
     {
-        if (context.started && !isCooldown && !IsSliding)
+        if (context.started && !isCooldown && !IsSliding )
         {
-            StartSliding();  // 슬라이딩 시작
+            if (_isMoving)
+            {
+				StartSliding();  // 슬라이딩 시작
+			}
         }
         else if (context.canceled && IsSliding)
         {
@@ -245,7 +249,8 @@ public class PlayerAction : MonoBehaviour
         IsSliding = true;
         slideTime = slideDuration;
         walkSpeed = slideSpeed;  // 슬라이드 속도 적용
-    }
+        
+	}
 
     // 슬라이딩 종료
     private void StopSliding()
