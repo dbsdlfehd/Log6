@@ -11,7 +11,7 @@ public class PlayerCome : MonoBehaviour
 		if (other.CompareTag("Player"))
 		{
 			// «¡∏Æ∆’ º“»Ø
-			prefabSpawner.SpawnPrefabs();
+			//prefabSpawner.SpawnPrefabs();
 		}
 	}
 

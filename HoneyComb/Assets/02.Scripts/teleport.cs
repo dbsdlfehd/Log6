@@ -17,7 +17,7 @@ public class teleport : MonoBehaviour
 			{
 				int RANDOM_NUMBER = Random.Range(0, 2);
 
-				Debug.Log(RANDOM_NUMBER + "번 방으로 모실께요~");
+				//Debug.Log(RANDOM_NUMBER + "번 방으로 모실께요~");
 
 				other.transform.position = Pos[RANDOM_NUMBER].position;
 				//닿은 접촉체의 플레이어 좌표가 스폰될 게임 오브젝트 좌표로 이동

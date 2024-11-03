@@ -24,32 +24,29 @@ public class _Object : MonoBehaviour
     public int tempPlayerDead = 0;
     public bool isDialogged = true;
 
-    public GameObject malPeungSeon;//말풍선 이미지
-    private Player player;//플레이어 스크립트
-    private float range = 1.5f; // 플레이어 감지범위
+    public GameObject malPeungSeon;         // 말풍선 이미지
+    private Player player;                  // 플레이어 스크립트
+    private float range = 2f;               // 플레이어 감지범위
 
 	private void Start()
 	{
-		player = FindObjectOfType<Player>();//무조건 해줘야됨 (초기화)
+		player = FindObjectOfType<Player>();// 무조건 해줘야됨 (초기화)
 	}
 
 	private void FixedUpdate()
 	{
+        /*플레이어가 가까이 왔을시 말풍선 보이기*/
 		Vector2 direction = player.transform.position - transform.position;
 
 		float X = Mathf.Abs(Mathf.Round(direction.x));
 		float Y = Mathf.Abs(Mathf.Round(direction.y));
 
-        //Debug.Log($"{X} {Y}");
-
 		if (isDialogged && (X<= range && Y <= range))//선언문에서 조절하셈
         {
-			Debug.Log($"{name} 말풍선 켜기");
 			malPeungSeon.SetActive(true);
 		}
         else if (!isDialogged || (X >= range && Y >= range))//선언문에서 조절하셈
 		{
-            Debug.Log($"{name} 말풍선 끄기");
             malPeungSeon.SetActive(false);
         }
 	}

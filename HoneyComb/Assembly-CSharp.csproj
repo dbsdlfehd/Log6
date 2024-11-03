@@ -105,6 +105,7 @@
     <Compile Include="Assets\02.Scripts\GameManager.cs" />
     <Compile Include="Assets\02.Scripts\Scanner.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\TrainBot.cs" />
     <Compile Include="Assets\04.Sprites\IsometricElfFreeVer\scripts\PotionManager.cs" />
     <Compile Include="Assets\02.Scripts\teleport.cs" />
     <Compile Include="Assets\Memo.cs" />

@@ -74,13 +74,11 @@ public class PlayerAction : MonoBehaviour
             animator.SetBool(AnimationStrings.isSliding, value);  // 애니메이션 상태 변경
         }
     }
-    private bool isCooldown = false; // 슬라이드 쿨타임 중인지 여부
-
-    // 캐릭터가 오른쪽을 보고 있는지 확인하는 변수
-    public bool _isFacingRight = true;
+    private bool isCooldown = false;  // 슬라이드 쿨타임 중인지 여부
+    public bool _isFacingRight = true;// 캐릭터가 오른쪽을 보고 있는지 확인하는 변수
 
 
-    public bool IsFacingRight
+	public bool IsFacingRight
     {
         get { return _isFacingRight; }
         private set
@@ -143,8 +141,6 @@ public class PlayerAction : MonoBehaviour
             skillAttack2Time -= Time.deltaTime;
         }
 
-        // 대화창 UI에 보여주기
-        //Dialog_UI_text.text = dialog_text.ToString();
     }
 
     // 대화창 E키
@@ -152,31 +148,21 @@ public class PlayerAction : MonoBehaviour
     {
         if (context.started)
         {
-            if (scanObject == null)
-            {
-                // 대상을 찾지 못했을 때의 대사
-                //dialog_text = "가까이 가서 대상을 바라보며 \n E키를 누르세요.";
-            }
-            else if (scanObject != null)
-            {
+            if (scanObject != null)// 대상을 찾았을 때의 대사
+			{
 				talkManager.DialogAction(scanObject);
-				// 대상을 찾았을 때의 대사
-				//dialog_text = "이것은 " + scanObject.name + " 입니다.";
-				//Debug.Log("이것은 " + scanObject.name + " 입니다.");
 			}
         }
     }
 
-    // 콜라이더를 비활성화하는 코루틴
-    IEnumerator DisableCollider(BoxCollider2D collider)
-    {
+    IEnumerator DisableCollider(BoxCollider2D collider)// 콜라이더를 비활성화하는 코루틴
+	{
         yield return new WaitForSeconds(0.1f); // 콜라이더를 0.1초 동안 활성화
         collider.enabled = false;
     }
 
-    // 물리 업데이트 처리 (이동 및 감지)
-    void FixedUpdate()
-    {
+    void FixedUpdate()// 물리 업데이트 처리 (이동 및 감지)
+	{
         //canMove는 true,
         //isDialoging(대화창 열린 여부)가 false 일때 움직일수 있음
         if (canMove && talkManager.isDialoging == false)
@@ -197,9 +183,8 @@ public class PlayerAction : MonoBehaviour
         else scanObject = null;
     }
 
-    // 이동 입력 처리
-    public void OnMove(InputAction.CallbackContext context)
-    {
+    public void OnMove(InputAction.CallbackContext context)// 이동 입력 처리
+	{
         if (canMove)
         {
             moveInput = context.ReadValue<Vector2>();
@@ -210,9 +195,8 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
-    // 이동 방향 설정
-    void SetFacingDirection(Vector2 moveInput)
-    {
+    void SetFacingDirection(Vector2 moveInput)// 이동 방향 설정
+	{
         //x값이 0보다 큼 && 오른쪽 안바라봄 && 대화가 끝남
         if (moveInput.x > 0 && !IsFacingRight && talkManager.isDialoging == false)
         {
@@ -227,9 +211,8 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
-    // 슬라이딩 입력 처리
-    public void OnSlide(InputAction.CallbackContext context)
-    {
+    public void OnSlide(InputAction.CallbackContext context)// 슬라이딩 입력 처리
+	{
         if (context.started && !isCooldown && !IsSliding )
         {
             if (_isMoving)
@@ -243,27 +226,24 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
-    // 슬라이딩 시작
-    private void StartSliding()
-    {
+    private void StartSliding()// 슬라이딩 시작
+	{
         IsSliding = true;
         slideTime = slideDuration;
         walkSpeed = slideSpeed;  // 슬라이드 속도 적용
         
 	}
 
-    // 슬라이딩 종료
-    private void StopSliding()
-    {
+    private void StopSliding()// 슬라이딩 종료
+	{
         IsSliding = false;
         walkSpeed = defaultSpeed;  // 기본 속도로 복귀
         isCooldown = true;
         cooldownTime = slideCooldown;  // 슬라이드 쿨타임 적용
     }
 
-    // 공격 입력 처리
-    public void OnAttack(InputAction.CallbackContext context)
-    {
+    public void OnAttack(InputAction.CallbackContext context)// 공격 입력 처리
+	{
         if (context.started)
         {
             // 방향에 따라 적절한 BoxCollider2D 활성화
@@ -281,9 +261,8 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
-    // 첫 번째 스킬 공격 입력 처리
-    public void OnSkillAttack(InputAction.CallbackContext context)
-    {
+    public void OnSkillAttack(InputAction.CallbackContext context)// 첫 번째 스킬 공격 입력 처리
+	{
         if (context.started)  // 쿨타임이 0일 때만 스킬 발동
         {
             if (skillAttackTime <= 0)
@@ -294,9 +273,8 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
-    // 두 번째 스킬 공격 입력 처리
-    public void OnSkillAttack2(InputAction.CallbackContext context)
-    {
+    public void OnSkillAttack2(InputAction.CallbackContext context)// 두 번째 스킬 공격 입력 처리
+	{
         if (context.started)  // 쿨타임이 0일 때만 스킬 발동
         {
             if (skillAttack2Time <= 0)
@@ -306,10 +284,4 @@ public class PlayerAction : MonoBehaviour
             }
         }
     }
-
-    //void Dead()
-    //{
-    //   // 플레이어 사망 처리
-    //   gameObject.SetActive(false);//플레이어 오브젝트 숨기기
-    //}
 }

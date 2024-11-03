@@ -11,6 +11,8 @@ public class Enemy : MonoBehaviour
 	private Rigidbody2D rb;//중력
 	private Player player;//플레이어
 	private PlayerAction playerAction;
+	private TrainBot trainBot;
+	private PrefabSpawner prefabSpawner;
 
     private Rigidbody2D target;
 
@@ -55,6 +57,8 @@ public class Enemy : MonoBehaviour
         scanner = GetComponent<Scanner>(); //근거리 공격용 스캔
         scanner2 = GetComponent<Scanner2>(); //원거리 공격용 스캔
 		playerAction = FindObjectOfType<Player>().GetComponent<PlayerAction>();
+		trainBot = FindObjectOfType<TrainBot>();
+		prefabSpawner = FindAnyObjectByType<PrefabSpawner>();
 	}
 
 	void FixedUpdate()
@@ -89,12 +93,12 @@ public class Enemy : MonoBehaviour
 		if (other.CompareTag("Player"))
 		{
             nowHP = nowHP - player.Atk;
-			//Debug.Log("현재 적 체력" + nowHP);
 		}
-        if(nowHP <= 0)//적 사망
+        if(nowHP <= 0)							   // 체력이 0보다 적을시
         {
             nowHP = 0;
 			Destroy(gameObject);
-        }
+			prefabSpawner.RoomEnemyCount++;        // 적 죽은 횟수 1 늘어남
+		}
 	}
 }
