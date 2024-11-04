@@ -41,6 +41,7 @@ public class PrefabSpawner : MonoBehaviour
         }
 
 
+
 		// room 1-1 소환
 		if (Vector3.Distance(playerPos.position, Pos[0].position) < checkDistance)
 		{
@@ -66,6 +67,14 @@ public class PrefabSpawner : MonoBehaviour
 		}
 	}
 
+	public void HideTP()
+    {
+		foreach (var tp in TP)
+		{
+			tp.SetActive(false);
+		}
+	}
+
 	public void SpawnEnemies(int room)
 	{
 		if(isSpawnned == false)
@@ -74,7 +83,7 @@ public class PrefabSpawner : MonoBehaviour
 			StartCoroutine(DelayedSpawn(sec,room));
 		}
 	}
-
+	
 	IEnumerator DelayedSpawn(float delay, int room)
 	{
 		// 3초 기다림

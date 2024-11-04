@@ -12,9 +12,15 @@ public class Player : MonoBehaviour
 
     public List<_Object> npcObjects = new List<_Object>();
 
+
+    public PrefabSpawner prefabSpawner;
+
     [Header("죽은 횟수")]
     public int DeadCount = 0;
     public TextMeshProUGUI DeadCount_UI;
+
+    //적 모두 킬
+    public bool EnmeyDown = false;
 
     //플레이어 위치
     public Transform player;
@@ -61,12 +67,7 @@ public class Player : MonoBehaviour
         PlayerHpShow = GetComponent<PlayerHpShow>();
 
         // 디버프 적용
-        ApplyDebuff();
-    }
-
-    private void FixedUpdate()
-    {
-
+        //ApplyDebuff();
     }
 
     // 디버프를 적용하는 함수
@@ -96,6 +97,9 @@ public class Player : MonoBehaviour
 
         // 지옥 위치로 이동
         player.position = DeadPoint.position;
+        prefabSpawner.HideTP();
+        prefabSpawner.isSpawnned = false;
+        EnmeyDown = true; // 적 모두 비활성화
     }
 
     // Trigger 이벤트에서 방어력을 고려한 피해 처리
@@ -131,13 +135,15 @@ public class Player : MonoBehaviour
             {
                 npc.isDialogged = true;
             }
+            EnmeyDown = false;//적 죽음 상태 해제
+            prefabSpawner.RoomEnemyCount = 0;// 적 죽인 수 0으로 초기화
         }
 
         if (isDead)
             player.position = DeadPoint.position;
 
         // UI 갱신
-        HP_UI.text = "HP : " + nowHP.ToString();
+        HP_UI.text = nowHP.ToString() + "/" + maxHP.ToString();
         Atk_UI.text = Atk.ToString();
 
         DeadCount_UI.text = "죽은 횟수 : " + DeadCount.ToString();

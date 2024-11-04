@@ -49,6 +49,8 @@ public class Enemy : MonoBehaviour
 		SetEnemyStatus(100);
 	}
 
+	
+
 	void Awake()
     {
 		rigid = GetComponent<Rigidbody2D>();
@@ -63,7 +65,11 @@ public class Enemy : MonoBehaviour
 
 	void FixedUpdate()
     {
-		
+		if(player.EnmeyDown == true)
+        {
+			Destroy(gameObject);
+		}
+
 		Vector2 direction = player.transform.position - transform.position;
 
 		int X = Math.Abs(Mathf.RoundToInt(direction.x));
