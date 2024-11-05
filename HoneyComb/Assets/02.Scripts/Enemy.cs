@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class Enemy : MonoBehaviour
 	private Rigidbody2D rb;//중력
 	private Player player;//플레이어
 	private PlayerAction playerAction;
-	private TrainBot trainBot;
 	private PrefabSpawner prefabSpawner;
 
     private Rigidbody2D target;
@@ -19,12 +19,10 @@ public class Enemy : MonoBehaviour
 	[Header("감지 범위")]
     public int SenserRangeX = 3;
     public int SenserRangeY = 3;
-    //private PlayerAction playerAction;
 
-    [Header("체력")]
-    public int maxHP;
-    public int nowHP;
-	//public TextMeshProUGUI HP_UI;
+	[Header("체력")]
+	public int maxHP; // 최대 체력 변수
+    public int nowHP; // 현재 체력 변수
 
 	[Header("이건 나도 몰루")]
     public Scanner scanner;
@@ -35,6 +33,16 @@ public class Enemy : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriter;
 
+	//체력바 프리펩 
+	[SerializeField]					// private형 변수를 외부에서 조절할 수 있게 바꿔줌
+	private GameObject prfHpBar;		
+	private GameObject hpBarInstance;
+
+	RectTransform bghp_bar; // bghp_bar 어두운 배경 체력바
+	Image hp_bar;			// hp_bar 현재 체력바
+
+	public float height = 1.7f;			// 높이
+
     private void SetEnemyStatus(int _maxHP)
     {
         maxHP = _maxHP;
@@ -44,12 +52,21 @@ public class Enemy : MonoBehaviour
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		// Scene에서 Player 태그를 가진 오브젝트를 찾습니다.
 		player = FindObjectOfType<Player>();//무조건 해줘야됨 (초기화)
 		SetEnemyStatus(100);
+
+		// prfHpBar 프리팹을 이용해 체력바 인스턴스를 생성합니다.
+		bghp_bar = Instantiate(prfHpBar, GameObject.Find("Canvas").transform).GetComponent<RectTransform>();
+		hp_bar = bghp_bar.transform.GetChild(0).GetComponent<Image>();
 	}
 
-	
+	void Update()
+	{
+		Vector3 _hpBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + height, 0));
+		bghp_bar.position = _hpBarPos;
+
+		hp_bar.fillAmount = (float)nowHP / (float)maxHP;
+	}
 
 	void Awake()
     {
@@ -59,7 +76,6 @@ public class Enemy : MonoBehaviour
         scanner = GetComponent<Scanner>(); //근거리 공격용 스캔
         scanner2 = GetComponent<Scanner2>(); //원거리 공격용 스캔
 		playerAction = FindObjectOfType<Player>().GetComponent<PlayerAction>();
-		trainBot = FindObjectOfType<TrainBot>();
 		prefabSpawner = FindAnyObjectByType<PrefabSpawner>();
 	}
 
@@ -100,11 +116,12 @@ public class Enemy : MonoBehaviour
 		{
             nowHP = nowHP - player.Atk;
 		}
-        if(nowHP <= 0)							   // 체력이 0보다 적을시
+        if(nowHP < 0)							   // 체력이 0보다 적을시
         {
             nowHP = 0;
 			Destroy(gameObject);
 			prefabSpawner.RoomEnemyCount++;        // 적 죽은 횟수 1 늘어남
+			Destroy(bghp_bar.gameObject);		   // 체력바 삭제
 		}
 	}
 }
