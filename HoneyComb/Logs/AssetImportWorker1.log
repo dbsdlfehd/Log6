@@ -1,0 +1,396 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.31f1 (3409e2af086f) revision 3410402'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Core' Language: 'ko' Physical Memory: 16139 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+D:\UnityEditorDownload\2021.3.31f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+D:/Project archive/Log6/HoneyComb
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+12849
+Successfully changed project path to: D:/Project archive/Log6/HoneyComb
+D:/Project archive/Log6/HoneyComb
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [6124] Host "[IP] 192.168.219.131 [Port] 0 [Flags] 2 [Guid] 1527707921 [EditorId] 1527707921 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EDV24H0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [6124] Host "[IP] 192.168.219.131 [Port] 0 [Flags] 2 [Guid] 1527707921 [EditorId] 1527707921 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EDV24H0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
+Refreshing native plugins compatible for Editor in 105.42 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.31f1 (3409e2af086f)
+[Subsystems] Discovering subsystems at path D:/UnityEditorDownload/2021.3.31f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Project archive/Log6/HoneyComb/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3060 (ID=0x2504)
+    Vendor:   NVIDIA
+    VRAM:     12115 MB
+    Driver:   32.0.15.6070
+Initialize mono
+Mono path[0] = 'D:/UnityEditorDownload/2021.3.31f1/Editor/Data/Managed'
+Mono path[1] = 'D:/UnityEditorDownload/2021.3.31f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'D:/UnityEditorDownload/2021.3.31f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56868
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/UnityEditorDownload/2021.3.31f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: D:/UnityEditorDownload/2021.3.31f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Register platform support module: D:/UnityEditorDownload/2021.3.31f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002512 seconds.
+Native extension for WindowsStandalone target not found
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+Native extension for iOS target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 227 ms
+Refreshing native plugins compatible for Editor in 100.54 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.833 seconds
+Domain Reload Profiling:
+	ReloadAssembly (833ms)
+		BeginReloadAssembly (83ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (675ms)
+			LoadAssemblies (83ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (91ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (526ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (313ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (101ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (72ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.004379 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for iOS target not found
+Native extension for Android target not found
+Refreshing native plugins compatible for Editor in 103.60 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Completed reload, in  1.532 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1533ms)
+		BeginReloadAssembly (94ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (1285ms)
+			LoadAssemblies (73ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (219ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (68ms)
+			SetupLoadedEditorAssemblies (882ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (24ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (104ms)
+				BeforeProcessingInitializeOnLoad (90ms)
+				ProcessInitializeOnLoadAttributes (622ms)
+				ProcessInitializeOnLoadMethodAttributes (40ms)
+				AfterProcessingInitializeOnLoad (2ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.56 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 4429 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 52 unused Assets / (119.7 KB). Loaded Objects now: 4890.
+Memory consumption went from 173.5 MB to 173.4 MB.
+Total: 1.998200 ms (FindLiveObjects: 0.152500 ms CreateObjectMapping: 0.055700 ms MarkObjects: 1.721000 ms  DeleteObjects: 0.068200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 472761.640293 seconds.
+  path: Assets/03.Fonts/Maplestory Bold.ttf
+  artifactKey: Guid(8401348286cb0a3418df7f97794d5494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/03.Fonts/Maplestory Bold.ttf using Guid(8401348286cb0a3418df7f97794d5494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a1849fa9c86b59f62687041a7b5d2571') in 0.086703 seconds 
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/03.Fonts/Maplestory Light.ttf
+  artifactKey: Guid(01434002059baa54697788397c2d9412) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/03.Fonts/Maplestory Light.ttf using Guid(01434002059baa54697788397c2d9412) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7196d27a23630d4c03b820ee7be5b6c7') in 0.021947 seconds 
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.994300 seconds.
+  path: Assets/04.Sprites/Dummy/home.png
+  artifactKey: Guid(491971cef2d3d62428f7b78360bdbe51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Dummy/home.png using Guid(491971cef2d3d62428f7b78360bdbe51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '197ae97f2e9579396a835852d0613b3c') in 0.050053 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/04.Sprites/Dummy/Player_Stand0.png
+  artifactKey: Guid(223249d39d23125488d6103deff835ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Dummy/Player_Stand0.png using Guid(223249d39d23125488d6103deff835ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a62cd6a49463f93729feba17e963e56') in 0.044663 seconds 
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/04.Sprites/Dummy/totalHome.png
+  artifactKey: Guid(4a26fdfdc70ee9845af5256a871831d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Dummy/totalHome.png using Guid(4a26fdfdc70ee9845af5256a871831d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05be16f5a56b6ac1f66467f487fffe2d') in 0.100255 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/04.Sprites/Dummy/images.jpg
+  artifactKey: Guid(96dbf9f3ad9ee5e4fa536e1d83a27e74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Dummy/images.jpg using Guid(96dbf9f3ad9ee5e4fa536e1d83a27e74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '419506b6be61b2a024d8d44774ff2164') in 0.049451 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 2.989515 seconds.
+  path: Assets/06.YooniLLDDong/Individual Sprites/adventurer-bow-jump-01.png
+  artifactKey: Guid(348ed2ecb0229bf40a8673c1e61b1128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/06.YooniLLDDong/Individual Sprites/adventurer-bow-jump-01.png using Guid(348ed2ecb0229bf40a8673c1e61b1128) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eae107dff4cbeb4d1dd311c531afaf80') in 0.019688 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.011721 seconds.
+  path: Assets/06.YooniLLDDong/Individual Sprites/adventurer-bow-jump-02.png
+  artifactKey: Guid(5c511c3b46ffb4443891ca292b3374b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/06.YooniLLDDong/Individual Sprites/adventurer-bow-jump-02.png using Guid(5c511c3b46ffb4443891ca292b3374b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e8ac2025a5a9465fb930ea52423e505') in 0.015570 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/DARK Series Mega Pack 1/DARK - Statement Pieces/Foreground/Object2.png
+  artifactKey: Guid(ed159aed71d0b544baf900dfe54148e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/DARK Series Mega Pack 1/DARK - Statement Pieces/Foreground/Object2.png using Guid(ed159aed71d0b544baf900dfe54148e5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '48b6b62ffd07843737b9ecc92ee66525') in 0.019020 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/DARK Series Mega Pack 1/DARK - Gunslinger Hero, NPC's, Thrones/Gun/Projectiles.aseprite
+  artifactKey: Guid(abc19abf9866adc459f364641857ddfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/DARK Series Mega Pack 1/DARK - Gunslinger Hero, NPC's, Thrones/Gun/Projectiles.aseprite using Guid(abc19abf9866adc459f364641857ddfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cf559d8121dd34aa2f5b7a1b43ea7a1') in 0.090551 seconds 
+Number of asset objects unloaded after import = 43
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/09.Tiles/Ground_tiles/JiWuok.asset
+  artifactKey: Guid(762f683d2759dcd4d9f4bea4e3095a7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/09.Tiles/Ground_tiles/JiWuok.asset using Guid(762f683d2759dcd4d9f4bea4e3095a7f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30520ae43dabdf2a096202860036fef9') in 0.010833 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/DARK Series Mega Pack 1/DARK - Gunslinger Hero, NPC's, Thrones/Gunslinger/Gunslinger Sprite Sheet.aseprite
+  artifactKey: Guid(a23b4ba10ce82b148a6e5286878bc5a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/DARK Series Mega Pack 1/DARK - Gunslinger Hero, NPC's, Thrones/Gunslinger/Gunslinger Sprite Sheet.aseprite using Guid(a23b4ba10ce82b148a6e5286878bc5a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b610a520c5b364549fe513cee569b4e6') in 0.151372 seconds 
+Number of asset objects unloaded after import = 84
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/06.YooniLLDDong/Individual Sprites/adventurer-jump-01.png
+  artifactKey: Guid(b2d3672f1ca729348a0152b5d4d5af42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/06.YooniLLDDong/Individual Sprites/adventurer-jump-01.png using Guid(b2d3672f1ca729348a0152b5d4d5af42) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c1d96fedee00e44ecac8ae1617fa716') in 0.015265 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/DARK Series Mega Pack 1/DARK - Enemies Pack 1/assassin/Assassin.aseprite
+  artifactKey: Guid(f281f800828fa09449f9cf7c7bf7190e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/DARK Series Mega Pack 1/DARK - Enemies Pack 1/assassin/Assassin.aseprite using Guid(f281f800828fa09449f9cf7c7bf7190e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf7c2dc5e354f57eb70edcb7e191f2c6') in 0.094467 seconds 
+Number of asset objects unloaded after import = 95
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/04.Sprites/Dummy/1/JumpAttack.png
+  artifactKey: Guid(10847719f740005499c63f2b8e2d1195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Dummy/1/JumpAttack.png using Guid(10847719f740005499c63f2b8e2d1195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f93326bd93c525a022d9cf671833e874') in 0.014533 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/06.YooniLLDDong/Individual Sprites/adventurer-jump-00.png
+  artifactKey: Guid(82152a3491412794b8e24803925cda5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/06.YooniLLDDong/Individual Sprites/adventurer-jump-00.png using Guid(82152a3491412794b8e24803925cda5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '45da129aec16726416f62042e1a69bec') in 0.015447 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/04.Sprites/Dummy/1/Jump.png
+  artifactKey: Guid(59683a635ff09074d9f7eef7a5d3e35e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Dummy/1/Jump.png using Guid(59683a635ff09074d9f7eef7a5d3e35e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a23203ce402cb24c6d5beec7a0027646') in 0.015180 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/DARK Series Mega Pack 1/DARK - Gunslinger Hero, NPC's, Thrones/Gun/Projectiles 16x16 Sprite Sheet.png
+  artifactKey: Guid(4b561ad6ce2609045ab1935ef3824034) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/DARK Series Mega Pack 1/DARK - Gunslinger Hero, NPC's, Thrones/Gun/Projectiles 16x16 Sprite Sheet.png using Guid(4b561ad6ce2609045ab1935ef3824034) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '018ae0995d96dda6827a0ebb8a2d35a1') in 0.036564 seconds 
+Number of asset objects unloaded after import = 24
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/06.YooniLLDDong/Individual Sprites/adventurer-bow-jump-05.png
+  artifactKey: Guid(35d5f6884291a614ab8c0d83d84cae6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/06.YooniLLDDong/Individual Sprites/adventurer-bow-jump-05.png using Guid(35d5f6884291a614ab8c0d83d84cae6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d2b4a5278e0b8411d8c6be0a90e177c') in 0.014536 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 27.344950 seconds.
+  path: Assets/04.Sprites/Isomtric_Objects/ForestBG_8.asset
+  artifactKey: Guid(6f396e6bcbc15c4408743ef3927dce6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Isomtric_Objects/ForestBG_8.asset using Guid(6f396e6bcbc15c4408743ef3927dce6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96b20777e8eb7ae6854c1aee9ffb88d1') in 0.012086 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/04.Sprites/Isomtric_Objects/ForestBG_18.asset
+  artifactKey: Guid(848ebcfc86dca8e4a8b86228a1569bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Isomtric_Objects/ForestBG_18.asset using Guid(848ebcfc86dca8e4a8b86228a1569bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43fb380a7c73ac4c17192420d6b74158') in 0.016067 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/04.Sprites/Isomtric_Objects/ForestBG_54.asset
+  artifactKey: Guid(60c65b13164291c4cb12c322d602f4c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Isomtric_Objects/ForestBG_54.asset using Guid(60c65b13164291c4cb12c322d602f4c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '781ba611caa261c0c832f58d4524fcd0') in 0.008481 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/04.Sprites/Isomtric_Objects/ForestBG_52.asset
+  artifactKey: Guid(db17346002988da44a1d8c8f32abe946) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Isomtric_Objects/ForestBG_52.asset using Guid(db17346002988da44a1d8c8f32abe946) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c653e03b01d43680b8644f069df799f8') in 0.021513 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/04.Sprites/Isomtric_Objects/ForestBG_20.asset
+  artifactKey: Guid(3ea98d1a65031b049a31376c0c3348b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Isomtric_Objects/ForestBG_20.asset using Guid(3ea98d1a65031b049a31376c0c3348b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e757ea9b6935fe0ce112daa86b7b8398') in 0.043408 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/04.Sprites/Isomtric_Objects/ForestBG_15.asset
+  artifactKey: Guid(bffe05e051e3c5945ab83d7dcaedd786) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Isomtric_Objects/ForestBG_15.asset using Guid(bffe05e051e3c5945ab83d7dcaedd786) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71976528026aa5154519e968b1b01190') in 0.012498 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/04.Sprites/Isomtric_Objects/ForestBG_19.asset
+  artifactKey: Guid(8560773b24a0bd445b1b3dad9a8d08b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Isomtric_Objects/ForestBG_19.asset using Guid(8560773b24a0bd445b1b3dad9a8d08b5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba885cf4a4fb11f169f870122e06d107') in 0.011991 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000013 seconds.
+  path: Assets/04.Sprites/Isomtric_Objects/ForestBG_30.asset
+  artifactKey: Guid(fe36a424e3773d6459cec79caf8dffe9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Isomtric_Objects/ForestBG_30.asset using Guid(fe36a424e3773d6459cec79caf8dffe9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3732599b7b40b843c64b1b32c05b2303') in 0.039630 seconds 
+Number of asset objects unloaded after import = 3
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

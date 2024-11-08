@@ -6,6 +6,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerAction : MonoBehaviour
 {
+    public Player playerScript;
+
     public float walkSpeed = 5f;        // 걷기 속도
     public float defaultSpeed = 5f;     // 기본 속도(걷기 속도와 동일해야 함)
     public float slideSpeed = 10f;      // 슬라이드 속도
@@ -155,11 +157,34 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
-    IEnumerator DisableCollider(BoxCollider2D collider)// 콜라이더를 비활성화하는 코루틴
+    public float tempTime = 1.0f; // 시간 텀
+	IEnumerator DisableCollider(BoxCollider2D collider, int AtkStyle)// 콜라이더를 비활성화하는 코루틴
 	{
-        yield return new WaitForSeconds(0.1f); // 콜라이더를 0.1초 동안 활성화
-        collider.enabled = false;
-    }
+		if (AtkStyle == 0 && Time.time > tempTime) // 기본공격
+        {
+			animator.SetTrigger(AnimationStrings.attackTrigger);  // 공격 애니메이션 실행
+			tempTime = Time.time + 0.15f;
+			collider.enabled = true; // 왼쪽 또는 오른쪽 공격 켜기
+			yield return new WaitForSeconds(0.1f); // 콜라이더를 0.1초 동안 활성화
+			collider.enabled = false;  // 왼쪽 또는 오른쪽 공격 끄기
+		}
+        else if(AtkStyle == 1) // 스킬 1
+        {
+			yield return new WaitForSeconds(0.6f);
+			collider.enabled = true;
+			yield return new WaitForSeconds(0.1f); // 콜라이더를 0.1초 동안 활성화
+			collider.enabled = false;
+			playerScript.Atk /= 2;
+		}
+		else if (AtkStyle == 2) // 스킬 2 (궁극기)
+		{
+			yield return new WaitForSeconds(0.9f);
+			collider.enabled = true;
+			yield return new WaitForSeconds(0.1f); // 콜라이더를 0.1초 동안 활성화
+			collider.enabled = false;
+			playerScript.Atk /= 4;
+		}
+	}
 
     void FixedUpdate()// 물리 업데이트 처리 (이동 및 감지)
 	{
@@ -246,18 +271,18 @@ public class PlayerAction : MonoBehaviour
 	{
         if (context.started)
         {
+            int atkStyle = 0; // 기본공격 스타일
+
             // 방향에 따라 적절한 BoxCollider2D 활성화
             if (sp.flipX)
             {
-                left.enabled = true;
-                StartCoroutine(DisableCollider(left));  // 왼쪽 공격 활성화
+                StartCoroutine(DisableCollider(left, atkStyle));  // 왼쪽 공격 활성화
             }
             else
             {
-                right.enabled = true;
-                StartCoroutine(DisableCollider(right));  // 오른쪽 공격 활성화
+                StartCoroutine(DisableCollider(right, atkStyle));  // 오른쪽 공격 활성화
             }
-            animator.SetTrigger(AnimationStrings.attackTrigger);  // 공격 애니메이션 실행
+            
         }
     }
 
@@ -269,8 +294,22 @@ public class PlayerAction : MonoBehaviour
             {
                 animator.SetTrigger(AnimationStrings.skillAttackTrigger);  // 스킬 애니메이션 실행
                 skillAttackTime = skillAttackCooldown;  // 쿨타임 적용
-            }
-        }
+
+
+				int atkStyle = 1; // 스킬 공격 스타일
+				playerScript.Atk *= 2;
+
+				// 방향에 따라 적절한 BoxCollider2D 활성화
+				if (sp.flipX)
+				{
+					StartCoroutine(DisableCollider(left, atkStyle));  // 왼쪽 공격 활성화
+				}
+				else
+				{
+					StartCoroutine(DisableCollider(right, atkStyle));  // 오른쪽 공격 활성화
+				}
+			}
+		}
     }
 
     public void OnSkillAttack2(InputAction.CallbackContext context)// 두 번째 스킬 공격 입력 처리
@@ -281,7 +320,19 @@ public class PlayerAction : MonoBehaviour
             {
                 animator.SetTrigger(AnimationStrings.skillAttackTrigger2);  // 스킬 애니메이션 실행
                 skillAttack2Time = skillAttack2Cooldown;  // 쿨타임 적용
-            }
-        }
+
+				int atkStyle = 2;
+				playerScript.Atk *= 4; // 플레이어 공격력 증가
+									   // 방향에 따라 적절한 BoxCollider2D 활성화
+				if (sp.flipX)
+				{
+					StartCoroutine(DisableCollider(left, atkStyle));  // 왼쪽 공격 활성화
+				}
+				else
+				{
+					StartCoroutine(DisableCollider(right, atkStyle));  // 오른쪽 공격 활성화
+				}
+			}
+		}
     }
 }

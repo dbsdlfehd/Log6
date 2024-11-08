@@ -61,7 +61,14 @@ public class Player : MonoBehaviour
     public float defenseDebuff3 = 0.26f;      // 방어력 감소 디버프 3 (26%) 회피행동
     public float defenseDebuff4 = 0.35f;      // 방어력 감소 디버프 4 (35%) 심장 두근거림
 
-    private void Start()
+
+	Animator animator;        // Animator 컴포넌트 참조
+
+	private void Awake()
+	{
+		animator = GetComponent<Animator>();
+	}
+	private void Start()
     {
         nowHP = Mathf.FloorToInt(maxHP); // 최대 체력을 정수로 설정
         PlayerHpShow = GetComponent<PlayerHpShow>();
@@ -91,19 +98,27 @@ public class Player : MonoBehaviour
     // 죽음 함수
     public void Dead()
     {
-        DeadCount++;
-        isDead = true;
-        Dead_set.SetActive(true);
-
-        // 지옥 위치로 이동
-        player.position = DeadPoint.position;
-        prefabSpawner.HideTP();
-        prefabSpawner.isSpawnned = false;
-        EnmeyDown = true; // 적 모두 비활성화
+		DeadCount++;
+		StartCoroutine(DeadShow());
+        
     }
+    IEnumerator DeadShow()
+    {
+		animator.SetTrigger(AnimationStrings.attackTrigger);  // dead 애니메이션 실행
 
-    // Trigger 이벤트에서 방어력을 고려한 피해 처리
-    void OnTriggerEnter2D(Collider2D collision)
+		isDead = true;
+		Dead_set.SetActive(true);
+		// 지옥 위치로 이동
+		player.position = DeadPoint.position;
+		prefabSpawner.HideTP();
+		prefabSpawner.isSpawnned = false;
+		EnmeyDown = true; // 적 모두 비활성화
+		yield return null;
+	}
+
+
+	// Trigger 이벤트에서 방어력을 고려한 피해 처리
+	void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("weapon"))
             return;
