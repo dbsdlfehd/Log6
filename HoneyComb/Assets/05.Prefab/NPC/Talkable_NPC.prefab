@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2890395096282155874}
   - component: {fileID: 2890395096282155878}
   m_Layer: 8
-  m_Name: DNA
+  m_Name: Talkable_NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

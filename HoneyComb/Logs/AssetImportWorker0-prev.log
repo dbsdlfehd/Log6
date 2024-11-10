@@ -15,7 +15,7 @@ D:/Project archive/Log6/HoneyComb
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-12091
+12849
 Successfully changed project path to: D:/Project archive/Log6/HoneyComb
 D:/Project archive/Log6/HoneyComb
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,12 +47,12 @@ D:/Project archive/Log6/HoneyComb
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [30156] Host "[IP] 192.168.219.189 [Port] 0 [Flags] 2 [Guid] 525911581 [EditorId] 525911581 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EDV24H0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [24520] Host "[IP] 192.168.219.131 [Port] 0 [Flags] 2 [Guid] 2874883939 [EditorId] 2874883939 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EDV24H0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [30156] Host "[IP] 192.168.219.189 [Port] 0 [Flags] 2 [Guid] 525911581 [EditorId] 525911581 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EDV24H0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [24520] Host "[IP] 192.168.219.131 [Port] 0 [Flags] 2 [Guid] 2874883939 [EditorId] 2874883939 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-EDV24H0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
-Refreshing native plugins compatible for Editor in 104.37 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 105.42 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.31f1 (3409e2af086f)
 [Subsystems] Discovering subsystems at path D:/UnityEditorDownload/2021.3.31f1/Editor/Data/Resources/UnitySubsystems
@@ -68,85 +68,85 @@ Initialize mono
 Mono path[0] = 'D:/UnityEditorDownload/2021.3.31f1/Editor/Data/Managed'
 Mono path[1] = 'D:/UnityEditorDownload/2021.3.31f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'D:/UnityEditorDownload/2021.3.31f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56276
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56584
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: D:/UnityEditorDownload/2021.3.31f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: D:/UnityEditorDownload/2021.3.31f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
 Register platform support module: D:/UnityEditorDownload/2021.3.31f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002606 seconds.
+Registered in 0.001398 seconds.
 Native extension for WindowsStandalone target not found
 [usbmuxd] Start listen thread
 [usbmuxd] Listen thread started
 Native extension for iOS target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 2352 ms
-Refreshing native plugins compatible for Editor in 105.10 ms, found 4 plugins.
+Android Extension - Scanning For ADB Devices 231 ms
+Refreshing native plugins compatible for Editor in 105.22 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.957 seconds
+- Completed reload, in  0.749 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2957ms)
-		BeginReloadAssembly (63ms)
+	ReloadAssembly (750ms)
+		BeginReloadAssembly (48ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (0ms)
-		EndReloadAssembly (2819ms)
-			LoadAssemblies (63ms)
+		EndReloadAssembly (655ms)
+			LoadAssemblies (48ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (93ms)
+			SetupTypeCache (67ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (24ms)
-			SetupLoadedEditorAssemblies (2666ms)
+			SetupLoadedEditorAssemblies (531ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (2436ms)
+				InitializePlatformSupportModulesInManaged (315ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (105ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (82ms)
-				ProcessInitializeOnLoadMethodAttributes (41ms)
+				ProcessInitializeOnLoadAttributes (71ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004123 seconds.
+Registered in 0.004291 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for iOS target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 103.19 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 100.31 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Completed reload, in  1.448 seconds
+- Completed reload, in  1.511 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1448ms)
-		BeginReloadAssembly (105ms)
+	ReloadAssembly (1511ms)
+		BeginReloadAssembly (99ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (20ms)
-		EndReloadAssembly (1258ms)
-			LoadAssemblies (81ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (1259ms)
+			LoadAssemblies (82ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (213ms)
+			SetupTypeCache (214ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (59ms)
-			SetupLoadedEditorAssemblies (875ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (879ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (24ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (103ms)
-				BeforeProcessingInitializeOnLoad (87ms)
-				ProcessInitializeOnLoadAttributes (618ms)
-				ProcessInitializeOnLoadMethodAttributes (40ms)
+				RefreshPlugins (100ms)
+				BeforeProcessingInitializeOnLoad (89ms)
+				ProcessInitializeOnLoadAttributes (622ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
 				AfterProcessingInitializeOnLoad (2ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -155,39 +155,12 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.58 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.51 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4429 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 52 unused Assets / (119.3 KB). Loaded Objects now: 4888.
-Memory consumption went from 173.4 MB to 173.3 MB.
-Total: 1.813300 ms (FindLiveObjects: 0.153700 ms CreateObjectMapping: 0.049400 ms MarkObjects: 1.551000 ms  DeleteObjects: 0.058100 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-========================================================================
-Received Import Request.
-  Time since last request: 309668.897754 seconds.
-  path: Assets/HoneyComb.inputactions
-  artifactKey: Guid(b8806b9451d518f4aa530bbc123d6f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/HoneyComb.inputactions using Guid(b8806b9451d518f4aa530bbc123d6f9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'be2ad2b3e8a4e0fbcabd6cfd1a26b5d6') in 0.021920 seconds 
-Number of asset objects unloaded after import = 18
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 4.08 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 25 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 25 unused Assets / (92.6 KB). Loaded Objects now: 4889.
-Memory consumption went from 82.5 MB to 82.4 MB.
-Total: 2.810400 ms (FindLiveObjects: 0.270600 ms CreateObjectMapping: 0.085500 ms MarkObjects: 2.423300 ms  DeleteObjects: 0.030500 ms)
+Unloading 52 unused Assets / (119.7 KB). Loaded Objects now: 4890.
+Memory consumption went from 173.5 MB to 173.4 MB.
+Total: 2.011800 ms (FindLiveObjects: 0.147500 ms CreateObjectMapping: 0.049600 ms MarkObjects: 1.754600 ms  DeleteObjects: 0.059600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -203,412 +176,300 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 139.862684 seconds.
-  path: Assets/00.Scenes
-  artifactKey: Guid(8b1243e4b4e02e742a2474072b32c9e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 472337.118743 seconds.
+  path: Assets/04.Sprites/JinWoo/hard_punch_motion.png
+  artifactKey: Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/00.Scenes using Guid(8b1243e4b4e02e742a2474072b32c9e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '818b0e9504b49f9c0575782961613f20') in 0.005367 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.919544 seconds.
-  path: Assets/00.Scenes/SampleScene.unity
-  artifactKey: Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/00.Scenes/SampleScene.unity using Guid(2cda990e2423bbf4892e6590ba056729) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c1143bb145a94d55691defc171a062d') in 0.004846 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 47.136669 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Animals & Trees
-  artifactKey: Guid(81fdeaa48701e3d429fb9e125f152c05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Animals & Trees using Guid(81fdeaa48701e3d429fb9e125f152c05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6675ea37851ed6965a41ac74199a1eb8') in 0.005195 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 1.138426 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Animated Trees
-  artifactKey: Guid(1d79aba1e321b624faaa87a3a16272f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Animated Trees using Guid(1d79aba1e321b624faaa87a3a16272f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e609e78ba797f48236ea1ba431df1a9') in 0.005672 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.064455 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Animated Trees/Blood Tree 1 Sprite Sheet 112x128.png
-  artifactKey: Guid(c89951bddda1cda42b334f5dbb76b1dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Animated Trees/Blood Tree 1 Sprite Sheet 112x128.png using Guid(c89951bddda1cda42b334f5dbb76b1dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb12c4d37a85df9a0ebf2e71eb239dad') in 0.153432 seconds 
-Number of asset objects unloaded after import = 47
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Animated Trees/Blood Tree 2 Sprite Sheet.aseprite
-  artifactKey: Guid(caa297ef1a042b748874d2f0bbf3dafe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Animated Trees/Blood Tree 2 Sprite Sheet.aseprite using Guid(caa297ef1a042b748874d2f0bbf3dafe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25bfb5f6269e12e39aca114cb5ce97e5') in 0.109594 seconds 
-Number of asset objects unloaded after import = 64
-========================================================================
-Received Import Request.
-  Time since last request: 5.468241 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Crow
-  artifactKey: Guid(24480133d8c1c494ba194c17d62e9ee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Crow using Guid(24480133d8c1c494ba194c17d62e9ee8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6270e24212784a7b64bc9147eab4ffa') in 0.006535 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.075054 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Crow/Crow Sprite Sheet 17x21 BLUE.png
-  artifactKey: Guid(8675c17d35049b841943f34c90e94ee9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Crow/Crow Sprite Sheet 17x21 BLUE.png using Guid(8675c17d35049b841943f34c90e94ee9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2916f4afbd65c4944d4f71562962835c') in 0.034525 seconds 
-Number of asset objects unloaded after import = 23
-========================================================================
-Received Import Request.
-  Time since last request: 3.578431 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Deer
-  artifactKey: Guid(64c49a80a6bcaa943a875f46c27b8d84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Deer using Guid(64c49a80a6bcaa943a875f46c27b8d84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6e8cf795f1ba912a2f842c57e6d427d') in 0.005479 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.096066 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Deer/Deer Sprite 56x54 BLUE.png
-  artifactKey: Guid(0b90d6e1b807af041b71a4a3842afce2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Deer/Deer Sprite 56x54 BLUE.png using Guid(0b90d6e1b807af041b71a4a3842afce2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17911fe16815dc811a60d9e0ba0a08f1') in 0.059626 seconds 
-Number of asset objects unloaded after import = 45
-========================================================================
-Received Import Request.
-  Time since last request: 0.000013 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Deer/Deer Sprite.aseprite
-  artifactKey: Guid(e92eb256818bbd3498fd14507a68e1fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Deer/Deer Sprite.aseprite using Guid(e92eb256818bbd3498fd14507a68e1fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c858b3dfa456dc51353fc04cae7030c9') in 0.056287 seconds 
-Number of asset objects unloaded after import = 61
-========================================================================
-Received Import Request.
-  Time since last request: 7.290197 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Elk
-  artifactKey: Guid(cd3d160fc3a3fce4bb8ab60aa63e42e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Elk using Guid(cd3d160fc3a3fce4bb8ab60aa63e42e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0da7a326ebc9ac6b271f385eafaea630') in 0.007308 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.081693 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Elk/Elk Sprite Sheet 56x35 RED.png
-  artifactKey: Guid(1a3e12425a5fce74cb5bb6eead798d23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Animals & Trees/Elk/Elk Sprite Sheet 56x35 RED.png using Guid(1a3e12425a5fce74cb5bb6eead798d23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e71199495483e85370652d0a632b89e1') in 0.053340 seconds 
-Number of asset objects unloaded after import = 49
-========================================================================
-Received Import Request.
-  Time since last request: 4.868426 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Enemies Pack 1
-  artifactKey: Guid(bc2869a09e5152f4eb958191cc423bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Enemies Pack 1 using Guid(bc2869a09e5152f4eb958191cc423bcc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '365b33d30566023a8e035cd1613baa1a') in 0.006579 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.698613 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Enemy Pack 2
-  artifactKey: Guid(9861e2b7f0a948d4abc03e0432c83aaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Enemy Pack 2 using Guid(9861e2b7f0a948d4abc03e0432c83aaa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00f7e89b6e86f60657ee9ec7887908c8') in 0.005385 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.582962 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Gunslinger Hero, NPC's, Thrones
-  artifactKey: Guid(d82256cf560d2364582636d8a57e2677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Gunslinger Hero, NPC's, Thrones using Guid(d82256cf560d2364582636d8a57e2677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6a5065e21f91af8daa870f64ce7ddcf') in 0.005250 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 1.609704 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Statement Pieces
-  artifactKey: Guid(5f77bd1ba0b7aae45acb7b5c0485dd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Statement Pieces using Guid(5f77bd1ba0b7aae45acb7b5c0485dd52) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b7725ad99abd0940231bb14576e0c8d') in 0.006388 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.552198 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Temple Guardians + Merchants
-  artifactKey: Guid(ce1ea7c0c13f3c449a4a6a90c44dcfcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Temple Guardians + Merchants using Guid(ce1ea7c0c13f3c449a4a6a90c44dcfcd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e204b9698c97fad2323782fb0a750aa3') in 0.006605 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.681587 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Victorian Boss + Add on Tileset
-  artifactKey: Guid(4f799856f9d20ac469fe18b4fc2aea38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Victorian Boss + Add on Tileset using Guid(4f799856f9d20ac469fe18b4fc2aea38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd96eca68c1dbda579509b2c98fae6f0') in 0.005365 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.580902 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK - Victorian Enemies & Assets
-  artifactKey: Guid(ee5633b304352dd448e3c4e959e4de15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK - Victorian Enemies & Assets using Guid(ee5633b304352dd448e3c4e959e4de15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfc2ec2769c16ecef58558987ad44a14') in 0.005046 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.433545 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK City Tileset
-  artifactKey: Guid(07c18c54c39597a4ca16f5eeaaa6145d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK City Tileset using Guid(07c18c54c39597a4ca16f5eeaaa6145d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91b66e24cf9ebb95d446dd821f749c56') in 0.005137 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.452972 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack
-  artifactKey: Guid(6e322937db5e41644a26b44820cfd541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack using Guid(6e322937db5e41644a26b44820cfd541) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '90c2c2d9bf730ac55f3172c052d04cc4') in 0.006116 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.586619 seconds.
-  path: Assets/DARK Series Mega Pack 1/Demo Scene
-  artifactKey: Guid(a56cb74ef1121fc478b8ad6fcabb9f2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/Demo Scene using Guid(a56cb74ef1121fc478b8ad6fcabb9f2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7bdd772067212deee81ba95b78f1057') in 0.006538 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 2.533376 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Underground Tileset & Enemies
-  artifactKey: Guid(4a9bd6681dffe3e43a2ff0b77bce8d9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Underground Tileset & Enemies using Guid(4a9bd6681dffe3e43a2ff0b77bce8d9d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'adba320f68653c7dab195309c0c3c078') in 0.005136 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.790667 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Underground Tileset & Enemies/Tileset
-  artifactKey: Guid(5237f3cbd74bf2d41bc23e4f11c9bd60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Underground Tileset & Enemies/Tileset using Guid(5237f3cbd74bf2d41bc23e4f11c9bd60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8056a11186ca0749b4785b6c5a9b48d1') in 0.006059 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.051764 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Underground Tileset & Enemies/Tileset/DARK Edition Tileset No background.png
-  artifactKey: Guid(8b407e05507ae344185bb682d1d1e6d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Underground Tileset & Enemies/Tileset/DARK Edition Tileset No background.png using Guid(8b407e05507ae344185bb682d1d1e6d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6de4cac4c1019e63ad26e3d7b4c999c8') in 0.018281 seconds 
+Start importing Assets/04.Sprites/JinWoo/hard_punch_motion.png using Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e06693a29bdccfb0ff9a682dee1b5607') in 0.075744 seconds 
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000012 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Underground Tileset & Enemies/Tileset/tileset with bg.png
-  artifactKey: Guid(6a8897e8de01ab244ae429e5652d7d7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 7.125496 seconds.
+  path: Assets/04.Sprites/JinWoo/hard_punch_motion.png
+  artifactKey: Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Underground Tileset & Enemies/Tileset/tileset with bg.png using Guid(6a8897e8de01ab244ae429e5652d7d7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fee9811165774d2ef2146f1b2aacc059') in 0.017925 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 11.280205 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Underground Tileset & Enemies/Tileset/tileset with bg.png
-  artifactKey: Guid(6a8897e8de01ab244ae429e5652d7d7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Underground Tileset & Enemies/Tileset/tileset with bg.png using Guid(6a8897e8de01ab244ae429e5652d7d7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '994a03b2b40a696b353cbdec3ffc02f5') in 0.010902 seconds 
+Start importing Assets/04.Sprites/JinWoo/hard_punch_motion.png using Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c2a868e78c30e77d12112d452d69c351') in 0.014551 seconds 
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 12.789829 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Underground Caves
-  artifactKey: Guid(3c71ebcee56648d488d55b48316851fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 89.151657 seconds.
+  path: Assets/04.Sprites/JinWoo/hard_punch_motion.png
+  artifactKey: Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Underground Caves using Guid(3c71ebcee56648d488d55b48316851fb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '940ab0fbe5288606bde5a04c041d82dd') in 0.005215 seconds 
+Start importing Assets/04.Sprites/JinWoo/hard_punch_motion.png using Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdb6f71a61d9a912f07c746e0cc28e4e') in 0.035250 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 77.526077 seconds.
+  path: Assets/04.Sprites/JinWoo/hard_punch_motion.png
+  artifactKey: Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/JinWoo/hard_punch_motion.png using Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f1f4e4e2e52ca47ddbc24b829acc483f') in 0.035615 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 9.147574 seconds.
+  path: Assets/04.Sprites/JinWoo/hard_punch_motion.png
+  artifactKey: Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/JinWoo/hard_punch_motion.png using Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c667e3dee22dc661bf491df6e091d277') in 0.029335 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 5.382100 seconds.
+  path: Assets/04.Sprites/JinWoo/hard_punch_motion.png
+  artifactKey: Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/JinWoo/hard_punch_motion.png using Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58bdd77160f7dccd3d7fef081788e3d4') in 0.033963 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 77.544260 seconds.
+  path: Assets/04.Sprites/JinWoo/hard_punch_motion.png
+  artifactKey: Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/JinWoo/hard_punch_motion.png using Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d49de7760c47b5a8a2b90bb7b9012df') in 0.051621 seconds 
+Number of asset objects unloaded after import = 14
+========================================================================
+Received Import Request.
+  Time since last request: 64.588473 seconds.
+  path: Assets/04.Sprites/JinWoo/hard_punch_motion.png
+  artifactKey: Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/JinWoo/hard_punch_motion.png using Guid(e792049aee461c8428e15e1e8835474a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22b3a568fc6add14b1c25f869ea835b5') in 0.048936 seconds 
+Number of asset objects unloaded after import = 15
+========================================================================
+Received Import Request.
+  Time since last request: 77.238395 seconds.
+  path: Assets/02.Anime/anim
+  artifactKey: Guid(a15e892b22580dd45a055ee0926a8f2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/02.Anime/anim using Guid(a15e892b22580dd45a055ee0926a8f2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21448614eb837dc55114576a37e0b443') in 0.004921 seconds 
 Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.065442 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Underground Caves/1-Background.png
-  artifactKey: Guid(024120c422f278346bfc8815a4a83f9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 6.521129 seconds.
+  path: Assets/01.Animation
+  artifactKey: Guid(bc59b5d279f3e9240b6b57af8b977acb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Underground Caves/1-Background.png using Guid(024120c422f278346bfc8815a4a83f9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f95ac4efa6434d06ae6bd03a76da876') in 0.020311 seconds 
-Number of asset objects unloaded after import = 3
+Start importing Assets/01.Animation using Guid(bc59b5d279f3e9240b6b57af8b977acb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9fb55becef215cd65d5a3b06bc8bf93') in 0.006327 seconds 
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.006999 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Underground Caves/4-far light.png
-  artifactKey: Guid(8b6e7c9d6520cd847a1996840f5109c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 1.836556 seconds.
+  path: Assets/01.Animation/DNA_PlayerAnim
+  artifactKey: Guid(1c09b6979d9863d4eb73c14f4eabf24d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Underground Caves/4-far light.png using Guid(8b6e7c9d6520cd847a1996840f5109c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6b0815793b847f5dd7bdaab52de6c19') in 0.025905 seconds 
-Number of asset objects unloaded after import = 3
+Start importing Assets/01.Animation/DNA_PlayerAnim using Guid(1c09b6979d9863d4eb73c14f4eabf24d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '778ba0db2a9c5b5939e5ba7c145ab8b7') in 0.004503 seconds 
+Number of asset objects unloaded after import = 0
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Underground Caves/Parallax Scifi Dark background.png
-  artifactKey: Guid(8c1ed89b70cbc794bb5280a79b494b19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 1.780441 seconds.
+  path: Assets/01.Animation/CatAnim
+  artifactKey: Guid(b977e26b4165ee443a17fdf50523cede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Underground Caves/Parallax Scifi Dark background.png using Guid(8c1ed89b70cbc794bb5280a79b494b19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6688bbcf43839167ade2ee836b6a820') in 0.028511 seconds 
-Number of asset objects unloaded after import = 3
+Start importing Assets/01.Animation/CatAnim using Guid(b977e26b4165ee443a17fdf50523cede) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'deb76ced0d797c8ffb5b1dccd75d6743') in 0.006618 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.557711 seconds.
+  path: Assets/01.Animation/PlayerAnim
+  artifactKey: Guid(29c5071f9d18039418b4f7a3bc830c9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/01.Animation/PlayerAnim using Guid(29c5071f9d18039418b4f7a3bc830c9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5291ac87454c28aaad5516a44669f958') in 0.006312 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.428955 seconds.
+  path: Assets/01.Animation/RabbitAnime
+  artifactKey: Guid(8abe0876fd1029a438282b7e2f981502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/01.Animation/RabbitAnime using Guid(8abe0876fd1029a438282b7e2f981502) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c25ca3483128b6300393f010c63e3f2') in 0.005301 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.310107 seconds.
+  path: Assets/03.Fonts/Maplestory Bold SDF.asset
+  artifactKey: Guid(cefc4e1db190e97419a4c031bbed9db0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/03.Fonts/Maplestory Bold SDF.asset using Guid(cefc4e1db190e97419a4c031bbed9db0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60c6791ed5214a9771f328c4ff982c74') in 0.241253 seconds 
+Number of asset objects unloaded after import = 6
+========================================================================
+Received Import Request.
+  Time since last request: 0.863663 seconds.
+  path: Assets/04.Sprites/Dummy/cat.png
+  artifactKey: Guid(8881cd44ab5f2b2438670af1ad5a45a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Dummy/cat.png using Guid(8881cd44ab5f2b2438670af1ad5a45a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '97447d55b7b341c4290e02b29c50edf1') in 0.015949 seconds 
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.003130 seconds.
+  path: Assets/04.Sprites/Dummy/Player_Run0.png
+  artifactKey: Guid(8646ea6e9f65d7b48ab6dbeb9f03bc58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Dummy/Player_Run0.png using Guid(8646ea6e9f65d7b48ab6dbeb9f03bc58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8965419a6c78322d98f7f3f7804d6071') in 0.049394 seconds 
+Number of asset objects unloaded after import = 8
 ========================================================================
 Received Import Request.
   Time since last request: 0.000014 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Underground Caves/7-tileset.png
-  artifactKey: Guid(26d1d92aa5362d145a0e71df8e7cbf5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  path: Assets/04.Sprites/Dummy/Set1_Ourdoor_Decoration.png
+  artifactKey: Guid(bc4bb899cdfe50a419a8822382904bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Underground Caves/7-tileset.png using Guid(26d1d92aa5362d145a0e71df8e7cbf5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6b54cf5e8855bf44b2491212e8c582f7') in 0.022846 seconds 
+Start importing Assets/04.Sprites/Dummy/Set1_Ourdoor_Decoration.png using Guid(bc4bb899cdfe50a419a8822382904bfc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9784c3ff3a2c161b2f7cd0fc257f5a7e') in 0.120628 seconds 
+Number of asset objects unloaded after import = 32
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/04.Sprites/Dummy/Player.png
+  artifactKey: Guid(a11ebcc2e85e07542ae23d31f159a32e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/04.Sprites/Dummy/Player.png using Guid(a11ebcc2e85e07542ae23d31f159a32e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '724bf9d26ec1a19faf1da0b2fe24358e') in 0.059884 seconds 
+Number of asset objects unloaded after import = 18
+========================================================================
+Received Import Request.
+  Time since last request: 2.983754 seconds.
+  path: Assets/06.YooniLLDDong/Individual Sprites/adventurer-bow-jump-00.png
+  artifactKey: Guid(290bee5a3ca5cc646b83ba8f9af6c11f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/06.YooniLLDDong/Individual Sprites/adventurer-bow-jump-00.png using Guid(290bee5a3ca5cc646b83ba8f9af6c11f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22033c7ec2fd5f5ddba2c4a6bec4923a') in 0.018413 seconds 
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 3.351856 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Electric Mountains
-  artifactKey: Guid(7f928ba3435866c469a825af7c964bc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 0.013176 seconds.
+  path: Assets/06.YooniLLDDong/Individual Sprites/adventurer-jump-02.png
+  artifactKey: Guid(96d9e2f914140254a9b3c1ac712f91e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Electric Mountains using Guid(7f928ba3435866c469a825af7c964bc3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b28f04881f3c02469e30f0cf2e6ffc3') in 0.006016 seconds 
-Number of asset objects unloaded after import = 0
-========================================================================
-Received Import Request.
-  Time since last request: 0.052873 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Electric Mountains/1- Background - Sky (1).png
-  artifactKey: Guid(8d9312dcd1cdca848895b80225c784ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Electric Mountains/1- Background - Sky (1).png using Guid(8d9312dcd1cdca848895b80225c784ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05332c7b389491932c65d494720d2ff5') in 0.019761 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.007145 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Electric Mountains/4- Ground (4).png
-  artifactKey: Guid(e921f871a7f02ac4f94b9edac41f23e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Electric Mountains/4- Ground (4).png using Guid(e921f871a7f02ac4f94b9edac41f23e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3cb7de2ceca7d3bb07b5ca7100fcc12d') in 0.019070 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000023 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Electric Mountains/Large Lightning (64x48).png
-  artifactKey: Guid(a93c79757921b0249af4a794d7f887de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Electric Mountains/Large Lightning (64x48).png using Guid(a93c79757921b0249af4a794d7f887de) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6081e7fd6001e2b7fce3f7c4595f5f77') in 0.018899 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000017 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Electric Mountains/3 -Foreground - Mountains (3).png
-  artifactKey: Guid(e7ad20cb9f8dca54a8362109a90e56d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Electric Mountains/3 -Foreground - Mountains (3).png using Guid(e7ad20cb9f8dca54a8362109a90e56d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64871035691cd68877c37cb32c8e3706') in 0.014584 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Electric Mountains/Distant Lightning (32x32).png
-  artifactKey: Guid(c1b7de93d99b5924f973c9266645fb32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Electric Mountains/Distant Lightning (32x32).png using Guid(c1b7de93d99b5924f973c9266645fb32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbe19ee9e0250f2f7421e7e6606f6a0b') in 0.014176 seconds 
+Start importing Assets/06.YooniLLDDong/Individual Sprites/adventurer-jump-02.png using Guid(96d9e2f914140254a9b3c1ac712f91e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4558bcf1f0626c6eed53a879d89fa546') in 0.015409 seconds 
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
   Time since last request: 0.000018 seconds.
-  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Electric Mountains/Peaks Of Lightning.aseprite
-  artifactKey: Guid(db17d1c835fdd9a41981b8a35d56ef2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  path: Assets/DARK Series Mega Pack 1/DARK - Statement Pieces/Foreground/Object1.png
+  artifactKey: Guid(bbc593230bd2d2d428ee07873e024310) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Parallax - Electric Mountains/Peaks Of Lightning.aseprite using Guid(db17d1c835fdd9a41981b8a35d56ef2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '56ec803ba3ceff14bbb274e6bec460e8') in 0.015958 seconds 
-Number of asset objects unloaded after import = 12
-========================================================================
-Received Import Request.
-  Time since last request: 43.802838 seconds.
-  path: Assets/TileMap/Tile/prop003.png
-  artifactKey: Guid(6484ed71b71313649915fa5a5d02c9f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/TileMap/Tile/prop003.png using Guid(6484ed71b71313649915fa5a5d02c9f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69601ff7548e97d46f118d135e859aff') in 0.014835 seconds 
+Start importing Assets/DARK Series Mega Pack 1/DARK - Statement Pieces/Foreground/Object1.png using Guid(bbc593230bd2d2d428ee07873e024310) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bb03b68bec2f93bc739a904c8dcc058') in 0.018089 seconds 
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
   Time since last request: 0.000017 seconds.
-  path: Assets/TileMap/Tile/Tile017.png
-  artifactKey: Guid(9c28dfb536328a1418f69a1b0f631e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  path: Assets/06.YooniLLDDong/Individual Sprites/adventurer-crnr-jmp-01.png
+  artifactKey: Guid(3057a6521ad980645a98aa0e473e36be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/TileMap/Tile/Tile017.png using Guid(9c28dfb536328a1418f69a1b0f631e3c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '757b92524a52893f4b9d381643c148ba') in 0.016467 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/TileMap/Tile/Tile008.png
-  artifactKey: Guid(bd7bd62e103670247b0afee3f17c73d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/TileMap/Tile/Tile008.png using Guid(bd7bd62e103670247b0afee3f17c73d3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '700a0167d8a94c4bf7ebdb1973d69791') in 0.013209 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/TileMap/Tile/Tile004.png
-  artifactKey: Guid(f9a04baa83eeff742b50d5f450783e04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/TileMap/Tile/Tile004.png using Guid(f9a04baa83eeff742b50d5f450783e04) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f444876540c994e9b8c22f5b112d8ba9') in 0.012027 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000018 seconds.
-  path: Assets/TileMap/Tile/Title 3.asset
-  artifactKey: Guid(e9af93aa0140f9845aea71291af135fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/TileMap/Tile/Title 3.asset using Guid(e9af93aa0140f9845aea71291af135fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f5828ade5404aa39ccf7b5d6b0d1da5') in 0.011943 seconds 
-Number of asset objects unloaded after import = 3
-========================================================================
-Received Import Request.
-  Time since last request: 0.000016 seconds.
-  path: Assets/TileMap/Tile/Tile013.png
-  artifactKey: Guid(8789f8626c65fa14f909fe5f98010f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/TileMap/Tile/Tile013.png using Guid(8789f8626c65fa14f909fe5f98010f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7adb96f18a7208c5b07cd7ffb232f0e') in 0.013398 seconds 
+Start importing Assets/06.YooniLLDDong/Individual Sprites/adventurer-crnr-jmp-01.png using Guid(3057a6521ad980645a98aa0e473e36be) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3652566c0c590c8a9da60f7ec21464b1') in 0.014670 seconds 
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
   Time since last request: 0.000024 seconds.
-  path: Assets/TileMap/Tile/Title 17.asset
-  artifactKey: Guid(0b7940729c68d69498a7805334dbb07e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  path: Assets/06.YooniLLDDong/Individual Sprites/adventurer-bow-jump-03.png
+  artifactKey: Guid(2b06c30f730315b469e4538bc9c1649b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/TileMap/Tile/Title 17.asset using Guid(0b7940729c68d69498a7805334dbb07e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9c5ab2cd930fcfc374fd8653b8fb0f6') in 0.007513 seconds 
+Start importing Assets/06.YooniLLDDong/Individual Sprites/adventurer-bow-jump-03.png using Guid(2b06c30f730315b469e4538bc9c1649b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '36c5fc915af347f699f6b6f172d747c9') in 0.014282 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000014 seconds.
+  path: Assets/DARK Series Mega Pack 1/DARK - Victorian Boss + Add on Tileset/Boss/The Tarnished Widow.aseprite
+  artifactKey: Guid(a2874d22a21b1a14d85cba3c6c9a6c54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/DARK Series Mega Pack 1/DARK - Victorian Boss + Add on Tileset/Boss/The Tarnished Widow.aseprite using Guid(a2874d22a21b1a14d85cba3c6c9a6c54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '39d811fc55e811fe002dd8312addcf79') in 0.330540 seconds 
+Number of asset objects unloaded after import = 144
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/07.TextMesh Pro/Sprites/EmojiOne.png
+  artifactKey: Guid(dffef66376be4fa480fb02b19edbe903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/07.TextMesh Pro/Sprites/EmojiOne.png using Guid(dffef66376be4fa480fb02b19edbe903) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de1fb05879c3547b515189156bcddbbb') in 0.010779 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/06.YooniLLDDong/Individual Sprites/adventurer-jump-03.png
+  artifactKey: Guid(d605d8b994a345a4eb3e5b878b34d000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/06.YooniLLDDong/Individual Sprites/adventurer-jump-03.png using Guid(d605d8b994a345a4eb3e5b878b34d000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1e9b9cb7b9b16e8b0a4c3d3227f5f119') in 0.016407 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000015 seconds.
+  path: Assets/07.TextMesh Pro/Examples & Extras/Textures/Fruit Jelly (B&W).jpg
+  artifactKey: Guid(1cdc5b506b1a4a33a53c30669ced1f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/07.TextMesh Pro/Examples & Extras/Textures/Fruit Jelly (B&W).jpg using Guid(1cdc5b506b1a4a33a53c30669ced1f51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0b2d04972098af6a8b070e7882c81ea') in 0.017569 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/06.YooniLLDDong/Individual Sprites/adventurer-bow-jump-04.png
+  artifactKey: Guid(02275b1ea61968140b61968fe11148b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/06.YooniLLDDong/Individual Sprites/adventurer-bow-jump-04.png using Guid(02275b1ea61968140b61968fe11148b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b6c23a12e501c187a4a56f911889a8b') in 0.015629 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/06.YooniLLDDong/Individual Sprites/adventurer-crnr-jmp-00.png
+  artifactKey: Guid(3e648dd49441bed4fbce47ebd6ab01ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/06.YooniLLDDong/Individual Sprites/adventurer-crnr-jmp-00.png using Guid(3e648dd49441bed4fbce47ebd6ab01ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca5378085a1136dda9cb12a35c749bec') in 0.015996 seconds 
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
   Time since last request: 0.000017 seconds.
-  path: Assets/TileMap/Tile/Tile005.png
-  artifactKey: Guid(c2ad53b06b07e284cac47b166b03e25d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  path: Assets/DARK Series Mega Pack 1/DARK - Enemies Pack 1/assassin/jump.png
+  artifactKey: Guid(88d037afed17cfe4b85c5fbd6ea7f0ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/TileMap/Tile/Tile005.png using Guid(c2ad53b06b07e284cac47b166b03e25d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13c58c1d4d426a19af128517e571d898') in 0.015475 seconds 
+Start importing Assets/DARK Series Mega Pack 1/DARK - Enemies Pack 1/assassin/jump.png using Guid(88d037afed17cfe4b85c5fbd6ea7f0ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7ec426754a439b131d1ad0cf95a25d78') in 0.016217 seconds 
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000036 seconds.
-  path: Assets/TileMap/Tile/Title 16.asset
-  artifactKey: Guid(a24d71ab70319424eab8105c1181ae49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 0.000015 seconds.
+  path: Assets/07.TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset
+  artifactKey: Guid(c41005c129ba4d66911b75229fd70b45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/TileMap/Tile/Title 16.asset using Guid(a24d71ab70319424eab8105c1181ae49) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf7a8152b9e8aedaaa163ba19dc84fa6') in 0.007978 seconds 
+Start importing Assets/07.TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset using Guid(c41005c129ba4d66911b75229fd70b45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0414faea1c6f1344a6dae4d382a2a07') in 0.003510 seconds 
 Number of asset objects unloaded after import = 3
 ========================================================================
 Received Import Request.
-  Time since last request: 8.539349 seconds.
-  path: Assets/TileMap/Effect/Effect_2.png
-  artifactKey: Guid(b4db9e6c6b4e8ba4689f0789b0092924) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 27.348706 seconds.
+  path: Assets/04.Sprites/Isomtric_Objects/ForestBG.png
+  artifactKey: Guid(faaa993c809def945aadc32d2df14c25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/TileMap/Effect/Effect_2.png using Guid(b4db9e6c6b4e8ba4689f0789b0092924) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '15a470dcf1a53105c0c6adbb986e029e') in 0.017422 seconds 
-Number of asset objects unloaded after import = 8
+Start importing Assets/04.Sprites/Isomtric_Objects/ForestBG.png using Guid(faaa993c809def945aadc32d2df14c25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '330b9a38d9a591059d13e557abcf7821') in 0.426391 seconds 
+Number of asset objects unloaded after import = 190
 ========================================================================
 Received Import Request.
-  Time since last request: 0.926375 seconds.
-  path: Assets/TileMap/Props/prop006.png
-  artifactKey: Guid(4e9449c5fbdec17478e2774cd7ca098e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 181.612306 seconds.
+  path: Assets/DARK Series Mega Pack 1/DARK - Enemies Pack 1/assassin/Assassin GIF.aseprite
+  artifactKey: Guid(72989fd6f1c9c9c4299a7e528f14be79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/TileMap/Props/prop006.png using Guid(4e9449c5fbdec17478e2774cd7ca098e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84ceabebbae2c7fd2884593365e60564') in 0.015677 seconds 
-Number of asset objects unloaded after import = 3
+Start importing Assets/DARK Series Mega Pack 1/DARK - Enemies Pack 1/assassin/Assassin GIF.aseprite using Guid(72989fd6f1c9c9c4299a7e528f14be79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '530b04dfecde98e809bcd61f5339b6fc') in 0.220365 seconds 
+Number of asset objects unloaded after import = 35
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/DARK Series Mega Pack 1/DARK - Victorian Enemies & Assets/Enemies/Caged Spider.aseprite
+  artifactKey: Guid(2b6e2f665bbecf74eb153d6a22e30f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/DARK Series Mega Pack 1/DARK - Victorian Enemies & Assets/Enemies/Caged Spider.aseprite using Guid(2b6e2f665bbecf74eb153d6a22e30f86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bb393865872b86ae961d865b0c9db89') in 0.074378 seconds 
+Number of asset objects unloaded after import = 56
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/DARK Series Mega Pack 1/DARK - Enemy Pack 2/Bomb Droid/Bomb droid.aseprite
+  artifactKey: Guid(28daf61b736228641b66e0d7e6739bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/DARK Series Mega Pack 1/DARK - Enemy Pack 2/Bomb Droid/Bomb droid.aseprite using Guid(28daf61b736228641b66e0d7e6739bb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f6022a615fa7f35658927a1ba9e75318') in 0.154051 seconds 
+Number of asset objects unloaded after import = 68
+========================================================================
+Received Import Request.
+  Time since last request: 16.641377 seconds.
+  path: Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Underground Tileset & Enemies/Sprites/Blinding Spider/spider.aseprite
+  artifactKey: Guid(33959e6ae85d26046a8d9221768bee4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/DARK Series Mega Pack 1/DARK Series - Platformer Starter Pack/Underground Tileset & Enemies/Sprites/Blinding Spider/spider.aseprite using Guid(33959e6ae85d26046a8d9221768bee4e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '93798b12b62c8b66226125cf8952403e') in 0.125665 seconds 
+Number of asset objects unloaded after import = 41
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting

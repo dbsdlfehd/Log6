@@ -35,13 +35,12 @@ public class Enemy : MonoBehaviour
 
 	//체력바 프리펩 
 	[SerializeField]					// private형 변수를 외부에서 조절할 수 있게 바꿔줌
-	private GameObject prfHpBar;		
-	private GameObject hpBarInstance;
+	private GameObject prfHpBar;		// 프리펩 체력바
 
-	RectTransform bghp_bar; // bghp_bar 어두운 배경 체력바
-	Image hp_bar;			// hp_bar 현재 체력바
+	RectTransform bghp_bar;				// bghp_bar 어두운 배경 체력바
+	Image hp_bar;						// hp_bar 현재 체력바
 
-	public float height = 1.7f;			// 높이
+	public float height = 1.7f;			// 체력바 Y 높이
 
     private void SetEnemyStatus(int _maxHP)
     {
@@ -52,20 +51,21 @@ public class Enemy : MonoBehaviour
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
-		player = FindObjectOfType<Player>();//무조건 해줘야됨 (초기화)
-		SetEnemyStatus(100);
+		player = FindObjectOfType<Player>();// 무조건 해줘야됨 (초기화)
+		SetEnemyStatus(100);				// 체력 수치 설정
 
-		// prfHpBar 프리팹을 이용해 체력바 인스턴스를 생성합니다.
-		bghp_bar = Instantiate(prfHpBar, GameObject.Find("Canvas").transform).GetComponent<RectTransform>();
-		hp_bar = bghp_bar.transform.GetChild(0).GetComponent<Image>();
+		// prfHpBar 프리팹을 이용해 canvas에다가 체력바 생성.
+		bghp_bar = Instantiate(prfHpBar, GameObject.Find("Canvas").transform).GetComponent<RectTransform>(); // bghp_bar생성
+		hp_bar = bghp_bar.transform.GetChild(0).GetComponent<Image>(); // bghp_bar에 자식 오브젝트 컴포넌트 가져오기
 	}
 
 	void Update()
 	{
+		// 카메라 보는 기준 체력바 좌표 위치 설정
 		Vector3 _hpBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + height, 0));
-		bghp_bar.position = _hpBarPos;
+		bghp_bar.position = _hpBarPos; // 해당 좌표의 위치 적용하기
 
-		hp_bar.fillAmount = (float)nowHP / (float)maxHP;
+		hp_bar.fillAmount = (float)nowHP / (float)maxHP; // 체력 수치 적용하기
 	}
 
 	void Awake()
