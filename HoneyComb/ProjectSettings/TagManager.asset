@@ -48,14 +48,17 @@ TagManager:
   - name: Ground
     uniqueID: 54192435
     locked: 0
-  - name: Carpet
-    uniqueID: 2968288821
-    locked: 0
   - name: Object
     uniqueID: 4079258265
     locked: 0
   - name: BorderLine
     uniqueID: 323400413
+    locked: 0
+  - name: wall2
+    uniqueID: 2135988813
+    locked: 0
+  - name: Carpet
+    uniqueID: 2968288821
     locked: 0
   - name: Attack
     uniqueID: 1659233345
