@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
-
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -104,8 +103,9 @@ public class Player : MonoBehaviour
     }
     IEnumerator DeadShow()
     {
-		animator.SetTrigger(AnimationStrings.attackTrigger);  // dead 애니메이션 실행
-
+        player.GetComponent<PlayerInput>().enabled = false; // 멈춰
+        animator.SetTrigger(AnimationStrings.DeadTrigger);  // dead 애니메이션 실행
+        yield return new WaitForSeconds(5); // 5초 동안 기달려
 		isDead = true;
 		Dead_set.SetActive(true);
 		// 지옥 위치로 이동
@@ -141,6 +141,7 @@ public class Player : MonoBehaviour
         // 죽은 상태에서 스페이스바를 누르면 부활 처리
         if (isDead && Input.GetKeyDown(KeyCode.Space))
         {
+            player.GetComponent<PlayerInput>().enabled = true; // 다시 움직일수 있게
             nowHP = Mathf.FloorToInt(maxHP); // 부활 시 체력을 최대치로 설정
             isDead = false;
             player.position = Home.position;

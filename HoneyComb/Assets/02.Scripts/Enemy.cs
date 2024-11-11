@@ -83,7 +83,10 @@ public class Enemy : MonoBehaviour
     {
 		if(player.EnmeyDown == true)
         {
-			Destroy(gameObject);
+			EnemyDead();
+			//GetComponent<Image>();     // 체력바(색) 파괴
+			//GetComponent<RectTransform>();   // 체력바(배경) 파괴
+			//Destroy(gameObject); // 적 (자기자신) 파괴
 		}
 
 		Vector2 direction = player.transform.position - transform.position;
@@ -118,10 +121,15 @@ public class Enemy : MonoBehaviour
 		}
         if(nowHP < 0)							   // 체력이 0보다 적을시
         {
-            nowHP = 0;
-			Destroy(gameObject);
-			prefabSpawner.RoomEnemyCount++;        // 적 죽은 횟수 1 늘어남
-			Destroy(bghp_bar.gameObject);		   // 체력바 삭제
+			EnemyDead();
 		}
+	}
+
+	void EnemyDead()
+    {
+		nowHP = 0;
+		Destroy(gameObject);
+		prefabSpawner.RoomEnemyCount++;        // 적 죽은 횟수 1 늘어남
+		Destroy(bghp_bar.gameObject);          // 체력바 삭제
 	}
 }

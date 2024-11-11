@@ -57,6 +57,7 @@ public class TalkManager : MonoBehaviour
 	}
 
 	public int i = 0;
+	public int j = 0;
 	void Talk(int id, GameObject scannedObject)
 	{
 		_Object obj = scannedObject.GetComponent<_Object>();
@@ -75,10 +76,10 @@ public class TalkManager : MonoBehaviour
 
 			//대화창 오픈
 			//Debug.Log("대화열기");
-			
+
 			isDialoging = true;// talking now
 			DialogSet.SetActive(true);
-			
+
 		}
 
 		// 죽음 횟수 가 NPC 기준으로 바뀌었는가?
@@ -110,6 +111,38 @@ public class TalkManager : MonoBehaviour
 			i = 0;
 			isOverIndex = false;
 		}
+	}
+
+	public void SoloTalk(int JinWooSolo)
+    {
+		int DialogNum = 40000 + (JinWooSolo * 100) + j;//대화번호
+		j++;
+		string[] texts = parsingManager.GetSoloDialogPlz(DialogNum); // 대화 가져오는 함수
+		talker = texts[1]; // 대화 하는 사람 이름 (현재 보여집니다.)
+		dialog = texts[0]; // 대화 내용 (현재 보여집니다.22)
+
+		if(talker == "...") // 독백 내용이 더이상 없다면 안보여주기
+        {
+			Debug.Log("할 독백 내용 없음");
+        }
+        else
+        {
+			DialogSet.SetActive(true);//대화 창 보이게 하기
+			StartCoroutine(SoloStopTalkTime());// 시간 지연후 대화창 닫기
+		}
+	}
+
+	// 시간 지연후 대화 닫기
+	IEnumerator SoloStopTalkTime()
+    {
+		yield return new WaitForSeconds(2); // 2초 정도만 보여주고
+		StopSoloTalk(); // 대화 안보이게 하기
+    }
+
+	//대화창 닫는 함수
+	public void StopSoloTalk()
+    {
+		DialogSet.SetActive(false);//대화 안 보이게 하기
 	}
 
 	public void StopDialogSet(_Object obj)

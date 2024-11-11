@@ -8,13 +8,13 @@ public class PlayerAction : MonoBehaviour
 {
     public Player playerScript;
 
-    public float walkSpeed = 5f;        // 걷기 속도
-    public float defaultSpeed = 5f;     // 기본 속도(걷기 속도와 동일해야 함)
-    public float slideSpeed = 10f;      // 슬라이드 속도
-    public float slideDuration = 0.3f;  // 슬라이드 지속 시간 (0.3초)
-    public float slideCooldown = 1f;    // 슬라이드 후 쿨타임 (1초)
-    private float slideTime = 0f;       // 남은 슬라이드 시간
-    private float cooldownTime = 0f;    // 남은 쿨타임 시간
+    public float walkSpeed = 5f;              // 걷기 속도
+    public float defaultSpeed = 5f;           // 기본 속도(걷기 속도와 동일해야 함)
+    public float slideSpeed = 10f;            // 슬라이드 속도
+    public float slideDuration = 0.3f;        // 슬라이드 지속 시간 (0.3초)
+    public float slideCooldown = 1f;          // 슬라이드 후 쿨타임 (1초)
+    private float slideTime = 0f;             // 남은 슬라이드 시간
+    private float cooldownTime = 0f;          // 남은 쿨타임 시간
     public float skillAttackCooldown = 2f;    // 첫 번째 스킬 쿨타임 2초
     public float skillAttack2Cooldown = 3f;   // 두 번째 스킬 쿨타임 3초
     private float skillAttackTime = 0f;       // 첫 번째 스킬 사용 가능 시간
@@ -36,9 +36,9 @@ public class PlayerAction : MonoBehaviour
     public TalkManager talkManager;  // 대화 매니저 참조
     public GameObject DialogSet;     // 대화창
 
-    Rigidbody2D rigid;        // Rigidbody2D 컴포넌트 참조
-    Animator animator;        // Animator 컴포넌트 참조
-    SpriteRenderer sp;        // SpriteRenderer 컴포넌트 참조
+    Rigidbody2D rigid;               // Rigidbody2D 컴포넌트 참조
+    Animator animator;               // Animator 컴포넌트 참조
+    SpriteRenderer sp;               // SpriteRenderer 컴포넌트 참조
 
     private GameObject scanObject;   // 감지된 오브젝트
 
@@ -46,8 +46,9 @@ public class PlayerAction : MonoBehaviour
 
 	public Transform player;
 
-	// 이동 상태 확인 변수 (애니메이터와 연동)
-	[SerializeField]
+
+    // 이동 상태 확인 변수 (애니메이터와 연동)
+    [SerializeField]
     private bool _isMoving = false;
     public bool IsMoving
     {

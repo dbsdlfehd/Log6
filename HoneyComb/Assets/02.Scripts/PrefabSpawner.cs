@@ -9,6 +9,9 @@ public class PrefabSpawner : MonoBehaviour
 	public GameObject player;
 	public Transform playerPos;
 
+	public TalkManager talkManager;
+
+
 	public float sec = 3.0f;			// 몇초 후 소환 할껀지
 
 	[Header("적 몇마리 소환")]
@@ -17,14 +20,11 @@ public class PrefabSpawner : MonoBehaviour
 	[Header("소환할 위치")]
 	public Transform[] Pos;				// 소환할 위치들
 
-	public GameObject[] TP;				// 텔레포트
-			
+	public GameObject[] TP;				// 텔레포트	
+
 	public float spawnOffset = 1.0f;	// 소환 간 간격 (원하는 경우 설정 가능)
-
 	public float checkDistance = 0.1f;  // 허용할 거리 오차
-
 	public bool isSpawnned = false;
-
 	public int RoomEnemyCount = 0;
 
 	private void Update()
@@ -77,10 +77,13 @@ public class PrefabSpawner : MonoBehaviour
 
 	public void SpawnEnemies(int room)
 	{
+		// 한번만 실행용 if문
 		if(isSpawnned == false)
 		{
 			isSpawnned = true;
 			StartCoroutine(DelayedSpawn(sec,room));
+			Debug.Log("던전 진입시 주인공 독백 시작");
+			talkManager.SoloTalk(0); //던전 진입 상황 = 0 
 		}
 	}
 	

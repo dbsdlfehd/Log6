@@ -29,4 +29,7 @@ internal class AnimationStrings
 
     // 스킬 공격 애니메이션을 시작하는 두 번째 트리거
     internal static string skillAttackTrigger2 = "skillAttack2";
+
+    // 플레이어 죽음
+    internal static string DeadTrigger = "Dead";
 }
