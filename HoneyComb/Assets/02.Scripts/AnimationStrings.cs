@@ -32,4 +32,7 @@ internal class AnimationStrings
 
     // 플레이어 죽음
     internal static string DeadTrigger = "Dead";
+
+    // 플레이어 피격 // 아파요
+    internal static string OuchTrigger = "Ouch";
 }

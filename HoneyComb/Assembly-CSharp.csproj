@@ -88,7 +88,7 @@
     <Compile Include="Assets\02.Scripts\Player.cs" />
     <Compile Include="Assets\02.Scripts\Keyboard.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
-    <Compile Include="Assets\01.Animation\PlayerAnim\Attack.cs" />
+    <Compile Include="Assets\01.Animation\DnaAnim\Attack.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\02.Scripts\AnimationStrings.cs" />
     <Compile Include="Assets\02.Scripts\PrefabSpawner.cs" />
@@ -118,7 +118,7 @@
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
     <Compile Include="Assets\02.Scripts\PlayerCome.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
-    <Compile Include="Assets\01.Animation\PlayerAnim\AttackReset.cs" />
+    <Compile Include="Assets\01.Animation\DnaAnim\AttackReset.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\DropdownSample.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />

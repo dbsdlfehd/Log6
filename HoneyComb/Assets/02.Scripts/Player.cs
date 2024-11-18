@@ -76,8 +76,7 @@ public class Player : MonoBehaviour
         //ApplyDebuff();
     }
 
-    // 디버프를 적용하는 함수
-    private void ApplyDebuff()
+    private void ApplyDebuff()// 디버프 적용
     {
         // 체력 디버프 적용: 95% 감소를 위해 계산
         nowHP = Mathf.FloorToInt(maxHP * 0.05f); // 최종 체력 = 1000 * 0.05
@@ -94,14 +93,12 @@ public class Player : MonoBehaviour
         Debug.Log($"방어력: {Defense}");
     }
 
-    // 죽음 함수
-    public void Dead()
+    public void Dead()// 죽음횟수 추가
     {
 		DeadCount++;
 		StartCoroutine(DeadShow());
-        
     }
-    IEnumerator DeadShow()
+    IEnumerator DeadShow()// 죽음 행동
     {
         player.GetComponent<PlayerInput>().enabled = false; // 멈춰
         animator.SetTrigger(AnimationStrings.DeadTrigger);  // dead 애니메이션 실행
@@ -116,12 +113,13 @@ public class Player : MonoBehaviour
 		yield return null;
 	}
 
-
-	// Trigger 이벤트에서 방어력을 고려한 피해 처리
-	void OnTriggerEnter2D(Collider2D collision)
+	void OnTriggerEnter2D(Collider2D collision)// 피격 당할시
     {
         if (!collision.CompareTag("weapon"))
             return;
+
+        // 피격 애니메이션 재생
+        animator.SetTrigger(AnimationStrings.OuchTrigger);  // dead 애니메이션 실행
 
         // 방어력을 고려한 최종 피해량 계산
         float incomingDamage = collision.GetComponent<FarATK>().damage;
@@ -135,7 +133,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    // 업데이트 메소드
     private void Update()
     {
         // 죽은 상태에서 스페이스바를 누르면 부활 처리
