@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public PrefabSpawner prefabSpawner;
 
     [Header("Á×Àº È½¼ö")]
-    public int DeadCount = 0;
+    static public int DeadCount = 0;
     public TextMeshProUGUI DeadCount_UI;
 
     //Àû ¸ðµÎ Å³

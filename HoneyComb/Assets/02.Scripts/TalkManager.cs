@@ -69,7 +69,7 @@ public class TalkManager : MonoBehaviour
 
 
 		//죽음의 수가 바뀌었는가?
-		if (obj.tempPlayerDead != player.DeadCount)
+		if (obj.tempPlayerDead != Player.DeadCount)
 		{
 			i = 0;
 			obj.isDeadUp = true;
@@ -83,7 +83,7 @@ public class TalkManager : MonoBehaviour
 		}
 
 		// 죽음 횟수 가 NPC 기준으로 바뀌었는가?
-		if (player.DeadCount > obj.EachTalkCount && obj.isDeadUp == true)
+		if (Player.DeadCount > obj.EachTalkCount && obj.isDeadUp == true)
 		{
 			obj.EachTalkCount++;
 			obj.isDeadUp = false;
@@ -95,7 +95,7 @@ public class TalkManager : MonoBehaviour
 			i = 0;
 		}
 
-		obj.tempPlayerDead = player.DeadCount;//현재 죽음 횟수 임시 저장
+		obj.tempPlayerDead = Player.DeadCount;//현재 죽음 횟수 임시 저장
 
 		if (isOverIndex == false)//대화 순번 index를 넘지 않을 때
 		{
