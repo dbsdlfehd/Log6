@@ -113,9 +113,9 @@ public class TalkManager : MonoBehaviour
 		}
 	}
 
-	public void SoloTalk(int JinWooSolo)
+	public void SoloTalk()
     {
-		int DialogNum = 40000 + (JinWooSolo * 100) + j;//대화번호
+		int DialogNum =  10000 + (400) + j;//대화번호
 		j++;
 		string[] texts = parsingManager.GetSoloDialogPlz(DialogNum); // 대화 가져오는 함수
 		talker = texts[1]; // 대화 하는 사람 이름 (현재 보여집니다.)
@@ -123,6 +123,7 @@ public class TalkManager : MonoBehaviour
 
 		if(talker == "...") // 독백 내용이 더이상 없다면 안보여주기
         {
+			j = 0;
 			Debug.Log("할 독백 내용 없음");
         }
         else

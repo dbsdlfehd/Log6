@@ -10,11 +10,15 @@ public class teleport : MonoBehaviour
 	//트리거에 충돌했을 때 호출되는 함수
 	private void OnTriggerEnter2D(Collider2D other)//닿은 접촉체를 매개변수로 불러옴
     {
-        if (Pos.Length>=2)
+		
+
+
+		if (Pos.Length>=2 && PrefabSpawner.hasTouchedPos)
         {
-			//플레이어가 충돌했는지 확인 (태그로 플레이어를 구분)
+			//플레이어가 충돌할 시
 			if (other.CompareTag("Player"))//닿은 접촉체의 태그가 Player일 경우
 			{
+				PrefabSpawner.hasTouchedPos = false;
 				int RANDOM_NUMBER = Random.Range(0, 2);
 
 				//Debug.Log(RANDOM_NUMBER + "번 방으로 모실께요~");

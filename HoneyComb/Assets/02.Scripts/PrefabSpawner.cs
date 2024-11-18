@@ -18,7 +18,7 @@ public class PrefabSpawner : MonoBehaviour
 	public int spawnCount = 5;			// 소환할 적의 수
 
 	[Header("소환할 위치")]
-	public Transform[] Pos;				// 소환할 위치들
+	public Transform[] Pos;             // 소환할 위치들
 
 	public GameObject[] TP;				// 텔레포트	
 
@@ -26,6 +26,8 @@ public class PrefabSpawner : MonoBehaviour
 	public float checkDistance = 0.1f;  // 허용할 거리 오차
 	public bool isSpawnned = false;
 	public int RoomEnemyCount = 0;
+
+	static public bool hasTouchedPos = false;
 
 	private void Update()
 	{
@@ -77,13 +79,16 @@ public class PrefabSpawner : MonoBehaviour
 
 	public void SpawnEnemies(int room)
 	{
+		// 한번이라도 소환을 해버림
+		hasTouchedPos = true;
+
 		// 한번만 실행용 if문
-		if(isSpawnned == false)
+		if (isSpawnned == false)
 		{
 			isSpawnned = true;
 			StartCoroutine(DelayedSpawn(sec,room));
 			Debug.Log("던전 진입시 주인공 독백 시작");
-			talkManager.SoloTalk(0); //던전 진입 상황 = 0 
+			talkManager.SoloTalk(); //던전 진입 상황 = 0 
 		}
 	}
 	

@@ -86,12 +86,12 @@ public class ParsingManager : MonoBehaviour
 				Debug.LogError($"대화 넘버 변환 실패: {hang[0]}");
 			}
 		}
-		// 던전 돌입시 독백 상황 추가
-		dialog.Add(40000, "많고 많은 사람중에~ 내가 제일 잘 나가지!:진우");
-		dialog.Add(40001, "오케이 해보자:진우");
-		dialog.Add(40002, "후..:진우");
-		dialog.Add(40003, "난 할수 있다!:진우");
-		dialog.Add(40004, "또 시작해볼까..:진우");
+		//// 던전 돌입시 독백 상황 추가
+		//dialog.Add(40000, "많고 많은 사람중에~ 내가 제일 잘 나가지!:진우");
+		//dialog.Add(40001, "오케이 해보자:진우");
+		//dialog.Add(40002, "후..:진우");
+		//dialog.Add(40003, "난 할수 있다!:진우");
+		//dialog.Add(40004, "또 시작해볼까..:진우");
 	}
 
 	public TalkManager talkManager;
