@@ -83,11 +83,12 @@ public class TalkManager : MonoBehaviour
 		}
 
 		// 죽음 횟수 가 NPC 기준으로 바뀌었는가?
-		if (Player.DeadCount > obj.EachTalkCount && obj.isDeadUp == true)
+		if (Player.DeadCount > _Object.EachTalkCountSaveNum[obj.id/100] && obj.isDeadUp == true)
 		{
 			obj.EachTalkCount++;
+			obj.EachTalkCountSave(obj.id); // 대화 넘버 저장 함수
 			obj.isDeadUp = false;
-			obj.isDialogged = true; 
+			obj.isDialogged = true;
 		}
 
 		if (tempId != 0 && tempId != id)//다른사람 대화했다가 저사람 대화했다가 순번 꼬이는 일 방지

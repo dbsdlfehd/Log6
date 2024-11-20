@@ -6,7 +6,6 @@ public class Door_Type : MonoBehaviour
 {
     void Start()
     {
-        Debug.Log("오래 전 부터 널 위해 준비된~"); // 장난으로 써봄ㅋㅋ
     }
 }
 
