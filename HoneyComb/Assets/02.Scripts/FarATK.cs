@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FarATK : MonoBehaviour
 {
-    [Header("이것들 안됨, 메모장 보셈;;")]
+    [Header("이것들 안됨;;")]
     public int damage;
     public int per;
 
@@ -37,7 +37,7 @@ public class FarATK : MonoBehaviour
 		Invoke("DestroyAfterTime", disappearTime);
 	}
 
-	// 10초가 지나면 오브젝트를 비활성화하는 함수
+	// N초가 지나면 오브젝트를 비활성화하는 함수
 	void DestroyAfterTime()
 	{
         if (rigid != null)
@@ -49,7 +49,8 @@ public class FarATK : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Player") || per == -1)
+        // 부딪힌 것이 플레이어와 벽이 아니면 건너뛰기
+        if (!collision.CompareTag("Player") && !collision.CompareTag("Wall") || per == -1)
             return;
 
         per--;
@@ -60,6 +61,4 @@ public class FarATK : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
-
-
 }

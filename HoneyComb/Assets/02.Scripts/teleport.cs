@@ -1,36 +1,32 @@
 using System.Collections;
 using UnityEngine;
 
-public class teleport : MonoBehaviour
+public class Teleport : MonoBehaviour
 {
-    //이동할 위치를 public으로 설정하여 Unity 에디터에서 지정할 수 있게 함
     [Header("좌표")]
-	public Transform [] Pos;// 플레이어가 스폰될 게임 오브젝트 좌표
+	public Transform [] Pos; //  좌표
 
-	//트리거에 충돌했을 때 호출되는 함수
-	private void OnTriggerEnter2D(Collider2D other)//닿은 접촉체를 매개변수로 불러옴
+	// 플레이어와 충돌시
+	private void OnTriggerEnter2D(Collider2D other)
     {
-		
 
-
-		if (Pos.Length>=2 && PrefabSpawner.hasTouchedPos)
-        {
-			//플레이어가 충돌할 시
-			if (other.CompareTag("Player"))//닿은 접촉체의 태그가 Player일 경우
+		if (Pos.Length>=2) // 좌표가 2개 이상일 경우 //
+		{
+			if (other.CompareTag("Player"))
 			{
-				PrefabSpawner.hasTouchedPos = false;
-				int RANDOM_NUMBER = Random.Range(0, 2);
-
-				//Debug.Log(RANDOM_NUMBER + "번 방으로 모실께요~");
-
+				int RANDOM_NUMBER = Random.Range(0, 2); // 랜덤 함수 발동
 				other.transform.position = Pos[RANDOM_NUMBER].position;
-				//닿은 접촉체의 플레이어 좌표가 스폰될 게임 오브젝트 좌표로 이동
 			}
 		}
-		else
+		else				// 좌표가 1개일 경우 //
 		{
-			other.transform.position = Pos[0].position;
+			if (other.CompareTag("Player"))
+			{
+				other.transform.position = Pos[0].position;
+				Debug.Log("다음 라운드로 이동");
+				Player.gameRound++;
+				PrefabSpawner.alreadySpawnedEnemies = false; // 다음 라운드로 문을 열었으니 몬스터 소환이 가능해집니다.
+			}
 		}
-        
     }
 }

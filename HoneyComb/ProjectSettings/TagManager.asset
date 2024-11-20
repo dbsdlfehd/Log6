@@ -8,6 +8,7 @@ TagManager:
   - weapon
   - EnemyAttack1
   - UI
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: InvisibleWall
     uniqueID: 453524833
+    locked: 0
+  - name: Wall
+    uniqueID: 151747341
     locked: 0
   - name: Shadow
     uniqueID: 207830705

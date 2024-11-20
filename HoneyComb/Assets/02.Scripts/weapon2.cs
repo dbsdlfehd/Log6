@@ -29,7 +29,7 @@ public class weapon2 : MonoBehaviour
         enemy = GetComponentInParent<Enemy>();
     }
 
-    void start()
+    void Start()
     {
         Init();
     }

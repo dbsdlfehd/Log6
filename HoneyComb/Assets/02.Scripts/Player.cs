@@ -4,15 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.InputSystem;
+using Unity.VisualScripting;
 
 public class Player : MonoBehaviour
 {
     PlayerHpShow PlayerHpShow;
 
     public List<_Object> npcObjects = new List<_Object>();
-
-
     public PrefabSpawner prefabSpawner;
+    public PlayerAction playerAction;
 
     [Header("죽은 횟수")]
     static public int DeadCount = 0;
@@ -34,7 +34,7 @@ public class Player : MonoBehaviour
     public GameObject Dead_set; // 죽음 연출
 
     [Header("체력")]
-    public float maxHP = 1000f; // 최대 체력
+    public int maxHP = 1000; // 최대 체력
     public int nowHP; // 체력을 int로 변경
     public TextMeshProUGUI HP_UI;
 
@@ -60,8 +60,29 @@ public class Player : MonoBehaviour
     public float defenseDebuff3 = 0.26f;      // 방어력 감소 디버프 3 (26%) 회피행동
     public float defenseDebuff4 = 0.35f;      // 방어력 감소 디버프 4 (35%) 심장 두근거림
 
+	[Header("재화")]
+	public int Money = 0; // 재화
+	public TextMeshProUGUI MoneyTxt;
+
+	[Header("구슬")]
+	public int round = 0; // 구슬
+	public TextMeshProUGUI RoundTxt;
 
 	Animator animator;        // Animator 컴포넌트 참조
+
+	[Header("랜덤 문 숨기기용")]
+	public RoomGenerator roomGenerator; // 랜덤 문 숨기기용
+
+	// 디폴트 스테이터스 (저장용)
+	int DefaultMaxHP = 0;
+	int DefaultAtk = 0;
+	int DefaultMoney = 0;
+	int DefaultRound = 0;
+
+	[Header("게임 라운드 수")]
+	public TextMeshProUGUI gameRoundTMP;
+	// 매 방마다 라운드 UP, 5번시 상점 -> 6번시 보스방
+	static public int gameRound = 0;
 
 	private void Awake()
 	{
@@ -74,7 +95,16 @@ public class Player : MonoBehaviour
 
         // 디버프 적용
         //ApplyDebuff();
-    }
+
+        // 게임 시작시 라운드 초기화
+        gameRound = 0;
+
+        // 디폴트 스테이터스 저장
+        DefaultMaxHP = maxHP;
+        DefaultAtk = Atk;
+        DefaultMoney = Money;
+        DefaultRound = round;
+	}
 
     private void ApplyDebuff()// 디버프 적용
     {
@@ -118,11 +148,17 @@ public class Player : MonoBehaviour
         if (!collision.CompareTag("weapon"))
             return;
 
-        // 피격 애니메이션 재생
-        animator.SetTrigger(AnimationStrings.OuchTrigger);  // dead 애니메이션 실행
+		// 피격 애니메이션 재생
+        if(playerAction.canMove == true)
+            animator.SetTrigger(AnimationStrings.OuchTrigger);  // dead 애니메이션 실행
+		else
+		{
+			// ResetTrigger로 해당 트리거를 비활성화
+			animator.ResetTrigger(AnimationStrings.OuchTrigger);
+		}
 
-        // 방어력을 고려한 최종 피해량 계산
-        float incomingDamage = collision.GetComponent<FarATK>().damage;
+		// 방어력을 고려한 최종 피해량 계산
+		float incomingDamage = collision.GetComponent<FarATK>().damage;
         float finalDamage = Mathf.Max(incomingDamage - Defense, 1); // 방어력 적용 후 최소 피해 1로 제한
 
         nowHP -= Mathf.FloorToInt(finalDamage); // 피해량을 정수로 적용
@@ -135,16 +171,27 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        // 죽은 상태에서 스페이스바를 누르면 부활 처리
+        // 죽은 상태에서 스페이스바를 누르면 부활 처리 // #####################
         if (isDead && Input.GetKeyDown(KeyCode.Space))
         {
-            player.GetComponent<PlayerInput>().enabled = true; // 다시 움직일수 있게
+            // 플레이어 스테이터스 원래대로 즉, 버프 제거
+            maxHP = DefaultMaxHP;
+            Atk = DefaultAtk;
+            round = DefaultRound;
+
+            // 진행 중인 게임 라운드 수 0으로 초기화
+            gameRound = 0;
+
+			player.GetComponent<PlayerInput>().enabled = true; // 다시 움직일수 있게
             nowHP = Mathf.FloorToInt(maxHP); // 부활 시 체력을 최대치로 설정
             isDead = false;
             player.position = Home.position;
             Dead_set.SetActive(false);
 
-            foreach (var npc in npcObjects)
+            // 랜덤 문 다시 안보이게 숨기기
+            roomGenerator.DestroyDoor();
+
+			foreach (var npc in npcObjects)
             {
                 npc.isDialogged = true;
             }
@@ -155,10 +202,14 @@ public class Player : MonoBehaviour
         if (isDead)
             player.position = DeadPoint.position;
 
-        // UI 갱신
-        HP_UI.text = nowHP.ToString() + "/" + maxHP.ToString();
-        Atk_UI.text = Atk.ToString();
 
-        DeadCount_UI.text = "죽은 횟수 : " + DeadCount.ToString();
+        HP_UI.text = nowHP.ToString() + "/" + maxHP.ToString();     // 체력
+		Atk_UI.text = Atk.ToString();                               // 공격력
+		MoneyTxt.text = Money.ToString();                           // 재화
+		RoundTxt.text = round.ToString();                           // 구슬
+		gameRoundTMP.text = gameRound.ToString();                   // 현재 게임 라운드 수
+
+
+		DeadCount_UI.text = "죽은 횟수 : " + DeadCount.ToString();
     }
 }

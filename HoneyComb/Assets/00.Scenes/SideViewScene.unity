@@ -466,6 +466,7 @@ MonoBehaviour:
   - {fileID: 641843027}
   - {fileID: 1305190787}
   prefabSpawner: {fileID: 0}
+  playerAction: {fileID: 0}
   DeadCount_UI: {fileID: 967616937}
   EnmeyDown: 0
   player: {fileID: 34459077}
@@ -489,6 +490,10 @@ MonoBehaviour:
   defenseDebuff2: 0.14
   defenseDebuff3: 0.26
   defenseDebuff4: 0.35
+  Money: 0
+  MoneyTxt: {fileID: 967616937}
+  round: 0
+  RoundTxt: {fileID: 967616937}
 --- !u!114 &34459076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1659,7 +1664,7 @@ GameObject:
   - component: {fileID: 967616938}
   - component: {fileID: 967616937}
   m_Layer: 5
-  m_Name: test
+  m_Name: testTMP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
