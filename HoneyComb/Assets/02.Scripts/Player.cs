@@ -40,9 +40,17 @@ public class Player : MonoBehaviour
     public int nowHP; // 체력을 int로 변경
     public TextMeshProUGUI HP_UI;
 
-    [Header("공격")]
+    [Header("일반 공격 (잽)")]
     public int Atk;
-    public TextMeshProUGUI Atk_UI;
+
+	[Header("스킬 (차징 펀치) 몇배만큼 증가할것인가?")]
+	public int SkillAtk;
+
+	[Header("궁극기(망치) 몇배만큼 증가 할것인가?")]
+	public int UltimitAtk;
+
+	[Header("현재 공격력 UI 표시용")]
+	public TextMeshProUGUI Atk_UI;
 
     [Header("방어")]
     public int Defense; // 방어력
@@ -183,6 +191,7 @@ public class Player : MonoBehaviour
         if (isDead && Input.GetKeyDown(KeyCode.Space))
         {
             RespawnPlayer();
+            Debug.Log("스페이스 바 누름");
         }
 
         if (isDead)
@@ -234,8 +243,8 @@ public class Player : MonoBehaviour
         player.GetComponent<PlayerInput>().enabled = true; // 다시 움직일수 있게
         nowHP = Mathf.FloorToInt(maxHP); // 부활 시 체력을 최대치로 설정
         isDead = false;
-        player.position = Home.position;
-        Dead_set.SetActive(false);
+        player.position = Home.position; // 집 텔
+        Dead_set.SetActive(false); // 죽음 연출 끝
 
         // 랜덤 문 다시 안보이게 숨기기
         roomGenerator.DestroyDoor();
@@ -244,8 +253,16 @@ public class Player : MonoBehaviour
         {
             npc.isDialogged = true;
         }
+        
         EnmeyDown = false;//적 죽음 상태 해제
         prefabSpawner.RoomEnemyCount = 0;// 적 죽인 수 0으로 초기화
         prefabSpawner.DestroySpawnedObjects();// 생성된 아이템 및 상점 TP 객체 제거
     }
+
+    public void SetPlayerDefaultStatus()
+    {
+		maxHP = DefaultMaxHP;
+		Atk = DefaultAtk;
+		round = DefaultRound;
+	}
 }

@@ -12,7 +12,12 @@ public class SceneChangeOnCollision : MonoBehaviour
 		if (collision.gameObject.CompareTag("Player")) // 예: "Player" 태그가 붙은 객체와 충돌 시
 		{
 			// 씬 전환
-			SceneManager.LoadScene(sceneName);
+			SceneChangeHamSu();
 		}
+	}
+
+	public void SceneChangeHamSu()
+	{
+		SceneManager.LoadScene(sceneName);
 	}
 }

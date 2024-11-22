@@ -51,7 +51,8 @@ public class weapon2 : MonoBehaviour
                 }
                 break;
         }
-    }
+		Scan();
+	}
 
     public void Init()
     {
@@ -80,19 +81,48 @@ public class weapon2 : MonoBehaviour
         }
 
     }
+	public Transform nearestTarget;
+	public float scanRadius = 10f; // 탐지 반경
+	public LayerMask targetLayer; // 탐지 대상 레이어
 
-    void Fire()
-    {
-        if (!enemy.scanner2.nearestTarget)
-            return;
 
-        Vector3 targetPos = enemy.scanner2.nearestTarget.position;
-        Vector3 dir = targetPos - transform.position;
-        dir = dir.normalized;
+	void Scan()
+	{
+		Collider[] colliders = Physics.OverlapSphere(transform.position, scanRadius, targetLayer);
 
-        Transform FarATK = GameManager.Instance.pool.Get(prefabId).transform;
-        FarATK.position = transform.position;
-        FarATK.rotation = Quaternion.FromToRotation(Vector3.up, dir);
-        FarATK.GetComponent<FarATK>().Init(damage, count, dir);
-    }
+		float nearestDistance = float.MaxValue;
+		nearestTarget = null;
+
+		foreach (Collider col in colliders)
+		{
+			// 특정 컴포넌트를 가진 Collider만 필터링
+			Player playerComp = col.GetComponent<Player>();
+			if (playerComp == null) continue; // PlayerComponent가 없으면 무시
+
+			float distance = Vector3.Distance(transform.position, col.transform.position);
+			if (distance < nearestDistance)
+			{
+				nearestDistance = distance;
+				nearestTarget = col.transform; // 타겟으로 설정
+			}
+		}
+	}
+
+	void Fire()
+	{
+		Debug.Log("총 발사");
+
+		if (!enemy.scanner2.nearestTarget)
+			return;
+
+		Vector3 targetPos = enemy.scanner2.nearestTarget.position;
+		Vector3 dir = targetPos - transform.position;
+		dir = dir.normalized;
+
+		Transform FarATK = GameManager.Instance.pool.Get(prefabId).transform;
+		FarATK.position = transform.position;
+		FarATK.rotation = Quaternion.FromToRotation(Vector3.up, dir);
+		FarATK.GetComponent<FarATK>().Init(damage, count, dir);
+	}
+
 }

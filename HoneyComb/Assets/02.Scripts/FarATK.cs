@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FarATK : MonoBehaviour
 {
-    [Header("이것들 안됨;;")]
+    [Header("여기서 말고 적 프리펩의 자식오브젝트에서 조절하셈")]
     public int damage;
     public int per;
 

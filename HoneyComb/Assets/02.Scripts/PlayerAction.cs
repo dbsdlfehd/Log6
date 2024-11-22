@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SocialPlatforms;
+using UnityEditor;
+
 
 public class PlayerAction : MonoBehaviour
 {
@@ -38,23 +41,38 @@ public class PlayerAction : MonoBehaviour
     public TalkManager talkManager;  // 대화 매니저 참조
     public GameObject DialogSet;     // 대화창
 
-    Rigidbody2D rigid;               // Rigidbody2D 컴포넌트 참조
+	[Header("잽 경직 시간")]
+    public float Jab;
+
+	[Header("스킬 경직 시간")]
+	public float Skill;
+
+	[Header("궁극기 경직 시간")]
+	public float Ultimite;
+
+	Rigidbody2D rigid;               // Rigidbody2D 컴포넌트 참조
     Animator animator;               // Animator 컴포넌트 참조
     SpriteRenderer sp;               // SpriteRenderer 컴포넌트 참조
 
     private GameObject scanObject;   // 감지된 오브젝트
+
+    private GameObject scanTP_Object;  // 감지된 TP 오브젝트
 
     private Collider2D playerCollider; // 플레이어의 콜라이더
 
 	public Transform player;
 
     [Header("아이템")]
-    public Collider2D myItemCollider; // 아이템의 콜라이더를 연결
+    public Collider2D[] myItemColliders; // 아이템의 콜라이더를 연결
 
-    public Camera mainCamera; // 메인 카메라 (화면 좌표 변환용)
+	[Header("메인 카메라")]
+	public Camera mainCamera; // 메인 카메라 (화면 좌표 변환용)
 
-    // 이동 상태 확인 변수 (애니메이터와 연동)
-    [SerializeField]
+    [Header("지금 현재 스킬or궁극기를 사용 중인가?")]
+    public bool isUsingSkillorUltimate; 
+
+	// 이동 상태 확인 변수 (애니메이터와 연동)
+	[SerializeField]
     private bool _isMoving = false;
     public bool IsMoving
     {
@@ -86,6 +104,7 @@ public class PlayerAction : MonoBehaviour
     private bool isCooldown = false;  // 슬라이드 쿨타임 중인지 여부
     public bool _isFacingRight = true;// 캐릭터가 오른쪽을 보고 있는지 확인하는 변수
 
+    public Transform playerPos;
 
 	public bool IsFacingRight
     {
@@ -108,7 +127,11 @@ public class PlayerAction : MonoBehaviour
         {
             return animator.GetBool(AnimationStrings.canMove);
         }
-    }
+        set
+        {
+			animator.SetBool(AnimationStrings.canMove, value); // 애니메이터와 연동하여 canMove 값을 설정
+		}
+	}
 
     void Awake()
     {
@@ -121,6 +144,7 @@ public class PlayerAction : MonoBehaviour
 
     void Update()
     {
+
         if (isCooldown)
         {
             cooldownTime -= Time.deltaTime;
@@ -149,66 +173,105 @@ public class PlayerAction : MonoBehaviour
         {
             skillAttack2Time -= Time.deltaTime;
         }
-
     }
-
-    // 대화창 E키
-    public void OnInteract(InputAction.CallbackContext context)
-    {
+    public bool RealStop = false; // 멈추는 것 Update 함수에 넣음
+	public void OnInteract(InputAction.CallbackContext context)// 대화창 E키
+	{
         if (context.started)
         {
+            // 대화 대상 찾을 시
             if (scanObject != null)// 대상을 찾았을 때의 대사
 			{
+                TicTocDealyTime = 5f;
+
+				PleaseStopPlayer();
 				talkManager.DialogAction(scanObject);
 			}
         }
     }
 
+    public bool timeStopu = false;
+
+    public Transform tempPlayerPos;
+
     public float tempTime = 1.0f; // 시간 텀
-	IEnumerator DisableCollider(BoxCollider2D collider, int AtkStyle)// 콜라이더를 비활성화하는 코루틴
+	IEnumerator DisableCollider(BoxCollider2D collider, int AtkStyle)// 실질적인 공격
 	{
+		PleaseStopPlayer();
 		if (AtkStyle == 0 && Time.time > tempTime) // 기본공격
         {
 			animator.SetTrigger(AnimationStrings.attackTrigger);  // 공격 애니메이션 실행
 			tempTime = Time.time + 0.15f;
-			collider.enabled = true; // 왼쪽 또는 오른쪽 공격 켜기
-			yield return new WaitForSeconds(0.1f); // 콜라이더를 0.1초 동안 활성화
-			collider.enabled = false;  // 왼쪽 또는 오른쪽 공격 끄기
+			collider.enabled = true;                              // 왼쪽 또는 오른쪽 공격 켜기
+			yield return new WaitForSeconds(0.1f);                // 콜라이더를 0.1초 동안 활성화
+			collider.enabled = false;                             // 왼쪽 또는 오른쪽 공격 끄기
 		}
-        else if(AtkStyle == 1) // 스킬 1
+        else if(AtkStyle == 1) // 스킬
         {
-			yield return new WaitForSeconds(0.6f);
-			collider.enabled = true;
-			yield return new WaitForSeconds(0.1f); // 콜라이더를 0.1초 동안 활성화
-			collider.enabled = false;
-			playerScript.Atk /= 2;
+			isUsingSkillorUltimate = true;              // 지금은 스킬 사용하고 있다.
+			yield return new WaitForSeconds(0.6f);      // 애니메이션 타격할 때까지 기다리는 중
+			playerScript.Atk *= playerScript.SkillAtk;  // 공격력 두배 증가
+			collider.enabled = true;                    // 공격 콜라이더 활성화
+			yield return new WaitForSeconds(0.1f);      // 콜라이더를 0.1초 동안 활성화
+			collider.enabled = false;                   // 공격 콜라이더 비활성화
+			playerScript.Atk /= playerScript.SkillAtk;  // 공격력 초기화
+			isUsingSkillorUltimate = false;             // 지금은 스킬 사용하고 있지 않다.
 		}
-		else if (AtkStyle == 2) // 스킬 2 (궁극기)
+		else if (AtkStyle == 2) // 궁극기
 		{
-			yield return new WaitForSeconds(0.9f);
-			collider.enabled = true;
-			yield return new WaitForSeconds(0.1f); // 콜라이더를 0.1초 동안 활성화
-			collider.enabled = false;
-			playerScript.Atk /= 4;
+            
+			isUsingSkillorUltimate = true;               // 지금은 스킬 사용하고 있다.
+			yield return new WaitForSeconds(0.9f);       // 애니메이션 타격할 때까지 기다리는 중
+			playerScript.Atk *= playerScript.UltimitAtk; // 플레이어 공격력 증가
+			collider.enabled = true;                     // 공격 콜라이더 활성화
+			yield return new WaitForSeconds(0.1f);       // 콜라이더를 0.1초 동안 활성화
+			collider.enabled = false;                    // 공격 콜라이더 비활성화
+			playerScript.Atk /= playerScript.UltimitAtk; // 공격력 초기화
+			isUsingSkillorUltimate = false;              // 지금은 스킬 사용하고 있지 않다.
 		}
+		canMove = true;
 	}
 
-    void FixedUpdate()
+    public float TicTocDealyTime;
+    IEnumerator TicToc()
+    {
+        IsMoving = false;                       // 움직이고 있는 여부 끄기
+        canMove = false;                        // 움직일수 있는 여부 끄기
+		//moveInput.x = 0;                        // input 값에 0 
+		//moveInput.y = 0;
+		playerPos = tempPlayerPos;
+		timeStopu = true;
+		yield return new WaitForSeconds(TicTocDealyTime);
+        timeStopu = false;
+        canMove = true;
+	}
+
+	// 플레이어 이동
+	void FixedUpdate()
 	{
-        // 물리 업데이트 처리 (이동 및 감지)
         //canMove는 true,
-        //isDialoging(대화창 열린 여부)가 false 일때 움직일수 있음
-        if (canMove && talkManager.isDialoging == false)
+        //isDialoging(대화창 열린 여부)가 false 일때 움직일수 있음 && 타임스토푸가 false일때만
+        if (canMove == true && talkManager.isDialoging == false && timeStopu == false)
         {
-            rigid.velocity = new Vector2(moveInput.x * walkSpeed, moveInput.y * walkSpeed);  // 이동 처리
+			rigid.velocity = new Vector2(moveInput.x * walkSpeed, moveInput.y * walkSpeed);  // 이동 처리
         }
-        else
+        else if (IsMoving == false)
         {
-            rigid.velocity = new Vector2(0, 0);  // 이동을 막을 때 속도를 0으로 설정
+            StartCoroutine(TicToc());
+		}
+		// 공격이 끝나고 계속 방향키 입력을 받으면 이동하도록 설정
+		if (canMove && !IsSliding && !isUsingSkillorUltimate)
+		{
+			IsMoving = moveInput != Vector2.zero;  // 계속 이동할 수 있도록 상태 업데이트
+			SetFacingDirection(moveInput);  // 이동 방향 설정
+		}
+        if (IsMoving == true && moveInput.x == 0 && moveInput.y == 0)
+        {
+            TicToc();
         }
 
-        // 플레이어 주위의 얇은 선으로 감지
-        Debug.DrawRay(rigid.position, dirVec * Length, new Color(0, 1, 0));
+		// 플레이어 주위의 얇은 선으로 감지
+		Debug.DrawRay(rigid.position, dirVec * Length, new Color(0, 1, 0));
         RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, dirVec, Length, LayerMask.GetMask("Object"));
 
         // 무언가 감지됨!
@@ -230,6 +293,8 @@ public class PlayerAction : MonoBehaviour
             SetFacingDirection(moveInput);  // 방향 설정
         }
     }
+
+    
 
     void SetFacingDirection(Vector2 moveInput)// 이동 방향 설정
 	{
@@ -255,7 +320,7 @@ public class PlayerAction : MonoBehaviour
         {
             if (_isMoving)
             {
-				StartSliding();  // 슬라이딩 시작
+                StartSliding();// 슬라이딩 시작
 			}
         }
         else if (context.canceled && IsSliding)
@@ -266,10 +331,9 @@ public class PlayerAction : MonoBehaviour
 
     private void StartSliding()// 슬라이딩 시작
 	{
-        IsSliding = true;
+		IsSliding = true;
         slideTime = slideDuration;
         walkSpeed = slideSpeed;  // 슬라이드 속도 적용
-        
 	}
 
     private void StopSliding()// 슬라이딩 종료
@@ -280,10 +344,10 @@ public class PlayerAction : MonoBehaviour
         cooldownTime = slideCooldown;  // 슬라이드 쿨타임 적용
     }
 
-    // 마우스 좌클릭 (잽)
-    public void OnAttack(InputAction.CallbackContext context)
+    public void OnAttack(InputAction.CallbackContext context)// 일반 공격 (잽)
 	{
-        if (context.started)
+		// 마우스 클릭을 시작 할때 && 스킬이나 궁극기를 사용하고 있지 않을시 잽을 실행
+		if (context.started && isUsingSkillorUltimate == false)
         {
             Vector2 mousePosition = Mouse.current.position.ReadValue();           // 마우스 위치 가져오기
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition); // 화면 좌표 -> 월드 좌표 변환
@@ -292,47 +356,45 @@ public class PlayerAction : MonoBehaviour
 
             int atkStyle = 0; // 기본 공격 스타일
 
-            // 클릭한 위치를 기준으로 캐릭터 방향 전환 및 콜라이더 활성화
-            if (worldPosition.x < playerPositionX)
-            {
+			TicTocDealyTime = Jab;                               // 몇초동안 경직되어 있을래?
+
+			// 화면 기준으로 왼쪽 클릭 시
+			if (worldPosition.x < playerPositionX)
+			{
                 sp.flipX = true; // 캐릭터를 왼쪽으로 바라보게 설정
                 StartCoroutine(DisableCollider(left, atkStyle)); // 왼쪽 공격 활성화
             }
-            else
-            {
+			// 화면 기준으로 오른쪽 클릭 시
+			else
+			{
                 sp.flipX = false; // 캐릭터를 오른쪽으로 바라보게 설정
                 StartCoroutine(DisableCollider(right, atkStyle)); // 오른쪽 공격 활성화
             }
 
-            RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);  // Cast a ray at the click position
-
-            if (hit.collider != null)
-            {
-                // Check if the object has a Teleport component
-                Teleport teleport = hit.collider.GetComponent<Teleport>();
-                if (teleport != null)
-                {
-                    teleport.MovePlayer(playerCollider2D); // Teleport the player
-                }
-            }
-
-
             // 아이템이 있는 콜라이더 객체 (예시로 myItemCollider를 사용)
-            if (myItemCollider.bounds.Contains(worldPosition)) // 클릭한 위치가 아이템 콜라이더 범위 안에 있을 때
-            {
-                Teleport teleport = myItemCollider.GetComponent<Teleport>();
-                if (teleport != null)
-                {
-                    teleport.MovePlayer(playerCollider2D); // 아이템의 OnItemClicked 함수 실행
-                }
 
-            }
+            foreach (var item in myItemColliders)
+            {
+				if (item.bounds.Contains(worldPosition)) // 클릭한 위치가 아이템 콜라이더 범위 안에 있을 때
+				{
+					Teleport teleport = item.GetComponent<Teleport>();
+					SceneChangeOnCollision sceneChangeOnCollision = item.GetComponent<SceneChangeOnCollision>();
+					if (teleport != null)
+					{
+						teleport.MovePlayer(playerCollider2D); // 아이템의 OnItemClicked 함수 실행
+					}
+                    else if (teleport == null)
+                    {
+                        sceneChangeOnCollision.SceneChangeHamSu();
+					}
+				}
+			}
         }
     }
 
-    public void OnSkillAttack(InputAction.CallbackContext context)// 첫 번째 스킬 공격 입력 처리
+    public void OnSkillAttack(InputAction.CallbackContext context)// 스킬
 	{
-        if (context.started)  // 쿨타임이 0일 때만 스킬 발동
+		if (context.started)  // 쿨타임이 0일 때만 스킬 발동
         {
             Vector2 mousePosition = Mouse.current.position.ReadValue(); // 마우스 위치 가져오기
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition); // 화면 좌표 -> 월드 좌표 변환
@@ -345,9 +407,10 @@ public class PlayerAction : MonoBehaviour
 
 
 				int atkStyle = 1; // 스킬 공격 스타일
-				playerScript.Atk *= 2;
 
-                if (worldPosition.x < playerPositionX)
+				TicTocDealyTime = Skill;                     // 몇초동안 경직되어 있을래?
+
+				if (worldPosition.x < playerPositionX)
                 {
                     sp.flipX = true; // 캐릭터를 왼쪽으로 바라보게 설정
                     StartCoroutine(DisableCollider(left, atkStyle)); // 왼쪽 공격 활성화
@@ -362,18 +425,18 @@ public class PlayerAction : MonoBehaviour
 		}
     }
 
-    public void OnSkillAttack2(InputAction.CallbackContext context)// 두 번째 스킬 공격 입력 처리
+    public void OnSkillAttack2(InputAction.CallbackContext context)// 궁극기
 	{
-        if (context.started)  // 쿨타임이 0일 때만 스킬 발동
+		if (context.started)  // 쿨타임이 0일 때만 스킬 발동
         {
             if (skillAttack2Time <= 0)
             {
                 animator.SetTrigger(AnimationStrings.skillAttackTrigger2);  // 스킬 애니메이션 실행
                 skillAttack2Time = skillAttack2Cooldown;  // 쿨타임 적용
 
-				int atkStyle = 2;
-				playerScript.Atk *= 4; // 플레이어 공격력 증가
+				int atkStyle = 2;      // 궁극기 공격 패턴
 									   // 방향에 따라 적절한 BoxCollider2D 활성화
+				TicTocDealyTime = Ultimite;                      // 몇초동안 경직되어 있을래?
 				if (sp.flipX)
 				{
 					StartCoroutine(DisableCollider(left, atkStyle));  // 왼쪽 공격 활성화
@@ -385,4 +448,12 @@ public class PlayerAction : MonoBehaviour
 			}
 		}
     }
+
+    void PleaseStopPlayer()
+    {
+		rigid.velocity = Vector2.zero;
+
+		tempPlayerPos = playerPos;
+		StartCoroutine(TicToc());
+	}
 }

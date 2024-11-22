@@ -34,9 +34,12 @@ public class PrefabSpawner : MonoBehaviour
     [Header("소환할 위치 오브젝트들")]
     public GameObject[] PosObj;         // 소환할 위치 오브젝트들
 
-    //public GameObject[] TP;             // 텔레포트들
+	[Header("독백 지연 시간")]
+	public float docBack_DelayTime;
 
-    public float spawnOffset = 1.0f;    // 소환 간 간격
+	//public GameObject[] TP;             // 텔레포트들
+
+	public float spawnOffset = 1.0f;    // 소환 간 간격
     public float checkDistance = 0.1f;  // 허용할 거리 오차
     public bool isSpawnned = false;
     public int RoomEnemyCount = 0;
@@ -93,13 +96,20 @@ public class PrefabSpawner : MonoBehaviour
     {
         if (isSpawnned == false) // 한번만 실행용 if문
         {
+            Debug.Log("적을 소환합니다.");
             alreadySpawnedEnemies = true;
             roomGenerator.DestroyDoor(); // 생성된 문 삭제
             isSpawnned = true;
             StartCoroutine(DelayedSpawn(sec, room));
-            talkManager.SoloTalk(); // 던전 진입 상황
+            StartCoroutine(DocBack());   // 주인공 독백 시작
         }
     }
+
+    IEnumerator DocBack()
+    {
+		yield return new WaitForSeconds(docBack_DelayTime);
+		talkManager.SoloTalk(); // 던전 진입 상황
+	}
 
     IEnumerator DelayedSpawn(float delay, int room) // 기다렸다가 적 소환해주는 시간차 함수
     {

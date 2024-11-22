@@ -490,9 +490,7 @@ MonoBehaviour:
   defenseDebuff2: 0.14
   defenseDebuff3: 0.26
   defenseDebuff4: 0.35
-  Money: 0
   MoneyTxt: {fileID: 967616937}
-  round: 0
   RoundTxt: {fileID: 967616937}
   roomGenerator: {fileID: 0}
   gameRoundTMP: {fileID: 822876299}
@@ -516,12 +514,16 @@ MonoBehaviour:
   slideCooldown: 1
   skillAttackCooldown: 2
   skillAttack2Cooldown: 3
+  playerCollider2D: {fileID: 0}
   Length: 0.7
   left: {fileID: 2072500958}
   right: {fileID: 1960575989}
   talkManager: {fileID: 217143286}
   DialogSet: {fileID: 1668496436}
   player: {fileID: 34459077}
+  myItemColliders:
+  - {fileID: 1304978787}
+  mainCamera: {fileID: 1251819165}
   _isMoving: 0
   _isSliding: 0
   _isFacingRight: 1

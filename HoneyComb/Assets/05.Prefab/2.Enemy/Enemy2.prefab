@@ -294,6 +294,7 @@ MonoBehaviour:
   nowHP: 0
   scanner: {fileID: 0}
   scanner2: {fileID: 0}
+  isBoss: 0
   prfHpBar: {fileID: 3114550308777509435, guid: 7a8e12f9a444a7441b8dfde6ed3a52f4, type: 3}
   height: 1
   damage_text: {fileID: 0}
@@ -340,6 +341,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   nearestTarget: {fileID: 0}
+  yOffset: 5
 --- !u!1 &6078138461833324236
 GameObject:
   m_ObjectHideFlags: 0

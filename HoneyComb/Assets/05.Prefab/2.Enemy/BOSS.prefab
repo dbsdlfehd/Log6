@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   prefabId: 1
-  damage: 2
+  damage: 20
   count: 0
   speed: 0.5
 --- !u!1 &5779236398721536170
@@ -378,6 +378,7 @@ MonoBehaviour:
   nowHP: 0
   scanner: {fileID: 0}
   scanner2: {fileID: 0}
+  isBoss: 1
   prfHpBar: {fileID: 3114550308777509435, guid: 7a8e12f9a444a7441b8dfde6ed3a52f4, type: 3}
   height: 1
   damage_text: {fileID: 0}

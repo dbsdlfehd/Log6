@@ -23,6 +23,7 @@ public class GoHomeManager : MonoBehaviour
 
     void Update()
     {
+        // 보스 처치시
         // 1. 대상 객체가 null(파괴되거나 씬에서 찾을 수 없음) 상태인지 확인
         if (targetObject == null)
         {
@@ -44,6 +45,9 @@ public class GoHomeManager : MonoBehaviour
             player.transform.rotation = homePosition.rotation;
 
             Debug.Log("플레이어가 지정된 좌표로 이동했습니다.");
+
+            // 플레이어 스탯 초기화 
+            playerScript.SetPlayerDefaultStatus();
 
             isPlayerMovable = true;
 

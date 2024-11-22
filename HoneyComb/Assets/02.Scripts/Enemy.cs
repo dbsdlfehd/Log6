@@ -30,7 +30,11 @@ public class Enemy : MonoBehaviour
 
     bool isLive;
 
-    Rigidbody2D rigid;
+	[Header("이것이 보스인가?")]
+	public bool isBoss;
+
+
+	Rigidbody2D rigid;
     SpriteRenderer spriter;
 
 	//체력바 프리펩 
@@ -127,18 +131,36 @@ public class Enemy : MonoBehaviour
 			StartCoroutine(ShowDamageText(damage)); // 대미지를 표기
 			nowHP = nowHP - damage;
 		}
-        if(nowHP < 0)							   // 체력이 0보다 적을시
+
+		// 일반몹 죽는 함수
+        if(nowHP < 0 && isBoss == false)			// 체력이 0보다 적을시
         {
 			EnemyDead();
 		}
+		// 적 죽는 함수
+		else if(nowHP < 0 && isBoss == true)
+		{
+			BossDead();
+		}
+	}
+
+	void BossDead()
+	{
+		Destroy(gameObject);
+		prefabSpawner.RoomEnemyCount++;        // 적 죽은 횟수 1 늘어남
+		Destroy(bghp_bar.gameObject);          // 체력바 삭제
 	}
 
 	void EnemyDead()
     {
 		nowHP = 0;
-		Destroy(gameObject);
+		if (isBoss == false)
+		{
+			Destroy(gameObject);
+		}
 		prefabSpawner.RoomEnemyCount++;        // 적 죽은 횟수 1 늘어남
 		Destroy(bghp_bar.gameObject);          // 체력바 삭제
+
 	}
 
 	// 대미지 텍스트 생성 및 1초 후 삭제
