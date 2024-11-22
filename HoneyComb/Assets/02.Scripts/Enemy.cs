@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
 	{
 		rb = GetComponent<Rigidbody2D>();
 		player = FindObjectOfType<Player>();// 무조건 해줘야됨 (초기화)
-		SetEnemyStatus(100);				// 체력 수치 설정
+		SetEnemyStatus(maxHP);				// 체력 수치 설정
 
 		// prfHpBar 프리팹을 이용해 canvas에다가 체력바 생성.
 		bghp_bar = Instantiate(prfHpBar, GameObject.Find("Canvas").transform).GetComponent<RectTransform>(); // bghp_bar생성

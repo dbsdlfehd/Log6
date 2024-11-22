@@ -61,10 +61,10 @@
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
     <Compile Include="Assets\02.Scripts\weapon2.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
-    <Compile Include="Assets\RoomGenerator.cs" />
+    <Compile Include="Assets\02.Scripts\RoomGenerator.cs" />
     <Compile Include="Assets\02.Scripts\Enemy3.cs" />
-    <Compile Include="Assets\SceneChangeOnCollision.cs" />
-    <Compile Include="Assets\Door_Type.cs" />
+    <Compile Include="Assets\02.Scripts\SceneChangeOnCollision.cs" />
+    <Compile Include="Assets\02.Scripts\Door_Type.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\02.Scripts\ParsingManager.cs" />
@@ -73,12 +73,13 @@
     <Compile Include="Assets\02.Scripts\weapon.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
     <Compile Include="Assets\04.Sprites\IsometricElfFreeVer\scripts\PlayerManager.cs" />
-    <Compile Include="Assets\npcManager.cs" />
+    <Compile Include="Assets\02.Scripts\npcManager.cs" />
     <Compile Include="Assets\04.Sprites\IsometricElfFreeVer\scripts\StoneManager.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\02.Scripts\GoHomeManager.cs" />
     <Compile Include="Assets\02.Scripts\PoolManager.cs" />
-    <Compile Include="Assets\TouchItems.cs" />
+    <Compile Include="Assets\02.Scripts\TouchItems.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
@@ -130,8 +131,10 @@
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\02.Scripts\WeaponChange.cs" />
-    <Compile Include="Assets\DestroyAnySec.cs" />
+    <Compile Include="Assets\02.Scripts\DestroyAnySec.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\02.Scripts\ClickableObject.cs" />
+    <Compile Include="Assets\TeleportClick.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\07.TextMesh Pro\Shaders\TMPro.cginc" />

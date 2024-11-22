@@ -36,8 +36,8 @@ public class TouchItems : MonoBehaviour
 			player.Atk += AddAtk;		// °ø°Ý·Â Áõ°¡
 			player.nowHP += Heal;		// Ã¼·Â È¸º¹
 			player.maxHP += AddHp;		// ÃÖ´ëÃ¼·Â Áõ°¡
-			player.Money += AddMoney;	// ÀçÈ­ È¹µæ
-			player.round += Round;		// ±¸½½ È¹µæ
+			Player.Money += AddMoney;	// ÀçÈ­ È¹µæ
+			Player.round += Round;		// ±¸½½ È¹µæ
 
 			if (player.nowHP > player.maxHP) player.nowHP = player.maxHP;
 

@@ -63,11 +63,11 @@ public class Player : MonoBehaviour
     public float defenseDebuff4 = 0.35f;      // 방어력 감소 디버프 4 (35%) 심장 두근거림
 
 	[Header("재화")]
-	public int Money = 0; // 재화
+	static public int Money = 0; // 재화
 	public TextMeshProUGUI MoneyTxt;
 
 	[Header("구슬")]
-	public int round = 0; // 구슬
+	static public int round = 0; // 구슬
 	public TextMeshProUGUI RoundTxt;
 
 	Animator animator;        // Animator 컴포넌트 참조
@@ -126,12 +126,15 @@ public class Player : MonoBehaviour
         Debug.Log($"방어력: {Defense}");
     }
 
-    public void Dead()// 죽음횟수 추가
+    // 죽었을 떄 행하는 것
+    public void Dead()
     {
 		DeadCount++;
 		StartCoroutine(DeadShow());
     }
-    IEnumerator DeadShow()// 죽음 행동
+
+    // 죽었을 때 행하는 것22
+    IEnumerator DeadShow()
     {
         player.GetComponent<PlayerInput>().enabled = false; // 멈춰
         animator.SetTrigger(AnimationStrings.DeadTrigger);  // dead 애니메이션 실행
@@ -140,13 +143,14 @@ public class Player : MonoBehaviour
 		Dead_set.SetActive(true);
 		// 지옥 위치로 이동
 		player.position = DeadPoint.position;
-		prefabSpawner.HideTP();
+		//prefabSpawner.HideTP();
 		prefabSpawner.isSpawnned = false;
 		EnmeyDown = true; // 적 모두 비활성화
 		yield return null;
 	}
 
-	void OnTriggerEnter2D(Collider2D collision)// 피격 당할시
+    // 적의 투사체에 의해 피격 당할시
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("weapon"))
             return;
@@ -172,34 +176,13 @@ public class Player : MonoBehaviour
         }
     }
 
+
     private void Update()
     {
         // 죽은 상태에서 스페이스바를 누르면 부활 처리 // #####################
         if (isDead && Input.GetKeyDown(KeyCode.Space))
         {
-            // 플레이어 스테이터스 원래대로 즉, 버프 제거
-            maxHP = DefaultMaxHP;
-            Atk = DefaultAtk;
-            round = DefaultRound;
-
-            // 진행 중인 게임 라운드 수 0으로 초기화
-            gameRound = 0;
-
-			player.GetComponent<PlayerInput>().enabled = true; // 다시 움직일수 있게
-            nowHP = Mathf.FloorToInt(maxHP); // 부활 시 체력을 최대치로 설정
-            isDead = false;
-            player.position = Home.position;
-            Dead_set.SetActive(false);
-
-            // 랜덤 문 다시 안보이게 숨기기
-            roomGenerator.DestroyDoor();
-
-			foreach (var npc in npcObjects)
-            {
-                npc.isDialogged = true;
-            }
-            EnmeyDown = false;//적 죽음 상태 해제
-            prefabSpawner.RoomEnemyCount = 0;// 적 죽인 수 0으로 초기화
+            RespawnPlayer();
         }
 
         if (isDead)
@@ -235,5 +218,34 @@ public class Player : MonoBehaviour
         gameRoundTMP.text = Temptext.ToString();
 
         DeadCount_UI.text = "죽은 횟수 : " + DeadCount.ToString();
+    }
+
+    // 플레이어 부활시 행 하는 것들
+    public void RespawnPlayer()
+    {
+        // 플레이어 스테이터스 원래대로 즉, 버프 제거
+        maxHP = DefaultMaxHP;
+        Atk = DefaultAtk;
+        round = DefaultRound;
+
+        // 진행 중인 게임 라운드 수 0으로 초기화
+        gameRound = 0;
+
+        player.GetComponent<PlayerInput>().enabled = true; // 다시 움직일수 있게
+        nowHP = Mathf.FloorToInt(maxHP); // 부활 시 체력을 최대치로 설정
+        isDead = false;
+        player.position = Home.position;
+        Dead_set.SetActive(false);
+
+        // 랜덤 문 다시 안보이게 숨기기
+        roomGenerator.DestroyDoor();
+
+        foreach (var npc in npcObjects)
+        {
+            npc.isDialogged = true;
+        }
+        EnmeyDown = false;//적 죽음 상태 해제
+        prefabSpawner.RoomEnemyCount = 0;// 적 죽인 수 0으로 초기화
+        prefabSpawner.DestroySpawnedObjects();// 생성된 아이템 및 상점 TP 객체 제거
     }
 }

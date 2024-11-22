@@ -20,6 +20,8 @@ public class PlayerAction : MonoBehaviour
     private float skillAttackTime = 0f;       // 첫 번째 스킬 사용 가능 시간
     private float skillAttack2Time = 0f;      // 두 번째 스킬 사용 가능 시간
 
+    public Collider2D playerCollider2D;
+
     Vector2 moveInput;  // 플레이어의 입력을 저장하는 변수
     Vector3 dirVec;     // 플레이어의 방향을 저장하는 변수
 
@@ -46,6 +48,10 @@ public class PlayerAction : MonoBehaviour
 
 	public Transform player;
 
+    [Header("아이템")]
+    public Collider2D myItemCollider; // 아이템의 콜라이더를 연결
+
+    public Camera mainCamera; // 메인 카메라 (화면 좌표 변환용)
 
     // 이동 상태 확인 변수 (애니메이터와 연동)
     [SerializeField]
@@ -187,8 +193,9 @@ public class PlayerAction : MonoBehaviour
 		}
 	}
 
-    void FixedUpdate()// 물리 업데이트 처리 (이동 및 감지)
+    void FixedUpdate()
 	{
+        // 물리 업데이트 처리 (이동 및 감지)
         //canMove는 true,
         //isDialoging(대화창 열린 여부)가 false 일때 움직일수 있음
         if (canMove && talkManager.isDialoging == false)
@@ -207,6 +214,9 @@ public class PlayerAction : MonoBehaviour
         // 무언가 감지됨!
         if (rayHit.collider != null) scanObject = rayHit.collider.gameObject;
         else scanObject = null;
+
+        // 왼쪽 화살표 = -1, 오른쪽 화살표 = 1
+        // Debug.Log(moveInput.x);
     }
 
     public void OnMove(InputAction.CallbackContext context)// 이동 입력 처리
@@ -224,16 +234,18 @@ public class PlayerAction : MonoBehaviour
     void SetFacingDirection(Vector2 moveInput)// 이동 방향 설정
 	{
         //x값이 0보다 큼 && 오른쪽 안바라봄 && 대화가 끝남
-        if (moveInput.x > 0 && !IsFacingRight && talkManager.isDialoging == false)
+        if (moveInput.x > 0 && talkManager.isDialoging == false)
         {
-            IsFacingRight = true;
+            //IsFacingRight = true;
             dirVec = Vector3.right;  // 오른쪽 방향 설정
+            sp.flipX = false; // 캐릭터를 오른쪽으로 바라보게 설정
         }
 		//x값이 0보다 큼 && 오른쪽 바라봄 && 대화가 끝남
-		else if (moveInput.x < 0 && IsFacingRight && talkManager.isDialoging == false)
+		else if (moveInput.x < 0 && talkManager.isDialoging == false)
         {
-            IsFacingRight = false;
+            //IsFacingRight = false;
             dirVec = Vector3.left;  // 왼쪽 방향 설정
+            sp.flipX = true; // 캐릭터를 왼쪽으로 바라보게 설정
         }
     }
 
@@ -268,22 +280,53 @@ public class PlayerAction : MonoBehaviour
         cooldownTime = slideCooldown;  // 슬라이드 쿨타임 적용
     }
 
-    public void OnAttack(InputAction.CallbackContext context)// 공격 입력 처리
+    // 마우스 좌클릭 (잽)
+    public void OnAttack(InputAction.CallbackContext context)
 	{
         if (context.started)
         {
-            int atkStyle = 0; // 기본공격 스타일
+            Vector2 mousePosition = Mouse.current.position.ReadValue();           // 마우스 위치 가져오기
+            Vector3 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition); // 화면 좌표 -> 월드 좌표 변환
+            float playerPositionX = transform.position.x;                         // 플레이어의 현재 x 좌표
+            worldPosition.z = 0f; // 카메라의 z값을 0으로 설정 (2D 공간에서의 좌표)
 
-            // 방향에 따라 적절한 BoxCollider2D 활성화
-            if (sp.flipX)
+            int atkStyle = 0; // 기본 공격 스타일
+
+            // 클릭한 위치를 기준으로 캐릭터 방향 전환 및 콜라이더 활성화
+            if (worldPosition.x < playerPositionX)
             {
-                StartCoroutine(DisableCollider(left, atkStyle));  // 왼쪽 공격 활성화
+                sp.flipX = true; // 캐릭터를 왼쪽으로 바라보게 설정
+                StartCoroutine(DisableCollider(left, atkStyle)); // 왼쪽 공격 활성화
             }
             else
             {
-                StartCoroutine(DisableCollider(right, atkStyle));  // 오른쪽 공격 활성화
+                sp.flipX = false; // 캐릭터를 오른쪽으로 바라보게 설정
+                StartCoroutine(DisableCollider(right, atkStyle)); // 오른쪽 공격 활성화
             }
-            
+
+            RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);  // Cast a ray at the click position
+
+            if (hit.collider != null)
+            {
+                // Check if the object has a Teleport component
+                Teleport teleport = hit.collider.GetComponent<Teleport>();
+                if (teleport != null)
+                {
+                    teleport.MovePlayer(playerCollider2D); // Teleport the player
+                }
+            }
+
+
+            // 아이템이 있는 콜라이더 객체 (예시로 myItemCollider를 사용)
+            if (myItemCollider.bounds.Contains(worldPosition)) // 클릭한 위치가 아이템 콜라이더 범위 안에 있을 때
+            {
+                Teleport teleport = myItemCollider.GetComponent<Teleport>();
+                if (teleport != null)
+                {
+                    teleport.MovePlayer(playerCollider2D); // 아이템의 OnItemClicked 함수 실행
+                }
+
+            }
         }
     }
 
@@ -291,6 +334,10 @@ public class PlayerAction : MonoBehaviour
 	{
         if (context.started)  // 쿨타임이 0일 때만 스킬 발동
         {
+            Vector2 mousePosition = Mouse.current.position.ReadValue(); // 마우스 위치 가져오기
+            Vector3 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition); // 화면 좌표 -> 월드 좌표 변환
+            float playerPositionX = transform.position.x; // 플레이어의 현재 x 좌표
+
             if (skillAttackTime <= 0)
             {
                 animator.SetTrigger(AnimationStrings.skillAttackTrigger);  // 스킬 애니메이션 실행
@@ -300,15 +347,17 @@ public class PlayerAction : MonoBehaviour
 				int atkStyle = 1; // 스킬 공격 스타일
 				playerScript.Atk *= 2;
 
-				// 방향에 따라 적절한 BoxCollider2D 활성화
-				if (sp.flipX)
-				{
-					StartCoroutine(DisableCollider(left, atkStyle));  // 왼쪽 공격 활성화
-				}
-				else
-				{
-					StartCoroutine(DisableCollider(right, atkStyle));  // 오른쪽 공격 활성화
-				}
+                if (worldPosition.x < playerPositionX)
+                {
+                    sp.flipX = true; // 캐릭터를 왼쪽으로 바라보게 설정
+                    StartCoroutine(DisableCollider(left, atkStyle)); // 왼쪽 공격 활성화
+
+                }
+                else
+                {
+                    sp.flipX = false; // 캐릭터를 오른쪽으로 바라보게 설정
+                    StartCoroutine(DisableCollider(right, atkStyle)); // 오른쪽 공격 활성화
+                }
 			}
 		}
     }
