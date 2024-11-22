@@ -40,9 +40,13 @@ public class Enemy : MonoBehaviour
 	RectTransform bghp_bar;				// bghp_bar 어두운 배경 체력바
 	Image hp_bar;						// hp_bar 현재 체력바
 
-	public float height = 1.7f;			// 체력바 Y 높이
+	public float height = 1.7f;         // 체력바 Y 높이
 
-    private void SetEnemyStatus(int _maxHP)
+	[Header("데미지")]
+	public TextMeshProUGUI damage_text;
+	public GameObject damage_text_prf;
+
+	private void SetEnemyStatus(int _maxHP)
     {
         maxHP = _maxHP;
         nowHP = _maxHP;
@@ -117,7 +121,11 @@ public class Enemy : MonoBehaviour
 	{
 		if (other.CompareTag("Player"))
 		{
-            nowHP = nowHP - player.Atk;
+			int damage = player.Atk;				// 플레이어 대미지
+
+
+			StartCoroutine(ShowDamageText(damage)); // 대미지를 표기
+			nowHP = nowHP - damage;
 		}
         if(nowHP < 0)							   // 체력이 0보다 적을시
         {
@@ -132,4 +140,20 @@ public class Enemy : MonoBehaviour
 		prefabSpawner.RoomEnemyCount++;        // 적 죽은 횟수 1 늘어남
 		Destroy(bghp_bar.gameObject);          // 체력바 삭제
 	}
+
+	// 대미지 텍스트 생성 및 1초 후 삭제
+	IEnumerator ShowDamageText(int damage)
+	{
+		// 텍스트 프리팹 생성
+		GameObject dmgText = Instantiate(damage_text_prf, GameObject.Find("Canvas").transform);
+		TextMeshProUGUI dmgTextComponent = dmgText.GetComponent<TextMeshProUGUI>();
+
+		// 텍스트 내용과 위치 설정
+		dmgTextComponent.text = damage.ToString();
+		dmgText.transform.position = Camera.main.WorldToScreenPoint(transform.position);
+
+        // 1초 기다린 뒤 삭제
+        yield return new WaitForSeconds(0.2f);
+        Destroy(dmgText);
+    }
 }

@@ -296,6 +296,8 @@ MonoBehaviour:
   scanner2: {fileID: 0}
   prfHpBar: {fileID: 3114550308777509435, guid: 7a8e12f9a444a7441b8dfde6ed3a52f4, type: 3}
   height: 1
+  damage_text: {fileID: 0}
+  damage_text_prf: {fileID: 3856379656499597575, guid: 567fa6cb274b68d45957d1ff00e6cc90, type: 3}
 --- !u!114 &1434557988318601364
 MonoBehaviour:
   m_ObjectHideFlags: 0

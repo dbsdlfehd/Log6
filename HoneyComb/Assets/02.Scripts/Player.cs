@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     PlayerHpShow PlayerHpShow;
 
     public List<_Object> npcObjects = new List<_Object>();
+
+    [Header("소환 스크립트")]
     public PrefabSpawner prefabSpawner;
     public PlayerAction playerAction;
 
@@ -83,6 +85,7 @@ public class Player : MonoBehaviour
 	public TextMeshProUGUI gameRoundTMP;
 	// 매 방마다 라운드 UP, 5번시 상점 -> 6번시 보스방
 	static public int gameRound = 0;
+
 
 	private void Awake()
 	{
@@ -207,9 +210,30 @@ public class Player : MonoBehaviour
 		Atk_UI.text = Atk.ToString();                               // 공격력
 		MoneyTxt.text = Money.ToString();                           // 재화
 		RoundTxt.text = round.ToString();                           // 구슬
-		gameRoundTMP.text = gameRound.ToString();                   // 현재 게임 라운드 수
 
 
-		DeadCount_UI.text = "죽은 횟수 : " + DeadCount.ToString();
+        // 스테이지 // 현재 게임 라운드 수
+
+        string Temptext = "";
+        if (gameRound == 0) // 집 일때
+        {
+            Temptext = "집".ToString();
+        }
+        else if (gameRound <= prefabSpawner.OverRoom)
+        {
+            Temptext = "스테이지 : " + gameRound.ToString();
+        }
+        else if (gameRound == prefabSpawner.OverRoom + 1)
+        {
+            Temptext = "상점";
+        }
+        else if (gameRound == prefabSpawner.OverRoom + 2)
+        {
+            Temptext = "보스방";
+        }
+
+        gameRoundTMP.text = Temptext.ToString();
+
+        DeadCount_UI.text = "죽은 횟수 : " + DeadCount.ToString();
     }
 }
