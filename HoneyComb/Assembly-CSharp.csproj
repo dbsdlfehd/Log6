@@ -91,6 +91,7 @@
     <Compile Include="Assets\02.Scripts\Scanner2.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\PlayerComponent.cs" />
     <Compile Include="Assets\02.Scripts\Player.cs" />
     <Compile Include="Assets\02.Scripts\Keyboard.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
@@ -135,7 +136,6 @@
     <Compile Include="Assets\02.Scripts\WeaponChange.cs" />
     <Compile Include="Assets\02.Scripts\DestroyAnySec.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\PlayerComponent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\07.TextMesh Pro\Shaders\TMPro.cginc" />

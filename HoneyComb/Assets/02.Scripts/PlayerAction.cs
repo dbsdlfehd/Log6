@@ -32,10 +32,12 @@ public class PlayerAction : MonoBehaviour
     public float Length = 0.7f;  // 감지할 거리
 
     [Header("공격 범위")]
-    public BoxCollider2D left;   // 왼쪽 공격 범위 콜라이더
-    public BoxCollider2D right;  // 오른쪽 공격 범위 콜라이더
+    public BoxCollider2D left;      // 왼쪽 공격 범위 콜라이더
+    public BoxCollider2D right;     // 오른쪽 공격 범위 콜라이더
+    public BoxCollider2D LargeLeft; // 더 넓은 영역을 지닌 왼쪽 공격 범위 콜라이더
+    public BoxCollider2D LargeRight; // 더 넓은 영역을 지닌 왼쪽 공격 범위 콜라이더
 
-    [Header("대화창")]
+	[Header("대화창")]
     //public TextMeshProUGUI Dialog_UI_text;
     //private string dialog_text;
     public TalkManager talkManager;  // 대화 매니저 참조
@@ -50,6 +52,9 @@ public class PlayerAction : MonoBehaviour
 	[Header("궁극기 경직 시간")]
 	public float Ultimite;
 
+	[Header("지금 공격중 여부")]
+	public bool isAtking = false;
+
 	Rigidbody2D rigid;               // Rigidbody2D 컴포넌트 참조
     Animator animator;               // Animator 컴포넌트 참조
     SpriteRenderer sp;               // SpriteRenderer 컴포넌트 참조
@@ -62,8 +67,8 @@ public class PlayerAction : MonoBehaviour
 
 	public Transform player;
 
-    [Header("아이템")]
-    public Collider2D[] myItemColliders; // 아이템의 콜라이더를 연결
+    [Header("텔포들")]
+    public Collider2D[] myItemColliders; // 클릭해서 넘어가는 용
 
 	[Header("메인 카메라")]
 	public Camera mainCamera; // 메인 카메라 (화면 좌표 변환용)
@@ -197,6 +202,7 @@ public class PlayerAction : MonoBehaviour
     public float tempTime = 1.0f; // 시간 텀
 	IEnumerator DisableCollider(BoxCollider2D collider, int AtkStyle)// 실질적인 공격
 	{
+        isAtking = true;
 		PleaseStopPlayer();
 		if (AtkStyle == 0 && Time.time > tempTime) // 기본공격
         {
@@ -230,6 +236,7 @@ public class PlayerAction : MonoBehaviour
 			isUsingSkillorUltimate = false;              // 지금은 스킬 사용하고 있지 않다.
 		}
 		canMove = true;
+        isAtking = false;
 	}
 
     public float TicTocDealyTime;
@@ -413,13 +420,13 @@ public class PlayerAction : MonoBehaviour
 				if (worldPosition.x < playerPositionX)
                 {
                     sp.flipX = true; // 캐릭터를 왼쪽으로 바라보게 설정
-                    StartCoroutine(DisableCollider(left, atkStyle)); // 왼쪽 공격 활성화
+                    StartCoroutine(DisableCollider(LargeLeft, atkStyle)); // 왼쪽 공격 활성화
 
                 }
                 else
                 {
                     sp.flipX = false; // 캐릭터를 오른쪽으로 바라보게 설정
-                    StartCoroutine(DisableCollider(right, atkStyle)); // 오른쪽 공격 활성화
+                    StartCoroutine(DisableCollider(LargeRight, atkStyle)); // 오른쪽 공격 활성화
                 }
 			}
 		}
@@ -439,16 +446,17 @@ public class PlayerAction : MonoBehaviour
 				TicTocDealyTime = Ultimite;                      // 몇초동안 경직되어 있을래?
 				if (sp.flipX)
 				{
-					StartCoroutine(DisableCollider(left, atkStyle));  // 왼쪽 공격 활성화
+					StartCoroutine(DisableCollider(LargeLeft, atkStyle));  // 왼쪽 공격 활성화
 				}
 				else
 				{
-					StartCoroutine(DisableCollider(right, atkStyle));  // 오른쪽 공격 활성화
+					StartCoroutine(DisableCollider(LargeRight, atkStyle));  // 오른쪽 공격 활성화
 				}
 			}
 		}
     }
 
+    // 경직 함수 Like 존야
     void PleaseStopPlayer()
     {
 		rigid.velocity = Vector2.zero;

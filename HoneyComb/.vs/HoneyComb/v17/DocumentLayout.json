@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\Project archive\\Log6\\HoneyComb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|d:\\project archive\\log6\\honeycomb\\assets\\02.scripts\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|d:\\project archive\\log6\\honeycomb\\assets\\02.scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -45,10 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\prefabspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\prefabspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project archive\\Log6\\HoneyComb\\Library\\PackageCache\\com.unity.inputsystem@1.7.0\\InputSystem\\Utilities\\DelegateHelpers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -134,21 +134,61 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Teleport.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Teleport.cs",
+              "RelativeDocumentMoniker": "Assets\\02.Scripts\\Teleport.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Teleport.cs",
+              "RelativeToolTip": "Assets\\02.Scripts\\Teleport.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAQwCkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T13:30:26.118Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "PlayerAction.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\PlayerAction.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\PlayerAction.cs",
               "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\PlayerAction.cs",
               "RelativeToolTip": "Assets\\02.Scripts\\PlayerAction.cs",
-              "ViewState": "AQIAAKgAAAAAAAAAAAAhwLgAAAAfAAAA",
+              "ViewState": "AQIAAJEBAAAAAAAAAAAuwMoBAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-11T10:10:58.371Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Enemy.cs",
+              "RelativeDocumentMoniker": "Assets\\02.Scripts\\Enemy.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Enemy.cs",
+              "RelativeToolTip": "Assets\\02.Scripts\\Enemy.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAqwA0AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T12:29:03.253Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\02.Scripts\\Player.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Player.cs",
+              "RelativeToolTip": "Assets\\02.Scripts\\Player.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAAAJgAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T12:19:24.159Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -165,21 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Player.cs",
-              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Player.cs",
-              "RelativeDocumentMoniker": "Assets\\02.Scripts\\Player.cs",
-              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Player.cs",
-              "RelativeToolTip": "Assets\\02.Scripts\\Player.cs",
-              "ViewState": "AQIAAHMAAAAAAAAAAAASwJgAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T12:19:24.159Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "GoHomeManager.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\GoHomeManager.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\GoHomeManager.cs",
@@ -188,19 +214,6 @@
               "ViewState": "AQIAAB4AAAAAAAAAAAAhwDAAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-22T09:36:24.427Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Teleport.cs",
-              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Teleport.cs",
-              "RelativeDocumentMoniker": "Assets\\02.Scripts\\Teleport.cs",
-              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Teleport.cs",
-              "RelativeToolTip": "Assets\\02.Scripts\\Teleport.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAhwBkAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T13:30:26.118Z",
               "IsPinned": true
             },
             {
@@ -218,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "PrefabSpawner.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\PrefabSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\PrefabSpawner.cs",
@@ -228,20 +241,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T12:44:16.454Z",
               "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Enemy.cs",
-              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Enemy.cs",
-              "RelativeDocumentMoniker": "Assets\\02.Scripts\\Enemy.cs",
-              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Enemy.cs",
-              "RelativeToolTip": "Assets\\02.Scripts\\Enemy.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAlwEkAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T12:29:03.253Z",
-              "IsPinned": true,
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -356,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "weapon.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\weapon.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\weapon.cs",
@@ -368,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Scanner.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Scanner.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\Scanner.cs",
@@ -380,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "weapon2.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\weapon2.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\weapon2.cs",
@@ -404,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TalkManager.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\TalkManager.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\TalkManager.cs",
@@ -412,8 +411,7 @@
               "RelativeToolTip": "Assets\\02.Scripts\\TalkManager.cs",
               "ViewState": "AQIAAHsAAAAAAAAAAAApwDwAAAAGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-18T16:29:34.286Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-18T16:29:34.286Z"
             },
             {
               "$type": "Document",
@@ -489,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Scanner2.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Scanner2.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\Scanner2.cs",
@@ -525,7 +523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "FarATK.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\FarATK.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\FarATK.cs",

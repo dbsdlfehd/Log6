@@ -6,24 +6,40 @@ public class Teleport : MonoBehaviour
     [Header("좌표")]
 	public Transform [] Pos; //  좌표
 
+
+	private PlayerAction playerAction; // PlayerAction 스크립트
+
+	private void Start()
+	{
+		playerAction = FindObjectOfType<Player>().GetComponent<PlayerAction>(); // PlayerAction 스크립트 찾기
+	}
+
 	// 플레이어와 충돌시
 	private void OnTriggerEnter2D(Collider2D collider)
     {
-
-		if (Pos.Length>=2) // 좌표가 2개 이상일 경우 //
+		// 공격중이 아닐때
+		if (playerAction.isAtking == false)
 		{
-			if (collider.CompareTag("Player"))
+			if (Pos.Length >= 2) // 좌표가 2개 이상일 경우 //
 			{
-				int RANDOM_NUMBER = Random.Range(0, 2); // 랜덤 함수 발동
-				collider.transform.position = Pos[RANDOM_NUMBER].position;
+				if (collider.CompareTag("Player"))
+				{
+					int RANDOM_NUMBER = Random.Range(0, 2); // 랜덤 함수 발동
+					collider.transform.position = Pos[RANDOM_NUMBER].position;
+				}
+			}
+			else                // 좌표가 1개일 경우 //
+			{
+				if (collider.CompareTag("Player"))
+				{
+					MovePlayer(collider);
+				}
 			}
 		}
-		else				// 좌표가 1개일 경우 //
+		// 공격중일 때
+		else if (playerAction.isAtking == true)
 		{
-			if (collider.CompareTag("Player"))
-			{
-				MovePlayer(collider);
-			}
+
 		}
     }
 
