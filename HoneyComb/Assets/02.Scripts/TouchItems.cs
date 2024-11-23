@@ -44,4 +44,6 @@ public class TouchItems : MonoBehaviour
 			Destroy(gameObject);		// 나 자신을 아이템 삭제
 		}
 	}
+
+
 }

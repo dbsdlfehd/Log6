@@ -478,6 +478,8 @@ MonoBehaviour:
   nowHP: 0
   HP_UI: {fileID: 967616937}
   Atk: 25
+  SkillAtk: 0
+  UltimitAtk: 0
   Atk_UI: {fileID: 967616937}
   Defense: 0
   Defense_UI: {fileID: 967616937}
@@ -518,16 +520,28 @@ MonoBehaviour:
   Length: 0.7
   left: {fileID: 2072500958}
   right: {fileID: 1960575989}
+  LargeLeft: {fileID: 0}
+  LargeRight: {fileID: 0}
   talkManager: {fileID: 217143286}
   DialogSet: {fileID: 1668496436}
+  Jab: 0
+  Skill: 0
+  Ultimite: 0
+  isAtking: 0
   player: {fileID: 34459077}
   myItemColliders:
   - {fileID: 1304978787}
   mainCamera: {fileID: 1251819165}
+  isUsingSkillorUltimate: 0
   _isMoving: 0
   _isSliding: 0
   _isFacingRight: 1
+  playerPos: {fileID: 0}
+  RealStop: 0
+  timeStopu: 0
+  tempPlayerPos: {fileID: 0}
   tempTime: 1
+  TicTocDealyTime: 0
 --- !u!4 &34459077
 Transform:
   m_ObjectHideFlags: 0
@@ -1260,8 +1274,8 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 40.329845, y: 26.88}
+  m_DrawMode: 2
+  m_Size: {x: 500, y: 26}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -2036,7 +2050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.83
+      value: -1.99
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2396,7 +2410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.76
+      value: -1.92
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalPosition.z

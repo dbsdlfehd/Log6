@@ -8,9 +8,10 @@ public class BtnManager : MonoBehaviour
 {
 	//툴팁
 	public GameObject tip;
+    public GameObject shop;
 
-	//개발자
-	public GameObject Dev;
+    //개발자
+    public GameObject Dev;
 
 	//창
 	public TextMeshProUGUI TipText;
@@ -59,7 +60,8 @@ public class BtnManager : MonoBehaviour
 	public void OFF()
 	{
 		tip.SetActive(false);
-		isOpened = false;
+        shop.SetActive(false);
+        isOpened = false;
 	}
 
 	public void Developement()

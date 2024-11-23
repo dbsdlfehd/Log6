@@ -43,7 +43,7 @@ public class PlayerAction : MonoBehaviour
     public TalkManager talkManager;  // 대화 매니저 참조
     public GameObject DialogSet;     // 대화창
 
-	[Header("잽 경직 시간")]
+    [Header("잽 경직 시간")]
     public float Jab;
 
 	[Header("스킬 경직 시간")]
@@ -321,35 +321,37 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
-    public void OnSlide(InputAction.CallbackContext context)// 슬라이딩 입력 처리
-	{
-        if (context.started && !isCooldown && !IsSliding )
+    public void OnSlide(InputAction.CallbackContext context) // 슬라이딩 입력 처리
+    {
+        if (context.started && !isCooldown && !IsSliding)
         {
             if (_isMoving)
             {
-                StartSliding();// 슬라이딩 시작
-			}
-        }
-        else if (context.canceled && IsSliding)
-        {
-            StopSliding();  // 슬라이딩 종료
+                StartSliding(); // 슬라이딩 시작
+            }
         }
     }
 
-    private void StartSliding()// 슬라이딩 시작
-	{
-		IsSliding = true;
-        slideTime = slideDuration;
-        walkSpeed = slideSpeed;  // 슬라이드 속도 적용
-	}
+    private void StartSliding() // 슬라이딩 시작
+    {
+        IsSliding = true;
+        slideTime = slideDuration; // 슬라이드 지속 시간 설정
+        walkSpeed = slideSpeed;    // 슬라이드 속도 적용
 
-    private void StopSliding()// 슬라이딩 종료
-	{
+        // 슬라이딩이 끝나면 자동으로 종료 처리
+        Invoke(nameof(StopSliding), slideDuration); // slideDuration만큼 대기 후 StopSliding 호출
+    }
+
+    private void StopSliding() // 슬라이딩 종료
+    {
         IsSliding = false;
-        walkSpeed = defaultSpeed;  // 기본 속도로 복귀
+        walkSpeed = defaultSpeed; // 기본 속도로 복귀
         isCooldown = true;
-        cooldownTime = slideCooldown;  // 슬라이드 쿨타임 적용
+        cooldownTime = slideCooldown; // 슬라이드 쿨타임 적용
+
+        // 쿨타임 타이머를 업데이트하는 코루틴 등을 사용할 수도 있음
     }
+
 
     public void OnAttack(InputAction.CallbackContext context)// 일반 공격 (잽)
 	{

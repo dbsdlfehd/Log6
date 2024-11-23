@@ -22,7 +22,8 @@ public class TalkManager : MonoBehaviour
 	public TextMeshProUGUI Dialog;
 	string talker = "";
 	string dialog = "";
-	public GameObject DialogSet;
+    public GameObject Shop;
+    public GameObject DialogSet;
 	public bool isDialoging; // 상태 저장 변수
 
 	[Header("테스트")]
@@ -82,8 +83,13 @@ public class TalkManager : MonoBehaviour
 
 		}
 
-		// 죽음 횟수 가 NPC 기준으로 바뀌었는가?
-		if (Player.DeadCount > _Object.EachTalkCountSaveNum[obj.id/100] && obj.isDeadUp == true)
+        if (ScanObject.CompareTag("shop"))
+        {
+            Shop.SetActive(true);
+        }
+
+        // 죽음 횟수 가 NPC 기준으로 바뀌었는가?
+        if (Player.DeadCount > _Object.EachTalkCountSaveNum[obj.id/100] && obj.isDeadUp == true)
 		{
 			obj.EachTalkCount++;
 			obj.EachTalkCountSave(obj.id); // 대화 넘버 저장 함수

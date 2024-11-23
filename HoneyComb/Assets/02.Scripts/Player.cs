@@ -71,10 +71,11 @@ public class Player : MonoBehaviour
     public float defenseDebuff4 = 0.35f;      // 방어력 감소 디버프 4 (35%) 심장 두근거림
 
 	[Header("재화")]
-	static public int Money = 0; // 재화
+    static public int Money = 0; // 재화
 	public TextMeshProUGUI MoneyTxt;
+    public TextMeshProUGUI StoreMoneyTxt;
 
-	[Header("구슬")]
+    [Header("구슬")]
 	static public int round = 0; // 구슬
 	public TextMeshProUGUI RoundTxt;
 
@@ -93,6 +94,8 @@ public class Player : MonoBehaviour
 	public TextMeshProUGUI gameRoundTMP;
 	// 매 방마다 라운드 UP, 5번시 상점 -> 6번시 보스방
 	static public int gameRound = 0;
+
+    public ShopManager shop;
 
 
 	private void Awake()
@@ -201,7 +204,8 @@ public class Player : MonoBehaviour
         HP_UI.text = nowHP.ToString() + "/" + maxHP.ToString();     // 체력
 		Atk_UI.text = Atk.ToString();                               // 공격력
 		MoneyTxt.text = Money.ToString();                           // 재화
-		RoundTxt.text = round.ToString();                           // 구슬
+        StoreMoneyTxt.text = Money.ToString();                      // 상점에서 보이는 재화
+        RoundTxt.text = round.ToString();                           // 구슬
 
 
         // 스테이지 // 현재 게임 라운드 수
@@ -277,4 +281,6 @@ public class Player : MonoBehaviour
             Dead();
         }
     }
+
+
 }
