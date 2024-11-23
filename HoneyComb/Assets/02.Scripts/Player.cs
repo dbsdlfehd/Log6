@@ -265,4 +265,16 @@ public class Player : MonoBehaviour
 		Atk = DefaultAtk;
 		round = DefaultRound;
 	}
+
+    //보스한테 데미지 받는거
+    public void TakeDamage(int damage)
+    {
+        nowHP -= damage;
+        Debug.Log($"{damage} 데미지입음. 남은체력: {nowHP}");
+
+        if (nowHP <= 0)
+        {
+            Dead();
+        }
+    }
 }

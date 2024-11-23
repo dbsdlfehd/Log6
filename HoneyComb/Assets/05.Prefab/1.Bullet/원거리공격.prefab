@@ -12,14 +12,14 @@ GameObject:
   - component: {fileID: 7065851878847847732}
   - component: {fileID: 7065851878847847735}
   - component: {fileID: 7065851878847847734}
-  - component: {fileID: 7065851878847847733}
+  - component: {fileID: 2808992999587796779}
   m_Layer: 21
   m_Name: "\uC6D0\uAC70\uB9AC\uACF5\uACA9"
   m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7065851878847847721
 Transform:
   m_ObjectHideFlags: 0
@@ -124,7 +124,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.4}
   m_Size: {x: 6.51, y: 22}
   m_Direction: 0
---- !u!114 &7065851878847847733
+--- !u!114 &2808992999587796779
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 056c0b6ab152cde4a9e9c12b1840c6c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10000
-  per: 1
-  speed: 4
-  disappearTime: 3
+  damage: 50
+  per: 0
+  speed: 20
+  disappearTime: 0.05

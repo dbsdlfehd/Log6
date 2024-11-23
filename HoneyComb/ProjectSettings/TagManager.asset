@@ -9,6 +9,8 @@ TagManager:
   - EnemyAttack1
   - UI
   - Wall
+  - Monster
+  - MonsterHP
   layers:
   - Default
   - TransparentFX
