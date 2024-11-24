@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
     public float healthDebuff3 = 0.2f;        // 체력 감소 디버프 3 (20%) 수면장애
     public float healthDebuff4 = 0.1f;        // 체력 감소 디버프 4 (10%) 탈모증
 
+
     [Header("방어력 디버프 퍼센트")]
     public float defenseDebuff1 = 0.25f;      // 방어력 감소 디버프 1 (25%) 사회적 불안장애
     public float defenseDebuff2 = 0.14f;      // 방어력 감소 디버프 2 (14%) 자존감 저하
@@ -120,7 +121,7 @@ public class Player : MonoBehaviour
         PlayerHpShow = GetComponent<PlayerHpShow>();
 
         // 디버프 적용
-        ApplyDebuff();
+       // ApplyDebuff();
 
         // 게임 시작시 라운드 초기화
         gameRound = 0;
