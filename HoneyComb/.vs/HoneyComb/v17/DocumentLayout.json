@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "D:\\Project archive\\Log6\\HoneyComb\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|d:\\project archive\\log6\\honeycomb\\assets\\02.scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\gohomemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\gohomemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\playeraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project archive\\Log6\\HoneyComb\\Library\\PackageCache\\com.unity.ide.visualstudio@2.0.21\\Editor\\VisualStudioIntegration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.ide.visualstudio@2.0.21\\Editor\\VisualStudioIntegration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\gohomemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\gohomemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\prefabspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\prefabspawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Project archive\\Log6\\HoneyComb\\Library\\PackageCache\\com.unity.ide.visualstudio@2.0.21\\Editor\\VisualStudioIntegration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Library\\PackageCache\\com.unity.ide.visualstudio@2.0.21\\Editor\\VisualStudioIntegration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\itemmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -35,16 +43,8 @@
       "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\_object.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\teleport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\parsingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\parsingmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|solutionrelative:assets\\02.scripts\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D565690-DA7C-F20C-4D81-51D4D59F6127}|Assembly-CSharp.csproj|D:\\Project archive\\Log6\\HoneyComb\\assets\\02.scripts\\weapon2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -154,11 +154,38 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
+              "Title": "Player.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Player.cs",
+              "RelativeDocumentMoniker": "Assets\\02.Scripts\\Player.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Player.cs",
+              "RelativeToolTip": "Assets\\02.Scripts\\Player.cs",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAnwGoAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T12:19:24.159Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GoHomeManager.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\GoHomeManager.cs",
+              "RelativeDocumentMoniker": "Assets\\02.Scripts\\GoHomeManager.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\GoHomeManager.cs",
+              "RelativeToolTip": "Assets\\02.Scripts\\GoHomeManager.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAYwDgAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-22T09:36:24.427Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "ItemManager.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\ItemManager.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\ItemManager.cs",
@@ -171,21 +198,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Player.cs",
-              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Player.cs",
-              "RelativeDocumentMoniker": "Assets\\02.Scripts\\Player.cs",
-              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Player.cs",
-              "RelativeToolTip": "Assets\\02.Scripts\\Player.cs",
-              "ViewState": "AQIAAB8BAAAAAAAAAADgvycBAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T12:19:24.159Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "PlayerAction.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\PlayerAction.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\PlayerAction.cs",
@@ -194,18 +207,17 @@
               "ViewState": "AQIAAB4BAAAAAAAAAAAUwC0BAABGAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-11T10:10:58.371Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Teleport.cs",
+              "DocumentIndex": 5,
+              "Title": "teleport.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Teleport.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\Teleport.cs",
               "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Teleport.cs",
               "RelativeToolTip": "Assets\\02.Scripts\\Teleport.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAYwD4AAAAfAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwEMAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-07T13:30:26.118Z",
               "IsPinned": true
@@ -238,20 +250,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GoHomeManager.cs",
-              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\GoHomeManager.cs",
-              "RelativeDocumentMoniker": "Assets\\02.Scripts\\GoHomeManager.cs",
-              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\GoHomeManager.cs",
-              "RelativeToolTip": "Assets\\02.Scripts\\GoHomeManager.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAiwDEAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-22T09:36:24.427Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 34,
               "Title": "RoomGenerator.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\RoomGenerator.cs",
@@ -265,13 +263,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "PrefabSpawner.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\PrefabSpawner.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\PrefabSpawner.cs",
               "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\PrefabSpawner.cs",
               "RelativeToolTip": "Assets\\02.Scripts\\PrefabSpawner.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAACAAAA",
+              "ViewState": "AQIAAIYAAAAAAAAAAIA9wC8AAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-02T12:44:16.454Z",
               "IsPinned": true
@@ -304,7 +302,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "_Object.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\_Object.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\_Object.cs",
@@ -343,7 +341,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "ScriptableObjectTest.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\ScriptableObjectTest.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\ScriptableObjectTest.cs",
@@ -364,20 +362,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "VisualStudioIntegration.cs",
-              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Library\\PackageCache\\com.unity.ide.visualstudio@2.0.21\\Editor\\VisualStudioIntegration.cs",
-              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ide.visualstudio@2.0.21\\Editor\\VisualStudioIntegration.cs",
-              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Library\\PackageCache\\com.unity.ide.visualstudio@2.0.21\\Editor\\VisualStudioIntegration.cs",
-              "RelativeToolTip": "Library\\PackageCache\\com.unity.ide.visualstudio@2.0.21\\Editor\\VisualStudioIntegration.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAUwDYAAADIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T14:01:18.572Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "ParsingManager.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\ParsingManager.cs",
               "RelativeDocumentMoniker": "Assets\\02.Scripts\\ParsingManager.cs",
@@ -497,6 +482,30 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Enemy.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Enemy.cs",
+              "RelativeDocumentMoniker": "Assets\\02.Scripts\\Enemy.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Enemy.cs",
+              "RelativeToolTip": "Assets\\02.Scripts\\Enemy.cs",
+              "ViewState": "AQIAAF0AAAAAAAAAAAAcwJ0AAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T07:57:51.913Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "VisualStudioIntegration.cs",
+              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Library\\PackageCache\\com.unity.ide.visualstudio@2.0.21\\Editor\\VisualStudioIntegration.cs",
+              "RelativeDocumentMoniker": "Library\\PackageCache\\com.unity.ide.visualstudio@2.0.21\\Editor\\VisualStudioIntegration.cs",
+              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Library\\PackageCache\\com.unity.ide.visualstudio@2.0.21\\Editor\\VisualStudioIntegration.cs",
+              "RelativeToolTip": "Library\\PackageCache\\com.unity.ide.visualstudio@2.0.21\\Editor\\VisualStudioIntegration.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAUwDYAAADIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T14:01:18.572Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 26,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\GameManager.cs",
@@ -518,18 +527,6 @@
               "ViewState": "AQIAAB4AAAAAAAAAAAAYwDsAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-07T14:07:06.487Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Enemy.cs",
-              "DocumentMoniker": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Enemy.cs",
-              "RelativeDocumentMoniker": "Assets\\02.Scripts\\Enemy.cs",
-              "ToolTip": "D:\\Project archive\\Log6\\HoneyComb\\Assets\\02.Scripts\\Enemy.cs",
-              "RelativeToolTip": "Assets\\02.Scripts\\Enemy.cs",
-              "ViewState": "AQIAAFwAAAAAAAAAAAAEwLoAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-24T07:57:51.913Z"
             },
             {
               "$type": "Document",

@@ -416,7 +416,7 @@
 "Assets/02.Scripts/ShopManager.cs"
 "Assets/02.Scripts/TableManager.cs"
 "Assets/02.Scripts/TalkManager.cs"
-"Assets/02.Scripts/Teleport.cs"
+"Assets/02.Scripts/teleport.cs"
 "Assets/02.Scripts/TeleportClick.cs"
 "Assets/02.Scripts/TouchItems.cs"
 "Assets/02.Scripts/weapon.cs"

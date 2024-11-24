@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class Teleport : MonoBehaviour
+public class teleport : MonoBehaviour
 {
     [Header("좌표")]
 	public Transform [] Pos; //  좌표
@@ -9,12 +9,14 @@ public class Teleport : MonoBehaviour
 	private Player player;				// player 스크립트
 	private PlayerAction playerAction;	// PlayerAction 스크립트
 	private ItemManager itemManager;	// 아이템 매니저 스크립트
+	private GoHomeManager goHomeManager;
 
 	private void Start()
 	{
 		playerAction = FindObjectOfType<Player>().GetComponent<PlayerAction>(); // PlayerAction 스크립트 찾기
 		itemManager = FindObjectOfType<ItemManager>();                          // 아이템 매니저 스크립트 찾기
 		player = playerAction.GetComponent<Player>().GetComponent<Player>();
+		goHomeManager = FindObjectOfType<GoHomeManager>();
 	}
 
 	// 플레이어와 충돌시
@@ -62,5 +64,7 @@ public class Teleport : MonoBehaviour
 		{
 			itemManager.CrunchModeEye();
 		}
+
+		goHomeManager.isRoundStart = true;
 	}
 }

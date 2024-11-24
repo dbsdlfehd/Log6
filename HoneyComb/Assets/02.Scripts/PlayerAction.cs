@@ -410,7 +410,7 @@ public class PlayerAction : MonoBehaviour
             {
 				if (item.bounds.Contains(worldPosition)) // 클릭한 위치가 아이템 콜라이더 범위 안에 있을 때
 				{
-					Teleport teleport = item.GetComponent<Teleport>();
+					teleport teleport = item.GetComponent<teleport>();
 					SceneChangeOnCollision sceneChangeOnCollision = item.GetComponent<SceneChangeOnCollision>();
 					if (teleport != null)
 					{

@@ -11,6 +11,8 @@ public class GoHomeManager : MonoBehaviour
     public Transform bossSpawnPoint; // 보스를 생성할 위치
 
 
+    public GameObject GameOverImg;  // 게임 오버 연출
+
     [Header("집 위치")]
     public Transform homePosition;  // 이동할 좌표
 
@@ -33,25 +35,12 @@ public class GoHomeManager : MonoBehaviour
             SpawnNewBoss();
         }
     }
+    public bool isRoundStart = false;
 
-    void MovePlayerToHome()
+	void MovePlayerToHome()
     {
-        if (player != null && homePosition != null && isPlayerMovable == false)
+        if (player != null && homePosition != null && isPlayerMovable == false && isRoundStart == true )
         {
-            // 2-1. 플레이어를 바로 좌표로 이동
-            player.transform.position = homePosition.position;
-
-            // (선택적으로) 회전도 이동할 위치의 회전에 맞춤
-            player.transform.rotation = homePosition.rotation;
-
-            //Debug.Log("플레이어가 지정된 좌표로 이동했습니다.");
-
-            // 플레이어 스탯 초기화 
-            //playerScript.StatDefaultPlayer();
-
-            isPlayerMovable = true;
-
-            Debug.Log("게임이 끝났습니다.");
 
             // 부활
             StartCoroutine(RespawnPlayerStart());
@@ -64,7 +53,22 @@ public class GoHomeManager : MonoBehaviour
 
     IEnumerator RespawnPlayerStart()
     {
-		yield return new WaitForSeconds(3);
+		//GameOverImg.SetActive(true);
+		yield return new WaitForSeconds(0.1f);
+		// 2-1. 플레이어를 바로 좌표로 이동
+		player.transform.position = homePosition.position;
+
+		// (선택적으로) 회전도 이동할 위치의 회전에 맞춤
+		player.transform.rotation = homePosition.rotation;
+
+		//Debug.Log("플레이어가 지정된 좌표로 이동했습니다.");
+
+		// 플레이어 스탯 초기화 
+		//playerScript.StatDefaultPlayer();
+
+		isPlayerMovable = true;
+
+		Debug.Log("게임이 끝났습니다.");
 		playerScript.RespawnPlayer();
 	}
 
@@ -83,5 +87,4 @@ public class GoHomeManager : MonoBehaviour
             Debug.LogWarning("BossPrefab이나 BossSpawnPoint가 설정되지 않았습니다.");
         }
     }
-
 }

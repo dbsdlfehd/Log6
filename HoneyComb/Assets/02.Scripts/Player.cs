@@ -120,7 +120,7 @@ public class Player : MonoBehaviour
         PlayerHpShow = GetComponent<PlayerHpShow>();
 
         // 디버프 적용
-        //ApplyDebuff();
+        ApplyDebuff();
 
         // 게임 시작시 라운드 초기화
         gameRound = 0;
@@ -214,6 +214,7 @@ public class Player : MonoBehaviour
         {
             RespawnPlayer();
             Debug.Log("스페이스 바 누름");
+            
         }
 
         if (isDead)

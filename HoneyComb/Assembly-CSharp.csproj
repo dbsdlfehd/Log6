@@ -121,7 +121,7 @@
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
     <Compile Include="Assets\04.Sprites\IsometricElfFreeVer\scripts\PotionManager.cs" />
     <Compile Include="Assets\02.Scripts\MonsterAI.cs" />
-    <Compile Include="Assets\02.Scripts\Teleport.cs" />
+    <Compile Include="Assets\02.Scripts\teleport.cs" />
     <Compile Include="Assets\02.Scripts\Memo.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
