@@ -481,8 +481,8 @@ MonoBehaviour:
   SkillAtk: 0
   UltimitAtk: 0
   Atk_UI: {fileID: 967616937}
-  Defense: 0
-  Defense_UI: {fileID: 967616937}
+  AR: 0
+  AR_UI: {fileID: 0}
   atkNum: 0
   healthDebuff1: 0.35
   healthDebuff2: 0.3
@@ -493,9 +493,13 @@ MonoBehaviour:
   defenseDebuff3: 0.26
   defenseDebuff4: 0.35
   MoneyTxt: {fileID: 967616937}
+  StoreMoneyTxt: {fileID: 0}
   RoundTxt: {fileID: 967616937}
   roomGenerator: {fileID: 0}
   gameRoundTMP: {fileID: 822876299}
+  shop: {fileID: 0}
+  itemManager: {fileID: 0}
+  HammerBuffedRoundCount: 0
 --- !u!114 &34459076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,6 +514,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 34459075}
   walkSpeed: 5
+  speed_ui: {fileID: 0}
+  As_ui: {fileID: 0}
   defaultSpeed: 5
   slideSpeed: 10
   slideDuration: 0.3
@@ -537,11 +543,13 @@ MonoBehaviour:
   _isSliding: 0
   _isFacingRight: 1
   playerPos: {fileID: 0}
+  itemManager: {fileID: 0}
   RealStop: 0
   timeStopu: 0
   tempPlayerPos: {fileID: 0}
   tempTime: 1
   TicTocDealyTime: 0
+  jabCooldown: 0.3
 --- !u!4 &34459077
 Transform:
   m_ObjectHideFlags: 0
@@ -682,6 +690,7 @@ MonoBehaviour:
   parsingManager: {fileID: 1340476154}
   Talker: {fileID: 833659158}
   Dialog: {fileID: 260062745}
+  Shop: {fileID: 0}
   DialogSet: {fileID: 1668496436}
   isDialoging: 0
   TalkCountNum: {fileID: 967616937}
@@ -1160,23 +1169,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.14
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.14
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.14
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.68
+      value: -9.65
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9
+      value: -2.06
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2034,23 +2043,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.22
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.22
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.22
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.22
+      value: -6.13
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.99
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 2890395096282155879, guid: 320c4dbc75c92ce4c8130bd86ea94e15, type: 3}
       propertyPath: m_LocalPosition.z
