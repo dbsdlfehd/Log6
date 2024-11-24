@@ -67,6 +67,7 @@
     <Compile Include="Assets\02.Scripts\SceneChangeOnCollision.cs" />
     <Compile Include="Assets\02.Scripts\Door_Type.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+    <Compile Include="Assets\02.Scripts\ScriptableObjectTest.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
     <Compile Include="Assets\02.Scripts\ShopManager.cs" />
     <Compile Include="Assets\02.Scripts\ParsingManager.cs" />
@@ -142,7 +143,6 @@
     <Compile Include="Assets\02.Scripts\WeaponChange.cs" />
     <Compile Include="Assets\02.Scripts\DestroyAnySec.cs" />
     <Compile Include="Assets\07.TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\02.Scripts\ScriptableObjectTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\07.TextMesh Pro\Shaders\TMPro.cginc" />

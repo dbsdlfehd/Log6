@@ -47,18 +47,26 @@ public class GoHomeManager : MonoBehaviour
             //Debug.Log("플레이어가 지정된 좌표로 이동했습니다.");
 
             // 플레이어 스탯 초기화 
-            playerScript.SetPlayerDefaultStatus();
+            //playerScript.StatDefaultPlayer();
 
             isPlayerMovable = true;
 
+            Debug.Log("게임이 끝났습니다.");
+
             // 부활
-            playerScript.RespawnPlayer();
+            StartCoroutine(RespawnPlayerStart());
         }
         else
         {
             //Debug.LogWarning("플레이어나 HomePosition이 설정되지 않았습니다.");
         }
     }
+
+    IEnumerator RespawnPlayerStart()
+    {
+		yield return new WaitForSeconds(3);
+		playerScript.RespawnPlayer();
+	}
 
     void SpawnNewBoss()
     {

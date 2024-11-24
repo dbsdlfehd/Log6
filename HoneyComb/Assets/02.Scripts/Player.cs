@@ -250,6 +250,8 @@ public class Player : MonoBehaviour
         gameRoundTMP.text = Temptext.ToString();
 
         DeadCount_UI.text = "죽은 횟수 : " + DeadCount.ToString();
+
+
     }
 
     // 플레이어 부활시 행 하는 것들
@@ -293,14 +295,19 @@ public class Player : MonoBehaviour
         AR = D_Ar; // 방어력 Armor Resistance
 
         itemManager.OFFCrunchMode();            // 과민의 눈 버프 제거
+
+		if (Atk != 25)
+		{
+			Atk = DefaultAtk;
+		}
 	}
 
-    public void SetPlayerDefaultStatus()
-    {
-		maxHP = DefaultMaxHP;
-		Atk = DefaultAtk;
-		round = DefaultRound;
-	}
+ //   public void SetPlayerDefaultStatus()
+ //   {
+	//	maxHP = DefaultMaxHP;
+	//	Atk = DefaultAtk;
+	//	round = DefaultRound;
+	//}
 
     //보스한테 데미지 받는거
     public void TakeDamage(int damage)
