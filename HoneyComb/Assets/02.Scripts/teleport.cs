@@ -6,12 +6,15 @@ public class Teleport : MonoBehaviour
     [Header("좌표")]
 	public Transform [] Pos; //  좌표
 
-
-	private PlayerAction playerAction; // PlayerAction 스크립트
+	private Player player;				// player 스크립트
+	private PlayerAction playerAction;	// PlayerAction 스크립트
+	private ItemManager itemManager;	// 아이템 매니저 스크립트
 
 	private void Start()
 	{
 		playerAction = FindObjectOfType<Player>().GetComponent<PlayerAction>(); // PlayerAction 스크립트 찾기
+		itemManager = FindObjectOfType<ItemManager>();                          // 아이템 매니저 스크립트 찾기
+		player = playerAction.GetComponent<Player>().GetComponent<Player>();
 	}
 
 	// 플레이어와 충돌시
@@ -39,15 +42,25 @@ public class Teleport : MonoBehaviour
 		// 공격중일 때
 		else if (playerAction.isAtking == true)
 		{
-
 		}
     }
 
 	public void MovePlayer(Collider2D collider)
     {
 		collider.transform.position = Pos[0].position;
-		Debug.Log("다음 라운드로 이동");
+		//Debug.Log("다음 라운드로 이동");
 		Player.gameRound++;
-		PrefabSpawner.alreadySpawnedEnemies = false; // 다음 라운드로 문을 열었으니 몬스터 소환이 가능해집니다.
+		PrefabSpawner.alreadySpawnedEnemies = false;	// 다음 라운드로 문을 열었으니 몬스터 소환이 가능해집니다.
+		itemManager.RoundUp();                          // 라운드 기회 1소모 (단, 버프중 일때)
+
+		if(itemManager.isNextRoundHpUp == true)
+		{
+			itemManager.HpUP();
+		}
+
+		if(itemManager.isCrunchMode == true)
+		{
+			itemManager.CrunchModeEye();
+		}
 	}
 }

@@ -21,7 +21,7 @@ public class Enemy : MonoBehaviour
     public int SenserRangeY = 3;
 
 	[Header("체력")]
-	public int maxHP; // 최대 체력 변수
+	private int maxHP = 0; // 최대 체력 변수
     public int nowHP; // 현재 체력 변수
 
 	[Header("이건 나도 몰루")]
@@ -78,6 +78,14 @@ public class Enemy : MonoBehaviour
 
 	void Awake()
     {
+		if (!isBoss)// 일반몬스터
+		{
+			maxHP = TableManager.Enemy1HP; // 최대 체력 변수
+		}
+		else if (isBoss) // 보스
+		{
+			maxHP = TableManager.BossHP; // 최대 체력 변수
+		}
 		rigid = GetComponent<Rigidbody2D>();
         target = GetComponent<Rigidbody2D>();
 		spriter = GetComponent<SpriteRenderer>();

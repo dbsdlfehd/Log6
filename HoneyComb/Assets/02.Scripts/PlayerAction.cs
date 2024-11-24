@@ -12,6 +12,9 @@ public class PlayerAction : MonoBehaviour
     public Player playerScript;
 
     public float walkSpeed = 5f;              // 걷기 속도
+    public TextMeshProUGUI speed_ui;          // 이동속도 보여주기 
+    public TextMeshProUGUI As_ui;             // 공격속도 보여주기
+
     public float defaultSpeed = 5f;           // 기본 속도(걷기 속도와 동일해야 함)
     public float slideSpeed = 10f;            // 슬라이드 속도
     public float slideDuration = 0.3f;        // 슬라이드 지속 시간 (0.3초)
@@ -110,6 +113,11 @@ public class PlayerAction : MonoBehaviour
     public bool _isFacingRight = true;// 캐릭터가 오른쪽을 보고 있는지 확인하는 변수
 
     public Transform playerPos;
+
+    public ItemManager itemManager;     // 아이템 매니저 스크립트
+
+	
+
 
 	public bool IsFacingRight
     {
@@ -226,14 +234,16 @@ public class PlayerAction : MonoBehaviour
 		else if (AtkStyle == 2) // 궁극기
 		{
             
-			isUsingSkillorUltimate = true;               // 지금은 스킬 사용하고 있다.
-			yield return new WaitForSeconds(0.9f);       // 애니메이션 타격할 때까지 기다리는 중
-			playerScript.Atk *= playerScript.UltimitAtk; // 플레이어 공격력 증가
-			collider.enabled = true;                     // 공격 콜라이더 활성화
-			yield return new WaitForSeconds(0.1f);       // 콜라이더를 0.1초 동안 활성화
-			collider.enabled = false;                    // 공격 콜라이더 비활성화
-			playerScript.Atk /= playerScript.UltimitAtk; // 공격력 초기화
-			isUsingSkillorUltimate = false;              // 지금은 스킬 사용하고 있지 않다.
+			isUsingSkillorUltimate = true;                  // 지금은 스킬 사용하고 있다.
+			yield return new WaitForSeconds(0.9f);          // 애니메이션 타격할 때까지 기다리는 중
+			playerScript.Atk *= playerScript.UltimitAtk;    // 플레이어 공격력 증가
+            itemManager.HammerBuff();                       // 해머 공격력 상승 (단, 버프중 일때)
+			collider.enabled = true;                        // 공격 콜라이더 활성화
+			yield return new WaitForSeconds(0.1f);          // 콜라이더를 0.1초 동안 활성화
+			collider.enabled = false;                       // 공격 콜라이더 비활성화
+            itemManager.HammerDeBuff();                     // 해머 공격력 하락 (단, 버프중 일때)
+			playerScript.Atk /= playerScript.UltimitAtk;    // 공격력 초기화
+			isUsingSkillorUltimate = false;                 // 지금은 스킬 사용하고 있지 않다.
 		}
 		canMove = true;
         isAtking = false;
@@ -287,6 +297,9 @@ public class PlayerAction : MonoBehaviour
 
         // 왼쪽 화살표 = -1, 오른쪽 화살표 = 1
         // Debug.Log(moveInput.x);
+
+        speed_ui.text = walkSpeed.ToString(); // 이동속도
+        As_ui.text = (3/jabCooldown).ToString("F2");           // 공격속도
     }
 
     public void OnMove(InputAction.CallbackContext context)// 이동 입력 처리
@@ -353,10 +366,18 @@ public class PlayerAction : MonoBehaviour
     }
 
 
-    public void OnAttack(InputAction.CallbackContext context)// 일반 공격 (잽)
+	public float jabCooldown = 0.3f;  // 잽 공격 쿨타임 (공속을 의미)
+	private float lastAttackTime = 0f;  // 마지막 공격 시간이 저장될 변수
+
+
+	public void OnAttack(InputAction.CallbackContext context)// 일반 공격 (잽)
 	{
+        if (jabCooldown <= 0.2f)
+        {
+            jabCooldown = 0.2f;
+        }
 		// 마우스 클릭을 시작 할때 && 스킬이나 궁극기를 사용하고 있지 않을시 잽을 실행
-		if (context.started && isUsingSkillorUltimate == false)
+		if (context.started && isUsingSkillorUltimate == false && isAtking == false && Time.time >= lastAttackTime + jabCooldown)
         {
             Vector2 mousePosition = Mouse.current.position.ReadValue();           // 마우스 위치 가져오기
             Vector3 worldPosition = mainCamera.ScreenToWorldPoint(mousePosition); // 화면 좌표 -> 월드 좌표 변환
@@ -380,9 +401,12 @@ public class PlayerAction : MonoBehaviour
                 StartCoroutine(DisableCollider(right, atkStyle)); // 오른쪽 공격 활성화
             }
 
-            // 아이템이 있는 콜라이더 객체 (예시로 myItemCollider를 사용)
+			lastAttackTime = Time.time;  // 마지막 공격 시간 갱신
 
-            foreach (var item in myItemColliders)
+
+			// 아이템이 있는 콜라이더 객체 (예시로 myItemCollider를 사용)
+
+			foreach (var item in myItemColliders)
             {
 				if (item.bounds.Contains(worldPosition)) // 클릭한 위치가 아이템 콜라이더 범위 안에 있을 때
 				{

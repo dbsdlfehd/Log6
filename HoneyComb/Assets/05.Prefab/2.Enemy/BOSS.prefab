@@ -105,9 +105,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   prefabId: 1
-  damage: 20
   count: 0
   speed: 0.5
+  isBoss: 1
+  nearestTarget: {fileID: 0}
+  scanRadius: 10
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &5779236398721536170
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,7 +379,6 @@ MonoBehaviour:
   speed: 2
   SenserRangeX: 3
   SenserRangeY: 3
-  maxHP: 1000
   nowHP: 0
   scanner: {fileID: 0}
   scanner2: {fileID: 0}

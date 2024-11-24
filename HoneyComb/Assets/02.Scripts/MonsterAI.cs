@@ -41,7 +41,7 @@ public class MonsterAI : MonoBehaviour
     System.Collections.IEnumerator PrepareAndAttack()
     {
         isPreparingAttack = true;
-        Debug.Log("공격 준비");
+        //Debug.Log("공격 준비");
 
         // 공격 준비 시 플레이어의 현재 위치를 기준으로 방향 고정
         lockedAttackDirection = (player.position - transform.position).normalized;
@@ -70,7 +70,7 @@ public class MonsterAI : MonoBehaviour
                 rb.velocity = lockedAttackDirection * projectileSpeed;
             }
 
-            Debug.Log("공격!");
+            //Debug.Log("공격!");
             Destroy(projectile, 0.1f); // n초 후 투사체 파괴
         }
     }

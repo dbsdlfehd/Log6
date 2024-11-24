@@ -7,6 +7,7 @@ public class Keyboard : MonoBehaviour
 	//플레이어의 좌표 변수 인듯?
 	public Transform player;
 	private Player playerScript;
+	public GameObject Dev_Btn;
 
 	//좌표 변수 인듯?
 	public Transform[] Pos;
@@ -21,16 +22,25 @@ public class Keyboard : MonoBehaviour
 	}
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.H))
+		if (Dev_Btn.activeSelf)
 		{
-			//플레이어 좌표를 -> 집 좌표
-			player.position = Pos[0].position;
-		}
+			//Debug.Log("Dev_Btn은 활성화된 상태입니다.");
 
-		if (Input.GetKeyDown(KeyCode.F))
+			if (Input.GetKeyDown(KeyCode.H))
+			{
+				//플레이어 좌표를 -> 집 좌표
+				player.position = Pos[0].position;
+			}
+
+			if (Input.GetKeyDown(KeyCode.F))
+			{
+				//소천하셨습니다.
+				playerScript.Dead();
+			}
+		}
+		else
 		{
-			//소천하셨습니다.
-			playerScript.Dead();
+			//Debug.Log("Dev_Btn은 비활성화된 상태입니다.");
 		}
 
 

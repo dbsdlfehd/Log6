@@ -52,9 +52,9 @@ public class Player : MonoBehaviour
 	[Header("현재 공격력 UI 표시용")]
 	public TextMeshProUGUI Atk_UI;
 
-    [Header("방어")]
-    public int Defense; // 방어력
-    public TextMeshProUGUI Defense_UI;
+    [Header("방어력")]
+    public int AR; // Armor Resistance 방어력 Defense -> AR로 바꿈
+    public TextMeshProUGUI AR_UI;
 
     public int atkNum; // 콤보 번호
 
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
     public float defenseDebuff3 = 0.26f;      // 방어력 감소 디버프 3 (26%) 회피행동
     public float defenseDebuff4 = 0.35f;      // 방어력 감소 디버프 4 (35%) 심장 두근거림
 
-	[Header("재화")]
+    [Header("재화")]
     static public int Money = 0; // 재화
 	public TextMeshProUGUI MoneyTxt;
     public TextMeshProUGUI StoreMoneyTxt;
@@ -89,6 +89,9 @@ public class Player : MonoBehaviour
 	int DefaultAtk = 0;
 	int DefaultMoney = 0;
 	int DefaultRound = 0;
+    float D_speed = 0;
+    float D_As = 0; // 공격속도
+    int D_Ar = 0; // 방어력 Armor Resistance
 
 	[Header("게임 라운드 수")]
 	public TextMeshProUGUI gameRoundTMP;
@@ -97,6 +100,15 @@ public class Player : MonoBehaviour
 
     public ShopManager shop;
 
+    public ItemManager itemManager;
+
+    public int HammerBuffedRoundCount = 0;
+
+    // 상점 테스트용 재화 + 100
+	public void AddMoneyTest()
+	{
+        Money += 100;
+	}
 
 	private void Awake()
 	{
@@ -118,6 +130,9 @@ public class Player : MonoBehaviour
         DefaultAtk = Atk;
         DefaultMoney = Money;
         DefaultRound = round;
+		D_speed = playerAction.walkSpeed;
+		D_As = playerAction.jabCooldown; // 공격속도
+		D_Ar = AR; // 방어력 Armor Resistance
 	}
 
     private void ApplyDebuff()// 디버프 적용
@@ -126,15 +141,15 @@ public class Player : MonoBehaviour
         nowHP = Mathf.FloorToInt(maxHP * 0.05f); // 최종 체력 = 1000 * 0.05
 
         // 방어력 디버프 적용
-        float debuffedDefense = Defense * (1 - defenseDebuff1);
+        float debuffedDefense = AR * (1 - defenseDebuff1);
         debuffedDefense *= (1 - defenseDebuff2);
         debuffedDefense *= (1 - defenseDebuff3);
         debuffedDefense *= (1 - defenseDebuff4);
-        Defense = Mathf.FloorToInt(debuffedDefense);
+        AR = Mathf.FloorToInt(debuffedDefense);
 
         Debug.Log("디버프 적용 완료: ");
         Debug.Log($"체력: {nowHP}");
-        Debug.Log($"방어력: {Defense}");
+        Debug.Log($"방어력: {AR}");
     }
 
     // 죽었을 떄 행하는 것
@@ -176,12 +191,16 @@ public class Player : MonoBehaviour
 		}
 
 		// 방어력을 고려한 최종 피해량 계산
+		//float incomingDamage = collision.GetComponent<FarATK>().damage;
+		//      float finalDamage = Mathf.Max(incomingDamage - AR, 1); // 방어력 적용 후 최소 피해 1로 제한
+
+		//      nowHP -= Mathf.FloorToInt(finalDamage); // 피해량을 정수로 적용
+
+		// 방어력을 고려한 최종 피해량 계산
 		float incomingDamage = collision.GetComponent<FarATK>().damage;
-        float finalDamage = Mathf.Max(incomingDamage - Defense, 1); // 방어력 적용 후 최소 피해 1로 제한
+        PlayerDamaged(incomingDamage);
 
-        nowHP -= Mathf.FloorToInt(finalDamage); // 피해량을 정수로 적용
-
-        if (nowHP <= 0)
+		if (nowHP <= 0)
         {
             Dead();
         }
@@ -201,12 +220,12 @@ public class Player : MonoBehaviour
             player.position = DeadPoint.position;
 
 
-        HP_UI.text = nowHP.ToString() + "/" + maxHP.ToString();     // 체력
+        HP_UI.text = nowHP.ToString() + "/" + maxHP.ToString();     // 현재체력 / 최대체력
 		Atk_UI.text = Atk.ToString();                               // 공격력
 		MoneyTxt.text = Money.ToString();                           // 재화
         StoreMoneyTxt.text = Money.ToString();                      // 상점에서 보이는 재화
         RoundTxt.text = round.ToString();                           // 구슬
-
+        AR_UI.text = AR.ToString();                                 // 방어력
 
         // 스테이지 // 현재 게임 라운드 수
 
@@ -237,12 +256,10 @@ public class Player : MonoBehaviour
     public void RespawnPlayer()
     {
         // 플레이어 스테이터스 원래대로 즉, 버프 제거
-        maxHP = DefaultMaxHP;
-        Atk = DefaultAtk;
-        round = DefaultRound;
+        StatDefaultPlayer();
 
-        // 진행 중인 게임 라운드 수 0으로 초기화
-        gameRound = 0;
+		// 진행 중인 게임 라운드 수 0으로 초기화
+		gameRound = 0;
 
         player.GetComponent<PlayerInput>().enabled = true; // 다시 움직일수 있게
         nowHP = Mathf.FloorToInt(maxHP); // 부활 시 체력을 최대치로 설정
@@ -262,6 +279,21 @@ public class Player : MonoBehaviour
         prefabSpawner.RoomEnemyCount = 0;// 적 죽인 수 0으로 초기화
         prefabSpawner.DestroySpawnedObjects();// 생성된 아이템 및 상점 TP 객체 제거
     }
+
+    public void StatDefaultPlayer()
+    {
+		// 플레이어 스테이터스 원래대로 즉, 버프 제거
+		maxHP = DefaultMaxHP;
+		Atk = DefaultAtk;
+		round = DefaultRound;
+		itemManager.isNextRoundHpUp = false;    // 기력방울 버프 제거
+		itemManager.DebuffHpUp();
+        playerAction.walkSpeed = D_speed;
+        playerAction.jabCooldown = D_As;// 공격속도
+        AR = D_Ar; // 방어력 Armor Resistance
+
+        itemManager.OFFCrunchMode();            // 과민의 눈 버프 제거
+	}
 
     public void SetPlayerDefaultStatus()
     {
@@ -283,4 +315,17 @@ public class Player : MonoBehaviour
     }
 
 
+	const float AR_FACTOR = 0.01f;
+
+	public void PlayerDamaged(float dmg) // 플레이어가 받게되는 데미지
+    {
+		// 방어력이 음수일 경우 0으로 보정
+		if (AR < 0) AR = 0;
+
+        // 데미지 계산 (롤하고 똑같음) (방어력 100 -> 50%) (방어력 200 -> 33.33%)
+		int totaldmg = Mathf.Max(1, (int)(dmg / (1 + (AR * AR_FACTOR))));
+
+		// 현재 HP에서 피해량 감소
+		nowHP -= totaldmg;
+	}
 }

@@ -1,5 +1,3 @@
-sceneSetups:
-- path: Assets/00.Scenes/SampleScene.unity
-  isLoaded: 1
-  isActive: 1
-  isSubScene: 0
+version https://git-lfs.github.com/spec/v1
+oid sha256:2d0a99e175c4ac8cd389edefda85a02696310e9c9e0db65aeab693a4c07bd0c1
+size 100

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+//using static UnityEditor.Progress;
+//using UnityEditor;
 
 public class PrefabSpawner : MonoBehaviour
 {
@@ -17,9 +19,10 @@ public class PrefabSpawner : MonoBehaviour
 
     [Header("상점 TP 객체")]
     public GameObject StorePos;         // 상점 위치들
-    private GameObject spawnedStoreTP;  // 생성된 상점 객체 참조
+    //private GameObject spawnedStoreTP;  // 생성된 상점 객체 참조
+	private List<GameObject> spawnedStoreTP = new List<GameObject>();
 
-    [Header("아이템들")]
+	[Header("아이템들")]
     public GameObject[] items;          // 공격, 최대 체력, 재화, 구슬
     private List<GameObject> spawnedItems = new List<GameObject>(); // 생성된 아이템들
 
@@ -61,8 +64,10 @@ public class PrefabSpawner : MonoBehaviour
             {
                 // 상점 가는 텔포 생성
                 Vector3 leftPosition = Pos[temp_i].position + Vector3.left * 1.5f; // 좌표 기준 왼쪽으로 이동
-                spawnedStoreTP = Instantiate(StorePos, leftPosition, Quaternion.identity); // 생성된 텔레포트를 변수에 저장
-            }
+                GameObject newItems = Instantiate(StorePos, leftPosition, Quaternion.identity); // 생성된 텔레포트를 변수에 저장
+				spawnedStoreTP.Add(newItems);
+
+			}
             else
             {
                 roomGenerator.RandomDoorGenerate(temp_i); // 랜덤 문 생성
@@ -137,15 +142,21 @@ public class PrefabSpawner : MonoBehaviour
                 Destroy(item);
             }
         }
+
         spawnedItems.Clear();
 
-        // 생성된 상점 텔레포트 제거
-        if (spawnedStoreTP != null)
-        {
-            Destroy(spawnedStoreTP);
-            spawnedStoreTP = null;
-        }
 
-        Debug.Log("생성된 아이템과 상점 텔레포트가 제거되었습니다.");
-    }
+        foreach(var item in spawnedStoreTP)
+        {
+			// 생성된 상점 텔레포트 제거
+			if (item != null)
+			{
+				Destroy(item);
+			}
+		}
+		spawnedStoreTP.Clear();
+
+
+		//Debug.Log("생성된 아이템과 상점 텔레포트가 제거되었습니다.");
+	}
 }

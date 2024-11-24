@@ -44,7 +44,7 @@ public class GoHomeManager : MonoBehaviour
             // (선택적으로) 회전도 이동할 위치의 회전에 맞춤
             player.transform.rotation = homePosition.rotation;
 
-            Debug.Log("플레이어가 지정된 좌표로 이동했습니다.");
+            //Debug.Log("플레이어가 지정된 좌표로 이동했습니다.");
 
             // 플레이어 스탯 초기화 
             playerScript.SetPlayerDefaultStatus();
@@ -56,7 +56,7 @@ public class GoHomeManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("플레이어나 HomePosition이 설정되지 않았습니다.");
+            //Debug.LogWarning("플레이어나 HomePosition이 설정되지 않았습니다.");
         }
     }
 
@@ -68,7 +68,7 @@ public class GoHomeManager : MonoBehaviour
             GameObject newBoss = Instantiate(bossPrefab, bossSpawnPoint.position, bossSpawnPoint.rotation);
             targetObject = newBoss; // 새로운 보스를 targetObject로 설정
 
-            Debug.Log("새로운 보스가 생성되었습니다.");
+            //Debug.Log("새로운 보스가 생성되었습니다.");
         }
         else
         {

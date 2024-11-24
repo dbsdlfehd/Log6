@@ -11,7 +11,7 @@ public class weapon2 : MonoBehaviour
     public int prefabId; //프리펩 아이디
 
     [Header("이게 되는 거임;; 공격력")]
-    public int damage; //데미지
+    private int damage; //데미지
 
     [Header("관통력")]
     public int count; //관통 되는 수 // EX. 0 = 한개
@@ -19,19 +19,30 @@ public class weapon2 : MonoBehaviour
     [Header("탄속")]
     public float speed; // 무기 속도
 
-    //public int per;
+	[Header("보스")]
+	public bool isBoss; // 무기 속도
 
-    float timer;
+	//public int per;
+
+	float timer;
     Enemy enemy;
 
     void Awake()
     {
-        enemy = GetComponentInParent<Enemy>();
+		if (!isBoss)
+		{
+			damage = TableManager.Enemy1Atk; //데미지
+		}
+		else if (isBoss)
+		{
+			damage = TableManager.BossATK; //데미지
+		}
+		enemy = GetComponentInParent<Enemy>();
     }
 
     void Start()
     {
-        Init();
+		Init();
     }
 
     void Update()
@@ -110,7 +121,7 @@ public class weapon2 : MonoBehaviour
 
 	void Fire()
 	{
-		Debug.Log("총 발사");
+		//Debug.Log("총 발사");
 
 		if (!enemy.scanner2.nearestTarget)
 			return;
