@@ -21,31 +21,52 @@ public class teleport : MonoBehaviour
 
 	// 플레이어와 충돌시
 	private void OnTriggerEnter2D(Collider2D collider)
-    {
-		// 공격중이 아닐때
-		if (playerAction.isAtking == false)
+	{
+		// Ensure playerAction is assigned
+		if (playerAction == null)
 		{
-			if (Pos.Length >= 2) // 좌표가 2개 이상일 경우 //
+			//Debug.LogError("playerAction is not assigned!");
+			return;
+		}
+
+		// Ensure Pos array is valid
+		if (Pos == null || Pos.Length == 0)
+		{
+			Debug.LogError("Pos array is not initialized or empty!");
+			return;
+		}
+
+		foreach (var pos in Pos)
+		{
+			if (pos == null)
 			{
-				if (collider.CompareTag("Player"))
+				Debug.LogError("An element in the Pos array is null!");
+				return;
+			}
+		}
+
+		// Not attacking
+		if (!playerAction.isAtking)
+		{
+			if (collider.CompareTag("Player"))
+			{
+				if (Pos.Length >= 2) // Two or more positions
 				{
-					int RANDOM_NUMBER = Random.Range(0, 2); // 랜덤 함수 발동
+					int RANDOM_NUMBER = Random.Range(0, Pos.Length); // Random index within bounds
 					collider.transform.position = Pos[RANDOM_NUMBER].position;
 				}
-			}
-			else                // 좌표가 1개일 경우 //
-			{
-				if (collider.CompareTag("Player"))
+				else // Single position
 				{
 					MovePlayer(collider);
 				}
 			}
 		}
-		// 공격중일 때
-		else if (playerAction.isAtking == true)
+		else // Attacking logic
 		{
+			// Your logic for when attacking
 		}
-    }
+	}
+
 
 	public void MovePlayer(Collider2D collider)
     {

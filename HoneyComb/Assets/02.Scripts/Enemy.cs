@@ -24,7 +24,7 @@ public class Enemy : MonoBehaviour
 	private int maxHP = 0; // 최대 체력 변수
     public int nowHP; // 현재 체력 변수
 
-	[Header("이건 나도 몰루")]
+	[Header("플레이어 감지기 인듯")]
     public Scanner scanner;
     public Scanner2 scanner2;
 
@@ -32,7 +32,6 @@ public class Enemy : MonoBehaviour
 
 	[Header("이것이 보스인가?")]
 	public bool isBoss;
-
 
 	Rigidbody2D rigid;
     SpriteRenderer spriter;
@@ -46,7 +45,7 @@ public class Enemy : MonoBehaviour
 
 	public float height = 1.7f;         // 체력바 Y 높이
 
-	[Header("데미지")]
+	[Header("데미지 수치 표기")]
 	public TextMeshProUGUI damage_text;
 	public GameObject damage_text_prf;
 
@@ -69,6 +68,12 @@ public class Enemy : MonoBehaviour
 
 	void Update()
 	{
+		if (bghp_bar == null)
+		{
+			//Debug.LogWarning("bghp_bar가 파괴되었습니다.");
+			return;
+		}
+
 		// 카메라 보는 기준 체력바 좌표 위치 설정
 		Vector3 _hpBarPos = Camera.main.WorldToScreenPoint(new Vector3(transform.position.x, transform.position.y + height, 0));
 		bghp_bar.position = _hpBarPos; // 해당 좌표의 위치 적용하기
@@ -167,8 +172,11 @@ public class Enemy : MonoBehaviour
 			Destroy(gameObject);
 		}
 		prefabSpawner.RoomEnemyCount++;        // 적 죽은 횟수 1 늘어남
-		Destroy(bghp_bar.gameObject);          // 체력바 삭제
 
+		if(bghp_bar != null) // 존재할 시
+		{
+			Destroy(bghp_bar.gameObject);          // 체력바 삭제
+		}
 	}
 
 	// 대미지 텍스트 생성 및 1초 후 삭제

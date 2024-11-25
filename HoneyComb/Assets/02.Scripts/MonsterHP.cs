@@ -8,13 +8,18 @@ public class MonsterHP : MonoBehaviour
     private Rigidbody2D rb; //중력
     private PlayerAction playerAction;
     private PrefabSpawner prefabSpawner;
+    private UI_MonsterHP uI_MonsterHP; // ui에 뿌려주는 hp바
+    private DamageTextShow damageTextShow; // ui 데미지 수치를 표기해주는거 관련 스크립트
 
-    [Header("체력")]
+	[Header("체력")]
     public int maxHP; // 최대 체력 변수
     public int nowHP; // 현재 체력 변수
 
     [Header("이것이 보스인가?")]
     public bool isBoss;
+
+    [Header("이것이 중간보스인가?")]
+    public bool middleBoss;
 
     Rigidbody2D rigid;
     SpriteRenderer spriter;
@@ -25,7 +30,9 @@ public class MonsterHP : MonoBehaviour
         spriter = GetComponent<SpriteRenderer>();
         playerAction = FindObjectOfType<Player>().GetComponent<PlayerAction>();
         prefabSpawner = FindAnyObjectByType<PrefabSpawner>();
-    }
+		uI_MonsterHP = GetComponent<UI_MonsterHP>();
+		damageTextShow = GetComponent<DamageTextShow>();// 같은 컴포넌트에 속해있다.
+	}
 
     private void SetEnemyStatus(int _maxHP)
     {
@@ -49,22 +56,25 @@ public class MonsterHP : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             int damage = player.Atk;                // 플레이어 대미지
-
-
-            //StartCoroutine(ShowDamageText(damage)); // 대미지를 표기
-            nowHP = nowHP - damage;
+			damageTextShow.ShowDamage(damage);
+			//StartCoroutine(ShowDamageText(damage)); // 대미지를 표기
+			nowHP = nowHP - damage;
         }
 
         // 일반몹 죽는 함수
-        if (nowHP < 0 && isBoss == false)			// 체력이 0보다 적을시
+        //if (nowHP < 0 && isBoss == false)			// 체력이 0보다 적을시
+        //{
+        //    EnemyDead();
+        //}
+        //// 적 죽는 함수
+        //else if (nowHP < 0 && isBoss == true)
+        //{
+        //    BossDead();
+        //}
+        if (nowHP < 0 && middleBoss) // 중간보스
         {
-            EnemyDead();
-        }
-        // 적 죽는 함수
-        else if (nowHP < 0 && isBoss == true)
-        {
-            BossDead();
-        }
+            MiddleBossDead();
+		}
     }
 
     void BossDead()
@@ -80,9 +90,17 @@ public class MonsterHP : MonoBehaviour
         if (isBoss == false)
         {
             Destroy(gameObject);
-        }
+		}
         //prefabSpawner.RoomEnemyCount++;        // 적 죽은 횟수 1 늘어남
         //Destroy(bghp_bar.gameObject);          // 체력바 삭제
 
     }
+
+	void MiddleBossDead()
+	{
+		nowHP = 0;
+        Debug.Log("나를 실행");
+		uI_MonsterHP.DestroyHP_UI();// 체력바 삭제
+		Destroy(gameObject);    // 자기 자신을 삭제
+	}
 }

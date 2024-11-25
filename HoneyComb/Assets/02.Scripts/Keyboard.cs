@@ -32,7 +32,7 @@ public class Keyboard : MonoBehaviour
 				player.position = Pos[0].position;
 			}
 
-			if (Input.GetKeyDown(KeyCode.F))
+			if (Input.GetKeyDown(KeyCode.K))
 			{
 				//소천하셨습니다.
 				playerScript.Dead();

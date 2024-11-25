@@ -131,7 +131,7 @@ public class Player : MonoBehaviour
         DefaultAtk = Atk;
         DefaultMoney = Money;
         DefaultRound = round;
-		D_speed = playerAction.walkSpeed;
+		D_speed = playerAction.walkSpeed; // start함수 내에 있음
 		D_As = playerAction.jabCooldown; // 공격속도
 		D_Ar = AR; // 방어력 Armor Resistance
 	}
@@ -156,6 +156,7 @@ public class Player : MonoBehaviour
     // 죽었을 떄 행하는 것
     public void Dead()
     {
+		isDead = true; // 플레이어 죽음 여부 활성화
 		DeadCount++;
 		StartCoroutine(DeadShow());
     }
@@ -163,10 +164,10 @@ public class Player : MonoBehaviour
     // 죽었을 때 행하는 것22
     IEnumerator DeadShow()
     {
-        player.GetComponent<PlayerInput>().enabled = false; // 멈춰
+		Debug.Log("내가 몇번 실행 되게?");
+		player.GetComponent<PlayerInput>().enabled = false; // 멈춰
         animator.SetTrigger(AnimationStrings.DeadTrigger);  // dead 애니메이션 실행
-        yield return new WaitForSeconds(5); // 5초 동안 기달려
-		isDead = true;
+        yield return new WaitForSeconds(4); // N초 동안 기달려
 		Dead_set.SetActive(true);
 		// 지옥 위치로 이동
 		player.position = DeadPoint.position;
@@ -201,7 +202,8 @@ public class Player : MonoBehaviour
 		float incomingDamage = collision.GetComponent<FarATK>().damage;
         PlayerDamaged(incomingDamage);
 
-		if (nowHP <= 0)
+        // 체력이 0보다 적을시 && 죽는 여부가 비활성화 될시
+		if (nowHP <= 0 && isDead == false)
         {
             Dead();
         }
@@ -215,22 +217,31 @@ public class Player : MonoBehaviour
         {
             RespawnPlayer();
             Debug.Log("스페이스 바 누름");
-            
         }
 
-        if (isDead)
-            player.position = DeadPoint.position;
+        //if (isDead)
+        //    player.position = DeadPoint.position;
 
+        // 임시 체력 표기 변수
+        int TempNowHP = nowHP;
 
-        HP_UI.text = nowHP.ToString() + "/" + maxHP.ToString();     // 현재체력 / 최대체력
+        if (nowHP < 0)// 체력이 음수일 때 -> 보여주기용 체력 0 표기
+		{
+            TempNowHP = 0;
+		}
+        else if (nowHP > 0) // 양수 일 때는 현재 체력으로 표기
+        {
+			TempNowHP = nowHP;
+		}
+
+        HP_UI.text = TempNowHP.ToString() + "/" + maxHP.ToString(); // (현재체력/최대체력)
 		Atk_UI.text = Atk.ToString();                               // 공격력
 		MoneyTxt.text = Money.ToString();                           // 재화
         StoreMoneyTxt.text = Money.ToString();                      // 상점에서 보이는 재화
         RoundTxt.text = round.ToString();                           // 구슬
         AR_UI.text = AR.ToString();                                 // 방어력
 
-        // 스테이지 // 현재 게임 라운드 수
-
+        // 현재 게임 라운드 수
         string Temptext = "";
         if (gameRound == 0) // 집 일때
         {
@@ -254,7 +265,6 @@ public class Player : MonoBehaviour
         DeadCount_UI.text = "죽은 횟수 : " + DeadCount.ToString();
     }
 
-    // 플레이어 부활시 행 하는 것들
     public void RespawnPlayer()
     {
         // 플레이어 스테이터스 원래대로 즉, 버프 제거
@@ -280,11 +290,10 @@ public class Player : MonoBehaviour
         EnmeyDown = false;//적 죽음 상태 해제
         prefabSpawner.RoomEnemyCount = 0;// 적 죽인 수 0으로 초기화
         prefabSpawner.DestroySpawnedObjects();// 생성된 아이템 및 상점 TP 객체 제거
-    }
+	}// 플레이어 부활
 
-    public void StatDefaultPlayer()
+	public void StatDefaultPlayer()
     {
-		// 플레이어 스테이터스 원래대로 즉, 버프 제거
 		maxHP = DefaultMaxHP;
 		Atk = DefaultAtk;
 		round = DefaultRound;
@@ -293,38 +302,20 @@ public class Player : MonoBehaviour
         playerAction.walkSpeed = D_speed;
         playerAction.jabCooldown = D_As;// 공격속도
         AR = D_Ar; // 방어력 Armor Resistance
+        itemManager.GoodByeHammerBuff();        // 해머 버프 제거
 
-        itemManager.OFFCrunchMode();            // 과민의 눈 버프 제거
+
+		itemManager.OFFCrunchMode();            // 과민의 눈 버프 제거
 
 		if (Atk != 25)
 		{
 			Atk = DefaultAtk;
 		}
-	}
-
- //   public void SetPlayerDefaultStatus()
- //   {
-	//	maxHP = DefaultMaxHP;
-	//	Atk = DefaultAtk;
-	//	round = DefaultRound;
-	//}
-
-    //보스한테 데미지 받는거
-    public void TakeDamage(int damage)
-    {
-        nowHP -= damage;
-        Debug.Log($"{damage} 데미지입음. 남은체력: {nowHP}");
-
-        if (nowHP <= 0)
-        {
-            Dead();
-        }
-    }
+	}// 플레이어 스테이터스 디폴트로 설정
 
 
-	const float AR_FACTOR = 0.01f;
-
-	public void PlayerDamaged(float dmg) // 플레이어가 받게되는 데미지
+	const float AR_FACTOR = 0.01f;       // 방어력 공식에 쓰임
+	public void PlayerDamaged(float dmg) // 플레이어가 받게되는 데미지 (방어력 공식 적용)
     {
 		// 방어력이 음수일 경우 0으로 보정
 		if (AR < 0) AR = 0;

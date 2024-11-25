@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterAI : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public float chaseSpeed; // 이속
     public float attackCooldown; // 공속
     public float attackPreparationTime = 0.5f; // 공격 준비 시간
@@ -18,7 +18,12 @@ public class MonsterAI : MonoBehaviour
 
     private Vector2 lockedAttackDirection; // 공격 준비 시 고정된 공격 방향
 
-    void Update()
+	private void Awake()
+	{
+		player = FindObjectOfType<Player>().transform;    // 무조건 해줘야됨 (초기화)
+	}
+
+	void Update()
     {
         if (player == null) return;
 

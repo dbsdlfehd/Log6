@@ -101,7 +101,7 @@ public class PrefabSpawner : MonoBehaviour
     {
         if (isSpawnned == false) // 한번만 실행용 if문
         {
-            Debug.Log("적을 소환합니다.");
+            //Debug.Log("적을 소환합니다.");
             alreadySpawnedEnemies = true;
             roomGenerator.DestroyDoor(); // 생성된 문 삭제
             isSpawnned = true;

@@ -145,7 +145,7 @@ public class ItemManager : MonoBehaviour
 	{
 		isHammerBuffing = false;                 // 라운드 수를 초과 해버렸으므로 (전체적인 해머)버프를 박탈합니다.
 		HammerBuffSet.SetActive(false);          // 버프 세트 다시 안보이게
-	}
+	} // 해머 버프 해제 함수
 
 	public void NextRoundHpUp() // 기력 방울 함수
 	{

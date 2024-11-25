@@ -466,7 +466,7 @@ MonoBehaviour:
   - {fileID: 641843027}
   - {fileID: 1305190787}
   prefabSpawner: {fileID: 0}
-  playerAction: {fileID: 0}
+  playerAction: {fileID: 34459076}
   DeadCount_UI: {fileID: 967616937}
   EnmeyDown: 0
   player: {fileID: 34459077}
@@ -482,7 +482,7 @@ MonoBehaviour:
   UltimitAtk: 0
   Atk_UI: {fileID: 967616937}
   AR: 0
-  AR_UI: {fileID: 0}
+  AR_UI: {fileID: 822876299}
   atkNum: 0
   healthDebuff1: 0.35
   healthDebuff2: 0.3
@@ -493,15 +493,13 @@ MonoBehaviour:
   defenseDebuff3: 0.26
   defenseDebuff4: 0.35
   MoneyTxt: {fileID: 967616937}
-  StoreMoneyTxt: {fileID: 0}
+  StoreMoneyTxt: {fileID: 967616937}
   RoundTxt: {fileID: 967616937}
   roomGenerator: {fileID: 0}
   gameRoundTMP: {fileID: 822876299}
   shop: {fileID: 0}
   itemManager: {fileID: 0}
   HammerBuffedRoundCount: 0
-  originalLayerID: 6
-  shiftedLayerID: 10
 --- !u!114 &34459076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,8 +514,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerScript: {fileID: 34459075}
   walkSpeed: 5
-  speed_ui: {fileID: 0}
-  As_ui: {fileID: 0}
+  speed_ui: {fileID: 967616937}
+  As_ui: {fileID: 967616937}
   defaultSpeed: 5
   slideSpeed: 10
   slideDuration: 0.3
@@ -1747,7 +1745,7 @@ GameObject:
   - component: {fileID: 967616938}
   - component: {fileID: 967616937}
   m_Layer: 5
-  m_Name: testTMP
+  m_Name: TempTxt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

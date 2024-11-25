@@ -68,7 +68,7 @@ public class BtnManager : MonoBehaviour
 	{
 		if (TipText != null) // Null 체크
 		{
-			string text = "집키 - H\n자결 - F";
+			string text = "집키 - H\n자결 - K";
 			TipText.text = text;
 		}
 		else
