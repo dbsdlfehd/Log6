@@ -106,7 +106,7 @@ public class Player : MonoBehaviour
     public int HammerBuffedRoundCount = 0;
 
     // 상점 테스트용 재화 + 100
-	public void AddMoneyTest()
+    public void AddMoneyTest()
 	{
         Money += 100;
 	}
@@ -252,8 +252,6 @@ public class Player : MonoBehaviour
         gameRoundTMP.text = Temptext.ToString();
 
         DeadCount_UI.text = "죽은 횟수 : " + DeadCount.ToString();
-
-
     }
 
     // 플레이어 부활시 행 하는 것들

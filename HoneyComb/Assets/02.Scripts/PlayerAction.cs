@@ -77,10 +77,17 @@ public class PlayerAction : MonoBehaviour
 	public Camera mainCamera; // 메인 카메라 (화면 좌표 변환용)
 
     [Header("지금 현재 스킬or궁극기를 사용 중인가?")]
-    public bool isUsingSkillorUltimate; 
+    public bool isUsingSkillorUltimate;
 
-	// 이동 상태 확인 변수 (애니메이터와 연동)
-	[SerializeField]
+
+    public int originalLayerID = 6; // 기본 레이어 ID (Default는 0)
+    public int shiftedLayerID = 10; // Shift 키를 눌렀을 때 적용할 레이어 ID
+
+    private SpriteRenderer spriteRenderer;
+    private Coroutine revertLayerCoroutine;
+
+    // 이동 상태 확인 변수 (애니메이터와 연동)
+    [SerializeField]
     private bool _isMoving = false;
     public bool IsMoving
     {
@@ -350,9 +357,10 @@ public class PlayerAction : MonoBehaviour
         IsSliding = true;
         slideTime = slideDuration; // 슬라이드 지속 시간 설정
         walkSpeed = slideSpeed;    // 슬라이드 속도 적용
-
+        gameObject.layer = shiftedLayerID;
         // 슬라이딩이 끝나면 자동으로 종료 처리
         Invoke(nameof(StopSliding), slideDuration); // slideDuration만큼 대기 후 StopSliding 호출
+        revertLayerCoroutine = StartCoroutine(RevertLayerAfterDelay(0.5f));
     }
 
     private void StopSliding() // 슬라이딩 종료
@@ -365,8 +373,19 @@ public class PlayerAction : MonoBehaviour
         // 쿨타임 타이머를 업데이트하는 코루틴 등을 사용할 수도 있음
     }
 
+    void SetLayer(int layerID)
+    {
+        gameObject.layer = layerID;
+    }
 
-	public float jabCooldown = 0.3f;  // 잽 공격 쿨타임 (공속을 의미)
+    IEnumerator RevertLayerAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SetLayer(originalLayerID);
+    }
+
+
+    public float jabCooldown = 0.3f;  // 잽 공격 쿨타임 (공속을 의미)
 	private float lastAttackTime = 0f;  // 마지막 공격 시간이 저장될 변수
 
 
