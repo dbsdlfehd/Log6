@@ -24,6 +24,8 @@ public class MonsterHP : MonoBehaviour
     Rigidbody2D rigid;
     SpriteRenderer spriter;
 
+    public int defaultMaxHp;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
@@ -32,7 +34,7 @@ public class MonsterHP : MonoBehaviour
         prefabSpawner = FindAnyObjectByType<PrefabSpawner>();
 		uI_MonsterHP = GetComponent<UI_MonsterHP>();
 		damageTextShow = GetComponent<DamageTextShow>();// 같은 컴포넌트에 속해있다.
-	}
+    }
 
     private void SetEnemyStatus(int _maxHP)
     {
@@ -40,8 +42,20 @@ public class MonsterHP : MonoBehaviour
         nowHP = _maxHP;
     }
 
+    IEnumerator SetDefaultEnemyStat()
+    {
+        yield return new WaitForSeconds(2.0f);
+        SetEnemyStatus(defaultMaxHp);
+    }
+
+
+    public void SetDefault()
+    {
+        SetDefaultEnemyStat();
+    }
     void Start()
     {
+        defaultMaxHp = maxHP;
         rb = GetComponent<Rigidbody2D>();
         player = FindObjectOfType<Player>();// 무조건 해줘야됨 (초기화)
         SetEnemyStatus(maxHP);              // 체력 수치 설정
@@ -49,6 +63,10 @@ public class MonsterHP : MonoBehaviour
         // prfHpBar 프리팹을 이용해 canvas에다가 체력바 생성.
         //bghp_bar = Instantiate(prfHpBar, GameObject.Find("Canvas").transform).GetComponent<RectTransform>(); // bghp_bar생성
         //hp_bar = bghp_bar.transform.GetChild(0).GetComponent<Image>(); // bghp_bar에 자식 오브젝트 컴포넌트 가져오기
+    }
+
+    private void Update()
+    {
     }
 
     // 접촉시

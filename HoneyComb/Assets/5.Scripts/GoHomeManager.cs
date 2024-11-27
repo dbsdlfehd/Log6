@@ -7,6 +7,8 @@ public class GoHomeManager : MonoBehaviour
     // 특정 객체를 감지하기 위한 변수
     [Header("보스")]
     public GameObject targetObject; // 감지할 대상 객체
+
+    [Header("보스 프리펩")]
     public GameObject bossPrefab;   // 새로 생성할 보스 프리팹
     public Transform bossSpawnPoint; // 보스를 생성할 위치
 
@@ -78,7 +80,20 @@ public class GoHomeManager : MonoBehaviour
         {
 			// 보스 생성
 			GameObject newBoss = Instantiate(bossPrefab, bossSpawnPoint.position, bossSpawnPoint.rotation);
-			targetObject = newBoss; // 새로운 보스를 targetObject로 설정
+            MonsterHP bossHP = newBoss.GetComponent<MonsterHP>();
+
+            if (bossHP != null)
+            {
+                // MonsterHP 컴포넌트의 특정 함수 호출
+                bossHP.SetDefault(); // 특정함수()는 MonsterHP 스크립트의 함수 이름으로 교체
+            }
+            else
+            {
+                Debug.LogError("MonsterHP 컴포넌트를 찾을 수 없습니다.");
+            }
+
+
+            targetObject = newBoss; // 새로운 보스를 targetObject로 설정
 		}
         else
         {
