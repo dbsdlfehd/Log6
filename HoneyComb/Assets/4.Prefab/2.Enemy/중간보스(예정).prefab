@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 8056407689731483471}
   m_Layer: 7
   m_Name: "\uC911\uAC04\uBCF4\uC2A4(\uC608\uC815)"
-  m_TagString: Monster
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -188,6 +188,7 @@ MonoBehaviour:
   nowHP: 0
   isBoss: 0
   middleBoss: 1
+  defaultMaxHp: 0
 --- !u!114 &7328611988191681140
 MonoBehaviour:
   m_ObjectHideFlags: 0
